@@ -1,0 +1,317 @@
+CHAPTER 13 Evaluating Transportation Alternatives
+
+[m]公式: 现值公式: PW=初始成本+Σ[C_n/((1+i)^n)]+成本重新铺设
+将结果转换为等效年成本(EUAC): EUAC=PW*(A/P,i,n)
+(A/P)系数通过公式: A/P=(i(1+i)^n)/[((1+i)^n)-1]
+
+[m]公式: PW=初始成本+年运营成本*(P/A,i,n)-残值*(P/F,i,n)
+年金现值因子: (P/A,i,n)=[(1+i)^n-1]/[i(1+i)^n]
+(P/A,10%,10)=[(1+0.10)^10-1]/[0.10*(1+0.10)^10]=6.145
+单笔终值的现值因子，也称为现值系数: (P/F,i,n)=1/(1+i)^n
+(P/F,10%,10)=1/(1+0.10)^10=0.3855
+
+---------------------------------------------
+
+3.成本组成与估算
+
+[m]13-9 A highway project is expected to cost $1,500,000 initially. Annual operating and maintenance cost after the first year is $2000 and will increase by $250 each year for the next 10 years. At the end of the fifth year, the project must be resurfaced at a cost of $300,000.
+(a) Calculate the present worth of costs for this project if the annual interest rate is 8%.
+(b) Convert the value obtained in (a) to equivalent uniform annual costs.
+13-9 一个公路项目预计初期成本为$1,500,000。第一年后的年度运营和维护成本为$2000，并将在接下来的10年里每年增加$250。在第五年结束时，该项目必须以$300,000的成本重新铺设。(a) 如果年利率为8%，计算该项目的成本现值。(b) 将(a)中获得的值转换为等效的年均成本。
+公式: 现值公式: PW=初始成本+Σ[C_n/((1+i)^n)]+成本重新铺设
+将结果转换为等效年成本(EUAC): EUAC=PW*(A/P,i,n)
+(A/P)系数通过公式: A/P=(i(1+i)^n)/[((1+i)^n)-1]
+答案: PW=1500000+2000/(1+0.08)^1+2250/(1+0.08)^2+2500/(1+0.08)^3+2750/(1+0.08)^4+...+4500/(1+0.08)^11+300000/(1+0.08)^5=1726020
+The present worth (cost) for this project is $1726020.
+n=11
+EUAC=PW(A/P)=1726020[0.08(1+0.08)^11]/[(1+0.08)^11-1]=241775
+The EUAC for this project will be $241775.
+
+---------------------------------------------
+---------------------------------------------
+
+4.经济分析方法
+
+[m]13-10 Three transportation projects have been proposed to increase safety in and around a residential neighborhood. Each project consists of upgrading existing street signs to highly retro-reflective sheeting to increase visibility. The following table shows the initial construction costs, annual operating costs, useful life of the sheeting, and the salvage values for each alternative. Assume that the discount rate is 10%. Calculate the present worth for each alternative and determine the preferred project based on economic criteria.
+13-10 提议了三个交通项目以提高住宅区及周边的安全性。每个项目均包括将现有街道标志改为高度反光材料以增强可见性。下表显示了每个备选方案的初始建设成本、年度运营成本、反光材料的使用寿命和残值。假设贴现率为10%。计算每个备选方案的现值并基于经济标准确定首选项目。
+公式: PW=初始成本+年运营成本*(P/A,i,n)-残值*(P/F,i,n)
+年金现值因子: (P/A,i,n)=[(1+i)^n-1]/[i(1+i)^n]
+(P/A,10%,10)=[(1+0.10)^10-1]/[0.10*(1+0.10)^10]=6.145
+单笔终值的现值因子，也称为现值系数: (P/F,i,n)=1/(1+i)^n
+(P/F,10%,10)=1/(1+0.10)^10=0.3855
+
+Given:
+Three alternatives with different:
+Initial construction costs
+Annual operating costs
+Useful life of materials
+Salvage values
+Discount rate = 10%
+
+Steps and Formulas:
+(1) Calculate NPW for Alternative I:
+PW1 = Initial cost + Annual cost × (P/A) - Salvage × (P/F)
+PW1 = $10,000 + $2,000 × (P/A, 10%, 10) - $2,500 × (P/F, 10%, 10)
+PW1 = $10,000 + $2,000 × 6.145 - $2,500 × 0.3855
+PW1 = $10,000 + $12,290 - $963.75
+PW1 = $21,326
+(2) Calculate NPW for Alternative II:
+PW2 = $12,000 + $1,600 × 6.145 - $3,000 × 0.3855
+PW2 = $12,000 + $9,832 - $1,156.5
+PW2 = $20,676
+(3) Calculate NPW for Alternative III (need to adjust for different life cycle):
+PW3 = $5,000 + $2,500 × 6.145 + ($5,000 + $500) × (P/F, 10%, 5) + $500 × (P/F, 10%, 10)
+PW3 = $5,000 + $15,362.5 + $5,500 × 0.6209 + $500 × 0.3855
+PW3 = $5,000 + $15,362.5 + $3,415 + $193
+PW3 = $22,964
+Result: Alternative II has lowest NPW ($20,676) and is preferred.
+
+---------------------------------------------
+
+[m]13-11 Two designs have been proposed for a short span bridge in a rural area, as shown in the following table. The first proposal is to construct the bridge in two phases (Phase I now and Phase II in 25 years). The second alternative is to construct it in one phase. Assuming that the annual interest rate is 4%, determine which alternative is preferred using present worth analysis.
+13-11 提议了两种设计方案用于在农村地区建造短跨度桥梁，如下面的表格所示。第一个提案是分两阶段建造桥梁（第一阶段现在开始，第二阶段在25年后）。第二个方案是一次性建造桥梁。假设年利率为4%，使用现值分析确定哪种方案更优。
+
+Given:
+Alternative I: Two-phase construction (Phase I now, Phase II in 25 years)
+Alternative II: One-phase construction
+Annual interest rate = 4%
+Service period = 50 years
+
+Steps and Formulas:
+(1) Calculate PW for Alternative I:
+PW1 = Phase I cost + Annual maintenance cost × (P/A) + Phase II cost × (P/F) + Additional maintenance × (P/A) × (P/F)
+PW1 = $14,200,000 + $75,000 × (P/A, 4%, 50) + $12,600,000 × (P/F, 4%, 25) + $25,000 × (P/A, 4%, 25) × (P/F, 4%, 25)
+PW1 = $14,200,000 + $75,000 × 21.482 + $12,600,000 × 0.3751 + $25,000 × 15.622 × 0.3751
+PW1 = $14,200,000 + $1,611,150 + $4,726,260 + $146,495
+PW1 = $20,683,905
+(2) Calculate PW for Alternative II:
+PW2 = Construction cost + Annual maintenance × (P/A)
+PW2 = $22,400,000 + $100,000 × (P/A, 4%, 50)
+PW2 = $22,400,000 + $100,000 × 21.482
+PW2 = $22,400,000 + $2,148,200
+PW2 = $24,548,200
+Result: Alternative I has lower PW ($20,683,905) and is preferred.
+
+---------------------------------------------
+
+
+[m]13-12 Three designs have been proposed to improve traffic flow at a major intersection in a heavily traveled suburban area. The first alternative involves improved traffic signaling. The second alternative includes traffic-signal improvements and intersection widening for exclusive left turns. The third alternative includes extensive reconstruction, including a grade separation structure. The construction costs, as well as annual maintenance and user costs, are listed in the following table for each alternative. Determine which alternative is preferred based on economic criteria if the analysis period is 20 years and the annual interest rate is 15%. Show that the result is the same using the present worth, equivalent annual cost, benefit-cost ratio, and rate-of-return methods.
+13-12 提议了三种设计方案以改善郊区繁忙交叉口的交通流量。第一种方案包括改进交通信号。第二种方案包括交通信号改进和交叉口扩宽以增加专用左转车道。第三种方案包括广泛的重建，包括立体交叉结构。每个方案的建设成本、年度维护和用户成本列在下表中。若分析期为20年，年利率为15%，确定基于经济标准的首选方案。使用现值、等效年成本、收益-成本比和收益率方法证明结果相同。
+
+Given:
+(1) Three alternatives with different:
+Construction costs
+Annual maintenance costs
+User costs
+(2) Analysis period = 20 years
+(3) Annual interest rate = 15%
+
+Steps and Formulas:
+(1) Present Worth Analysis:
+PW0 (present condition) = $0 + $15,000 × (P/A, 15%, 20) + $600,000 × (P/A, 15%, 20)
+PW0 = $0 + $15,000 × 6.259 + $600,000 × 6.259
+PW0 = $3,849,285
+PW1 (traffic signals) = $340,000 + $10,000 × (P/A, 15%, 20) + $450,000 × (P/A, 15%, 20) - $25,000 × (P/F, 15%, 20)
+PW1 = $340,000 + $10,000 × 6.259 + $450,000 × 6.259 - $25,000 × 0.0611
+PW1 = $3,217,613
+PW2 (intersection widening) = $850,000 + $5,000 × (P/A, 15%, 20) + $300,000 × (P/A, 15%, 20) - $12,000 × (P/F, 15%, 20)
+PW2 = $850,000 + $5,000 × 6.259 + $300,000 × 6.259 - $12,000 × 0.0611
+PW2 = $2,758,262
+PW3 (grade separation) = $2,120,000 + $5,000 × (P/A, 15%, 20) + $225,000 × (P/A, 15%, 20)
+PW3 = $2,120,000 + $5,000 × 6.259 + $225,000 × 6.259
+PW3 = $3,559,570
+(2) Equivalent Uniform Annual Cost:
+EUAC0 = $0 + $15,000 + $600,000 = $615,000
+EUAC1 = $340,000 × (A/P, 15%, 20) + $10,000 + $450,000 - $25,000 × (A/F, 15%, 20)
+EUAC1 = $340,000 × 0.1598 + $10,000 + $450,000 - $25,000 × 0.0098
+EUAC1 = $514,087
+EUAC2 = $850,000 × (A/P, 15%, 20) + $5,000 + $300,000 - $12,000 × (A/F, 15%, 20)
+EUAC2 = $850,000 × 0.1598 + $5,000 + $300,000 - $12,000 × 0.0098
+EUAC2 = $440,712
+EUAC3 = $2,120,000 × (A/P, 15%, 20) + $5,000 + $225,000
+EUAC3 = $2,120,000 × 0.1598 + $5,000 + $225,000
+EUAC3 = $568,776
+(3) Benefit-Cost Ratio calculations and Rate of Return calculations are also performed to confirm the results.
+Result: Intersection widening (Alternative 2) has lowest cost ($2,758,262 PW or $440,712 EUAC) and is preferred.
+
+---------------------------------------------
+
+[m]13-13 A road is being proposed to facilitate a housing development on a scenic lake. Two alternatives have been suggested. One roadway alignment goes around the lake and slightly impacts a wetland. The second alternative will also go around the lake but will significantly impact two wetlands. The following table shows the anticipated costs for each alternative. Assuming that the annual interest rate is 7%, determine which alternative is preferred using equivalent annual cost analysis.
+13-13 提议修建一条道路以便利湖泊景观的住房开发。建议了两个替代方案。其中一种道路线形是绕湖而行，对湿地有轻微影响。第二种方案也绕湖而行，但会显著影响两个湿地。下表显示了每个方案的预期成本。假设年利率为7%，使用等效年成本分析确定优选方案。
+
+Given:
+Two alternatives for a road around a lake
+Different wetland impacts
+Annual interest rate = 7%
+15-year service life
+
+Steps and Formulas:
+(1) Calculate EUAC for Alternative I:
+EUAC1 = Initial cost × (A/P) + Annual maintenance + Wetland costs + Lighting costs - Salvage × (A/F)
+EUAC1 = $75,000 × (A/P, 7%, 15) + $3,000 + $7,500 + $1,500 - $45,000 × (A/F, 7%, 15)
+EUAC1 = $75,000 × 0.1098 + $12,000 - $45,000 × 0.0398
+EUAC1 = $8,235 + $12,000 - $1,791
+EUAC1 = $18,444
+(2) Calculate EUAC for Alternative II:
+EUAC2 = $125,000 × (A/P, 7%, 15) + $2,000 + $2,500 + $2,500 - $25,000 × (A/F, 7%, 15)
+EUAC2 = $125,000 × 0.1098 + $7,000 - $25,000 × 0.0398
+EUAC2 = $13,725 + $7,000 - $995
+EUAC2 = $19,730
+Result: Alternative I has lower EUAC ($18,444) and is preferred.
+
+---------------------------------------------
+
+
+[m]13-14 Two alternatives are under consideration for maintenance of a bridge. Select the most cost-effective alternative using present worth analysis. Assume an interest rate of 10% per year and a design life of 50 years for each alternative.
+Alternative A: annual maintenance costs of $5,000 per year for the design life except for:
+-Year 20, bridge deck repairs will cost $20,000
+-Year 30, deck overlay and structural repairs will cost $105,000
+Alternative B: annual maintenance costs of $3,000 per year for the design life except for:
+-Year 20, bridge deck repairs will cost $35,000
+-Year 30, deck overlay and structural repairs will cost $85,000
+13-14 考虑了两种桥梁维护方案。使用现值分析选择最具成本效益的方案。假设每年的利率为10%，每种方案的设计寿命为50年。
+方案A：设计寿命期间的年维护费用为$5,000，但在以下年份发生特殊成本：
+-第20年，桥面修复费用为$20,000
+-第30年，桥面覆盖和结构修复费用为$105,000
+方案B：设计寿命期间的年维护费用为$3,000，但在以下年份发生特殊成本：
+-第20年，桥面修复费用为$35,000
+-第30年，桥面覆盖和结构修复费用为$85,000
+
+Given:
+Two maintenance alternatives with different cost structures
+Interest rate = 10% per year
+Design life = 50 years
+
+Steps and Formulas:
+(1) Calculate NPW for Alternative A:
+PW_A = Annual maintenance cost × (P/A) + Year 20 repair × (P/F) + Year 30 repair × (P/F)
+PW_A = $5,000 × (P/A, 10%, 50) + $20,000 × (P/F, 10%, 20) + $105,000 × (P/F, 10%, 30)
+PW_A = $5,000 × 9.915 + $20,000 × 0.1486 + $105,000 × 0.0573
+PW_A = $49,575 + $2,972 + $6,017
+PW_A = $58,564
+(2) Calculate NPW for Alternative B:
+PW_B = $3,000 × (P/A, 10%, 50) + $35,000 × (P/F, 10%, 20) + $85,000 × (P/F, 10%, 30)
+PW_B = $3,000 × 9.915 + $35,000 × 0.1486 + $85,000 × 0.0573
+PW_B = $29,745 + $5,201 + $4,871
+PW_B = $39,817
+Result: Alternative B has lower NPW ($39,817) and is preferred.
+
+---------------------------------------------
+
+
+[m]13-15 Two highway capacity improvement plans have been proposed for a congested suburban arterial. Select the most cost-effective alternative using present worth analysis. Assume an interest rate of 5% per year and a design life of 20 years for each alternative.
+Alternative A: improvements to traffic signals at an initial cost of $82,000 and a salvage value of $5,000. Annual maintenance costs will be $700 per year.
+Alternative B: traffic signal improvements and addition of a left-turn lane at an initial cost of $72,000 with no salvage value. Annual maintenance costs will be $1,200 per year, except in year 10, in which a rehabilitation will cost $14,000.
+13-15 提议了两个公路容量提升计划以缓解郊区交通拥堵的主干道。使用现值分析选择最具成本效益的方案。假设每年的利率为5%，每种方案的设计寿命为20年。
+方案A：交通信号改善，初始成本为$82,000，残值为$5,000。年维护费用为$700/年。
+方案B：交通信号改进并增加左转车道，初始成本为$72,000，无残值。年维护费用为$1,200/年，第10年需要$14,000的修复费用。
+
+Given:
+Two alternatives with different costs and salvage values
+Interest rate = 5% per year
+Design life = 20 years
+
+Steps and Formulas:
+(1) Calculate NPW for Alternative A:
+PW_A = Initial cost - Salvage value × (P/F) + Annual maintenance × (P/A)
+PW_A = $82,000 - $5,000 × (P/F, 5%, 20) + $700 × (P/A, 5%, 20)
+PW_A = $82,000 - $5,000 × 0.3769 + $700 × 12.462
+PW_A = $82,000 - $1,885 + $8,723
+PW_A = $88,838
+(2) Calculate NPW for Alternative B:
+PW_B = $72,000 + $1,200 × (P/A, 5%, 20) + $14,000 × (P/F, 5%, 10)
+PW_B = $72,000 + $1,200 × 12.462 + $14,000 × 0.6139
+PW_B = $72,000 + $14,954 + $8,595
+PW_B = $95,549
+Result: Alternative A has lower NPW ($88,838) and is preferred.
+
+---------------------------------------------
+---------------------------------------------
+
+5.多标准评估
+
+[m]13-16 The light-rail transit line described in this chapter is being evaluated by another group of stakeholders. In examining the objectives, they place the following rankings on each objective as follows. Using the revised information, determine the weighted score for each alternative and comment on your result.
+13-16 本章描述的轻轨交通线正在接受另一利益相关者小组的评估。审查目标时，他们对每项目标分配了以下排名。使用修订后的信息，确定每个备选方案的加权得分，并对结果进行评论。
+
+Given:
+Five objectives with rankings (1-5)
+Multiple alternatives with measures of effectiveness
+
+Steps and Formulas:
+(1) Convert rankings to relative weights:
+Objective 1 (rank 5): Relative weight = 1
+Objective 2 (rank 3): Relative weight = 3
+Objective 3 (rank 1): Relative weight = 5
+Objective 4 (rank 2): Relative weight = 4
+Objective 5 (rank 4): Relative weight = 2
+Total relative weight = 15
+(2) Calculate weighting factors:
+K1 = (1/15) × 100 = 6.667 ≈ 7%
+K2 = (3/15) × 100 = 20%
+K3 = (5/15) × 100 = 33.333 ≈ 33%
+K4 = (4/15) × 100 = 26.667 ≈ 27%
+K5 = (2/15) × 100 = 13.333 ≈ 13%
+(3) Calculate scores for each alternative by multiplying measures of effectiveness by weighting factors and summing.
+Result: Alternative II has highest score (82.7) followed by Alternative I (82.6).
+
+---------------------------------------------
+
+
+[m]13-17 Three alternatives to replace an existing two-lane highway with a four-lane highway that meets current design standards are proposed. The selected alternative will provide a more direct route between two towns that are 12.0 miles apart along the existing highway. With each alternative, operating speeds are expected to be at or near the design speed of 60 miles per hour. Develop the scores for each alternative and recommend a preferred alternative for development.
+The following scoring method, developed by the transportation oversight board, is to be used.
+The following information has been estimated for each alternative by the planning staff.
+13-17 提议了三种替代方案以将现有的双车道公路替换为符合当前设计标准的四车道公路。所选方案将提供两镇之间更直接的路线，目前沿现有公路相距12.0英里。对于每个方案，预计运行速度将接近或达到设计时速60英里/小时。开发每个方案的得分并推荐一个优选方案进行开发。
+运输监督委员会开发了以下评分方法。
+规划部门已为每个方案估计了以下信息。
+
+Given:
+Three alternatives for replacing a two-lane highway
+Performance measures for mobility, safety, cost-effectiveness, environmental impact, and community impact
+Specific weights for each criterion
+
+Steps and Formulas:
+(1) Calculate performance measures:
+Travel time = Length / Speed
+Cost per mile = Total cost / Length
+Total displacements = Business + Residential displacements
+(2) Calculate relative scores (Vij) for each criterion:
+For "lower is better" criteria: Best value / Value for alternative i
+For "higher is better" criteria: Value for alternative i / Best value
+(3) Calculate final scores:
+Score = Σ (Weight × Relative score)
+Result: Alternative 1 has highest score (85.03) and is preferred.
+
+---------------------------------------------
+
+[m]13-18 You have been hired as a consultant to a medium-sized city to develop and implement a procedure for evaluating whether or not to build a highway bypass around the CBD. Write a short report describing your proposal and recommendation as to how the city should proceed with this process.
+13-18 您已被聘为中等城市的顾问，以制定和实施评估程序，用于评估是否在CBD周围建造高速公路绕行。撰写一份简短报告，描述您的提案和建议，说明城市应如何推进此过程。
+
+---------------------------------------------
+
+[m]13-19 The following data have been developed for four alternative transportation plans for a high-speed transit line that will connect a major airport with the downtown area of a large city. Prepare an evaluation report for these proposals by considering the cost-effectiveness of each attribute. Show your results in graphical form and comment on each proposal.
+13-19 已为高速交通线的四个替代方案开发了以下数据，该交通线将连接一个大型城市的主要机场和市中心区域。编写一份评估报告，考虑每个属性的成本效益，评估这些提案。以图表形式显示您的结果并对每个提案进行评论。
+
+---------------------------------------------
+---------------------------------------------
+
+6.交通运营评估
+
+[m]13-20 A new carpool lane has replaced one lane of an existing six-lane highway. During peak hours, the lane is restricted to cars carrying three or more passengers. After five months of operation, the carpool lane handles 800 autos/h, whereas the existing lanes are operating at capacity levels of 1500 veh/h/ln at an occupancy rate of 1.2. How would you determine if the new carpool lane is successful or if the lane should be open to all traffic?
+13-20 一条新拼车车道取代了现有六车道高速公路中的一条车道。在高峰时段，该车道仅限三人及以上的车辆通行。运行五个月后，拼车车道处理800辆车/小时，而现有车道以1.2的乘员率达到1500辆车/小时/车道的容量。如何判断此新拼车车道是否成功，或者该车道是否应向所有车辆开放？
+
+Given:
+New carpool lane handles 800 autos/h with 3+ passengers
+Existing lanes operate at 1500 veh/h/ln with 1.2 occupancy rate
+5 months of operation
+
+Steps and Formulas:
+(1) Calculate person throughput for carpool lane:
+Person throughput = Vehicle volume × Average occupancy
+Person throughput = 800 × 3 = 2,400 persons/hour
+(2) Calculate person throughput for regular lane considering growth:
+Person throughput = Vehicle volume × Average occupancy × (1 + growth rate)
+Person throughput = 1,500 × 1.2 × (1 + 0.04) = 1,872 persons/hour
+(3) Compare:
+2,400 > 1,872
+Result: Carpool lane is successful as it carries more people per hour than a regular lane would, even accounting for traffic growth.
+

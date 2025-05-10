@@ -1,0 +1,328 @@
+Chapter 5 - Highway Safety 
+
+[m]公式: 多用于intersections交叉口的安全性评估: RMEV (每百万进入车辆的碰撞次数)
+RMEV=(A*10^6)/(ADT_total*365)
+A是每年碰撞总数
+
+[m]公式: 多用于road segments路段的安全性评估: RMVM (每一亿车英里行驶的碰撞次数)
+RMVM=(A*10^8)/(ADT_total*365*L)
+L是路段长度
+致命事故率通过比例计算: RMVM_total*(致命事故数/总事故数)
+
+[m]公式:年度车辆英里数 VMT=AADT*365*L
+事故率=(事故数*10^8)/VMT
+
+--------------------------------------------------------
+
+2.碰撞率计算(事故率/严重度)
+
+[m]Q5-2 A local jurisdiction has determined that for a given set of geometric conditions, a maximum rate of eight crashes/million entering vehicles can be tolerated. At an intersection of two roadways with ADTs of 10,000 and 7500, how many crashes can occur before corrective action must be sought?
+5-2 一个地方管辖区确定，在特定的几何条件下，每百万进入车辆的最大碰撞率为8起。在两个道路交叉口的ADT分别为10,000和7500时，最多允许发生多少次碰撞，超过该数量则需采取纠正措施？
+公式: 多用于intersections交叉口的安全性评估: RMEV (每百万进入车辆的碰撞次数)
+RMEV=(A*10^6)/(ADT_total*365)
+A是每年碰撞总数
+
+Known conditions:
+Maximum crash rate: 8 crashes per million entering vehicles
+ADT for first road: 10,000 vehicles/day
+ADT for second road: 7,500 vehicles/day
+
+Steps and equations:
+Calculate total ADT at intersection:
+ADT_total = 10,000 + 7,500 = 17,500 vehicles/day
+Use the formula for rate of million entering vehicles (RMEV):
+RMEV = A × (1,000,000) ÷ (ADT × 365 days)
+Solve for A (maximum allowable crashes per year):
+8 = A × (1,000,000) ÷ (17,500 × 365)
+A = 8 × 17,500 × 365 ÷ 1,000,000
+A = 51.1 crashes
+Round to 51 crashes per year as the maximum allowable before corrective action must be sought.
+
+--------------------------------------------------------
+
+
+[m]Q5-3 Studies were conducted at two sites on rural roads with similar characteristics. The first site was 5.1 miles in length with an ADT of 6500. Over the year-long study period, 28 crashes occurred on this portion of roadway, five of them resulting in fatalities. The second site was a 10-mile section with an ADT of 5000. There were 32 crashes in this section with four fatalities. Determine the appropriate crash rates for both locations, and discuss the implications.
+5-3 研究在具有相似特征的两处乡村道路上进行。第一个地点长度为5.1英里，ADT为6500。在为期一年的研究期间，该道路上发生了28起碰撞，其中5起导致死亡。第二个地点是一段10英里的道路，ADT为5000，该段道路发生了32起碰撞，其中4起导致死亡。确定这两个地点的适当碰撞率，并讨论其影响。
+公式: 多用于road segments路段的安全性评估: RMVM (每一亿车英里行驶的碰撞次数)
+RMVM=(A*10^8)/(ADT_total*365*L)
+L是路段长度
+致命事故率通过比例计算: RMVM_total*(致命事故数/总事故数)
+
+Known conditions:
+Site 1: 5.1 miles length, ADT = 6,500, 28 total crashes (5 fatal) in 1 year
+Site 2: 10 miles length, ADT = 5,000, 32 total crashes (4 fatal) in 1 year
+
+Steps and equations:
+Calculate crash rate per 100 million vehicle-miles traveled (RMVMT) for Site 1:
+RMVMT = A × (100,000,000) ÷ (ADT × 365 days × length of road section)
+RMVMT_1 = 28 × (100,000,000) ÷ (6,500 × 365 × 5.1)
+RMVMT_1 = 231.4 crashes per 100 million VMT
+Calculate fatal crash rate for Site 1:
+RMVMT_F1 = RMVMT_1 × (# of fatal ÷ # of total)
+RMVMT_F1 = 231.4 × (5 ÷ 28)
+RMVMT_F1 = 41.3 fatal crashes per 100 million VMT
+Calculate crash rate for Site 2:
+RMVMT_2 = 32 × (100,000,000) ÷ (5,000 × 365 × 10.0)
+RMVMT_2 = 175.3 crashes per 100 million VMT
+Calculate fatal crash rate for Site 2:
+RMVMT_F2 = RMVMT_2 × (# of fatal ÷ # of total)
+RMVMT_F2 = 175.3 × (4 ÷ 32)
+RMVMT_F2 = 21.9 fatal crashes per 100 million VMT
+
+Although site 2 experiences more crashes, with a lower ADT, over the one year period, the crash rate for that site is lower than for site 1.
+This is due to the fact that the roadway section is almost twice as long for site 2, increasing the total vehicle miles traveled and thereby reducing the rate per 100 million vehicle miles traveled.
+Site 1 can be consider less safe than site 2 based on both crash rate and fatal crash rate.
+
+--------------------------------------------------------
+
+
+[m]Q5-4 A 5.4-mile segment of highway has the following traffic and safety data: Determine the fatal crash and total crash rates (per 100 million VMT) for each year and for the three-year period. Comment on and qualify the results as necessary.
+5-4 一段5.4英里的高速公路有以下交通和安全数据：计算每年和三年期间的致命碰撞率和总碰撞率（每1亿VMT），并对结果进行必要的评论和说明。
+公式:年度车辆英里数 VMT=AADT*365*L
+事故率=(事故数*10^8)/VMT
+
+Known conditions:
+Road segment length: 5.4 miles
+AADT for 2005: 15,200 vehicles/day, 3 fatal crashes, 29 total crashes
+AADT for 2006: 16,300 vehicles/day, 3 fatal crashes, 31 total crashes
+AADT for 2007: 17,400 vehicles/day, 2 fatal crashes, 27 total crashes
+
+Steps and equations:
+(1) Calculate annual VMT for each year:
+VMT_2005 = 15,200 × 365 × 5.4 = 29,956,800
+VMT_2006 = 16,300 × 365 × 5.4 = 32,117,100
+VMT_2007 = 17,400 × 365 × 5.4 = 34,277,400
+(2) Calculate fatal crash rates (per 100 million VMT) for each year:
+Fatal rate_2005 = 3 × 100,000,000 ÷ 29,956,800 = 10.0 fatal crashes per 100M VMT
+Fatal rate_2006 = 3 × 100,000,000 ÷ 32,117,100 = 9.3 fatal crashes per 100M VMT
+Fatal rate_2007 = 2 × 100,000,000 ÷ 34,277,400 = 5.8 fatal crashes per 100M VMT
+(3) Calculate total crash rates (per 100 million VMT) for each year:
+Total rate_2005 = 29 × 100,000,000 ÷ 29,956,800 = 96.8 crashes per 100M VMT
+Total rate_2006 = 31 × 100,000,000 ÷ 32,117,100 = 96.5 crashes per 100M VMT
+Total rate_2007 = 27 × 100,000,000 ÷ 34,277,400 = 78.8 crashes per 100M VMT
+(4) Calculate three-year rates:
+Three-year fatal rate = 8 × 100,000,000 ÷ 96,351,300 = 8.3 fatal crashes per 100M VMT
+Three-year total rate = 87 × 100,000,000 ÷ 96,351,300 = 90.3 crashes per 100M VMT
+
+--------------------------------------------------------
+
+
+[m]Q5-6 Determine the severity number for a section of highway that had 2 fatal crashes, 24 personal injury crashes, and 74 property damage-only crashes during a particular time period. Use a weighting scheme of 20 for fatal crashes, 5 for personal injury crashes, and 1 for property damage-only crashes. Determine the severity index by dividing the severity number by the total number of crashes, thereby normalizing the severity number by the number of crashes.
+5-6 计算某段高速公路的严重程度数，该段在特定时间段内发生了2起致命碰撞、24起人身伤害碰撞和74起仅财产损失碰撞。使用致命碰撞权重20、人身伤害碰撞权重5和仅财产损失碰撞权重1的加权方案。通过将严重程度数除以总碰撞数，得到严重程度指数，从而标准化严重程度数。
+
+Known conditions:
+2 fatal crashes, weighting factor = 20
+24 personal injury crashes, weighting factor = 5
+74 property damage-only crashes, weighting factor = 1
+
+Steps and equations:
+Calculate severity number (SN):
+SN = (Fatal crashes × 20) + (Injury crashes × 5) + (PDO crashes × 1)
+SN = (2 × 20) + (24 × 5) + (74 × 1)
+SN = 40 + 120 + 74 = 234
+Calculate severity index:
+SI = SN ÷ Total number of crashes
+SI = 234 ÷ (2 + 24 + 74)
+SI = 234 ÷ 100 = 2.34
+
+--------------------------------------------------------
+--------------------------------------------------------
+
+
+4.危险地点识别(危险度评估)
+
+[m]Q5-12 A rural primary road segment of 2 miles long has an AADT of 11,350. The number of crashes that have occurred over the past 5 years are 5 fatal, 55 injury crashes, and 100 property damage-only crashes. Statewide average crashes for this type of road are 2 fatal, 130 injury, and 300 property damage-only crashes per 100 MVMT. The weighting factors for fatal, injury, and property crashes are 8, 3, 1, respectively. Using the critical crash ratio methodology, determine whether this site can be labeled a hazardous site. Use a 95% confidence limit.
+5-12 一段长2英里的乡村主干道的年平均每日交通量（AADT）为11,350。在过去的5年里，该段道路发生了5起致命碰撞、55起伤害碰撞和100起仅财产损失碰撞。对于该类型道路的全州平均碰撞数为每1亿VMT发生2起致命、130起伤害和300起仅财产损失碰撞。致命、伤害和财产损失碰撞的权重因子分别为8、3、1。使用关键碰撞比率方法，确定该地点是否可以被标记为危险地点。使用95%的置信限。
+公式: 交通基数 MEV_i=(Years*AADT*Segment Length*365)/(100*10^6)
+3年期平均等效PDO事故率 AVR=用致命事故、伤害事故和财产损失事故，分别乘以权重并求和。
+关键事故率: CR=AVR+0.5/TB+TF*(AVR/TB)^0.5 [TB=MEV_i, TF=1.96]
+路段实际历史等效事故数: Segment crash history/TB=每100MVMT的等效事故
+事故比率crash ratio=等效事故/CR
+
+Known conditions:
+Rural primary road segment: 2 miles long, AADT = 11,350
+5-year crash data: 5 fatal, 55 injury, 100 PDO crashes
+Statewide averages per 100 MVMT: 2 fatal, 130 injury, 300 PDO crashes
+Weight factors: fatal = 8, injury = 3, PDO = 1
+Confidence level: 95%
+
+Steps and equations:
+(1) Calculate traffic base (MEV_i):
+MEV_i = Years × AADT × Length × 365 ÷ (100 × 10^6)
+MEV_i = 5 × 11,350 × 2.0 × 365 ÷ (100 × 10^6)
+MEV_i = 0.414 × 100 MVMT
+(2) Calculate average equivalent PDO crash rate (AVR):
+AVR = 8 × 2 + 3 × 130 + 300 = 706 equivalent PDO crashes per 100 MVMT
+(3) Select test factor based on confidence level (95%): TF = 1.96
+(4) Compute critical rate (CR):
+CR = AVR + (0.5 ÷ MEV_i) + TF × √(AVR ÷ MEV_i)
+CR = 706 + (0.5 ÷ 0.414) + 1.96 × √(706 ÷ 0.414)
+CR = 706 + 1.207 + 80.9 = 788 equivalent PDO crashes per 100 MVMT
+(5) Calculate site crash history in equivalent PDO crashes:
+Site crash history = 8 × 5 + 3 × 55 + 100 = 40 + 165 + 100 = 305
+(6) Calculate equivalent crash rate:
+Equivalent rate = 305 ÷ 0.414 = 737 equivalent PDO crashes per 100 MVMT
+(7) Calculate crash ratio:
+Crash ratio = 737 ÷ 788 = 0.935
+Since ratio < 1, site is not considered hazardous
+
+--------------------------------------------------------
+--------------------------------------------------------
+
+
+5.安全改进措施评估(安全对策评估/措施效果估算)
+
+[m]Q5-8 The crash rate on a heavily traveled two-lane rural highway is abnormally high. The corridor is 14 miles long with an ADT of 34,000. An investigation has determined that head-on collisions are most common, with an RMVMT of 4.5 and are caused by vehicles attempting to pass. Determine an appropriate countermeasure and calculate the estimated yearly reduction in total crashes.
+5-8 在乡村双车道公路上的碰撞率异常高。该走廊长14英里，ADT为34,000。调查显示，正面碰撞最常见，RMVMT为4.5，其原因是车辆尝试超车。确定一个适当的对策，并计算估计的年碰撞总数减少量。
+
+Known conditions:
+Road length: 14 miles
+ADT: 34,000 vehicles/day
+RMVMT for head-on collisions: 4.5
+Countermeasure: Adding passing lanes with crash reduction factor of 0.25
+
+Steps and equations:
+(1) Calculate annual crashes using RMVMT formula:
+RMVMT = A × 100,000,000 ÷ (ADT × 365 × length)
+4.5 = A × 100,000,000 ÷ (34,000 × 365 × 14)
+A = 4.5 × 34,000 × 365 × 14 ÷ 100,000,000
+A = 7.82 ≈ 8 crashes per year
+(2) Calculate crash reduction:
+Crash reduction = Annual crashes × Crash reduction factor
+Crash reduction = 8 × 0.25 = 2 crashes per year
+
+--------------------------------------------------------
+
+
+[m]Q5-15 A state transportation agency has established crash reduction factors shown in the table. An intersection has been identified as having an abnormally high left-turn crash rate (17, 20, and 18 crashes in the last three years), attributed to excessive speeds and the absence of an exclusive left-turn phase. The ADT of the intersection for the last three years is 8400, and the ADT after implementation is 9500. Determine:
+(a) the appropriate countermeasures
+(b) the expected reduction in crashes if the countermeasures are implemented
+5-15 州交通运输机构已经建立了表中显示的碰撞减少因子。一个交叉口被识别为具有异常高的左转碰撞率（过去三年分别为17、20和18次碰撞），其原因是车速过快和缺少专用左转相位。该交叉口过去三年的ADT为8400，实施后ADT为9500。确定：
+(a) 适当的对策
+(b) 如果实施对策，预计碰撞减少量
+
+Known conditions:
+(1) Crash reduction factors:
+Retime signals: 0.10
+Provide left-turn signal phase: 0.30
+Reduce speed limit on approaches: 0.35
+Provide turning guide lines: 0.05
+Prohibit left turns: 0.75
+(2) Intersection left-turn crashes: 17, 20, 18 in last three years
+(3) ADT before implementation: 8,400
+(4) ADT after implementation: 9,500
+
+Steps and equations:
+(1) Determine appropriate countermeasures:
+Provide exclusive left-turn phase
+Reduce speed limit on approaches
+(2) Calculate combined crash reduction factor (CR):
+CR = RF1 + (1 - RF1) × RF2
+CR = 0.30 + (1 - 0.30) × 0.35
+CR = 0.30 + 0.70 × 0.35
+CR = 0.30 + 0.245 = 0.545
+(3) Calculate average annual crashes:
+Average annual crashes = (17 + 20 + 18) ÷ 3 = 18.33
+(4) Calculate expected crash reduction:
+Crashes prevented = Average crashes × CR × (ADT_after ÷ ADT_before)
+Crashes prevented = 18.33 × 0.545 × (9,500 ÷ 8,400)
+Crashes prevented = 18.33 × 0.545 × 1.131 = 11.30 ≈ 11 crashes
+
+--------------------------------------------------------
+
+[m]Q5-16 The geometrics along a portion of roadway have been improved to provide wider travel lanes and paved shoulders. While these improvements have reduced the crash rate, the local traffic engineer is still concerned about the number of crashes, particularly those involving collisions with fixed objects along the edge of pavement. Thirty such crashes have occurred in the past 12 months. What countermeasure should the engineer undertake to reduce the number of crashes by at least five per year?
+5-16 对某段道路的几何形状进行了改进，以提供更宽的行车道和铺设的路肩。尽管这些改进降低了碰撞率，但当地交通工程师仍担心碰撞数量，尤其是涉及到与路边固定物体碰撞的情况。过去12个月发生了30次此类碰撞。工程师应采取何种对策，以每年至少减少5次碰撞？
+
+Known conditions:
+30 fixed object crashes in past 12 months
+Goal: reduce crashes by at least 5 per year
+
+Steps and equations:
+(1) Calculate percent reduction needed:
+Required reduction = 5 ÷ 30 = 0.167 = 16.7%
+(2) Identify countermeasure:
+Increase roadside recovery distance to 8 feet (based on reference table)
+
+--------------------------------------------------------
+
+[m]Q5-17 A 10-mile section of a rural two-lane road with 9-ft lanes and 2-ft paved shoulders has a crash rate of 156/100 million vehicle-miles traveled. The current ADT is 20,000, and due to nearby commercial development, it is anticipated to increase to 37,700. Estimate the additional lane and shoulder widths required to keep the average number of crashes per year at the current level.
+5-17 一段10英里长的乡村双车道道路，车道宽9英尺，路肩宽2英尺，碰撞率为156/1亿VMT。由于附近的商业开发，当前ADT为20,000，预计将增加至37,700。估算需要增加的车道和路肩宽度以保持每年平均碰撞次数在当前水平。
+
+Known conditions:
+Rural two-lane road: 10 miles long
+Current lane width: 9 feet
+Current shoulder width: 2 feet
+Current crash rate: 156 per 100M VMT
+Current ADT: 20,000
+Future ADT: 37,700
+
+Steps and equations:
+(1) Calculate current annual crashes:
+A = RMVMT × ADT × 365 × Length ÷ 100,000,000
+A = 156 × 20,000 × 365 × 10 ÷ 100,000,000
+A = 113.88 ≈ 114 crashes
+(2) Calculate future crashes without improvements:
+A = 156 × 37,700 × 365 × 10 ÷ 100,000,000
+A = 214.66 ≈ 215 crashes
+(3) Calculate percent reduction needed:
+Reduction needed = (215 - 114) ÷ 215 = 0.47 = 47%
+(4) Determine needed geometry improvements (based on reference table):
+Option 1: Increase lane width by 3 feet and shoulder width by 4 feet
+Option 2: Increase lane width by 2 feet and shoulder width by 6 feet
+
+--------------------------------------------------------
+
+[m]Q5-19 Estimate the yearly reduction in total and fatal crashes resulting from the upgrade of an 18.4-mile corridor with partially controlled access to one with full control. The road is in an urban area and has an ADT of 62,000.
+5-19 估计将一个18.4英里的部分控制访问道路升级为完全控制的道路所导致的每年减少的总碰撞和致命碰撞数量。该道路位于城市地区，ADT为62,000。
+
+Known conditions:
+Road corridor: 18.4 miles long
+Current: partially controlled access
+Proposed: fully controlled access
+Urban area with ADT = 62,000
+
+Steps and equations:
+(1) Identify crash rates from reference table:
+Partial control: 4.96 total crashes and 0.05 fatal crashes per million VMT
+Full control: 1.86 total crashes and 0.02 fatal crashes per million VMT
+(2) Calculate current total crashes:
+Before total = (62,000 × 4.96 × 365 × 18.4) ÷ 1,000,000 = 2,065 crashes
+(3) Calculate current fatal crashes:
+Before fatal = (62,000 × 0.05 × 365 × 18.4) ÷ 1,000,000 = 21 fatal crashes
+(4) Calculate future total crashes:
+After total = (62,000 × 1.86 × 365 × 18.4) ÷ 1,000,000 = 775 crashes
+(5) Calculate future fatal crashes:
+After fatal = (62,000 × 0.02 × 365 × 18.4) ÷ 1,000,000 = 8 fatal crashes
+(6) Calculate reductions:
+Total crash reduction = 2,065 - 775 = 1,290 crashes
+Fatal crash reduction = 21 - 8 = 13 fatal crashes
+
+--------------------------------------------------------
+
+
+[m]Q5-20 An engineer has proposed four countermeasures to be implemented to reduce the high crash rate at an intersection. The CRFs for these countermeasures are 0.25, 0.30, 0.17, and 0.28. The number of crashes occurring at the intersection during the past three years were 28, 30, and 31, and the AADTs during those years were 8450, 9150, and 9850, respectively. Determine the expected reductions in the number of crashes during the first three years after the implementation of the countermeasures if the AADT during the first year of implementation is 10,850 and the estimated traffic growth rate is 4% per annum after implementation.
+5-20 一名工程师提出在一个交叉口实施四项对策以减少高碰撞率。这些对策的CRFs分别为0.25、0.30、0.17和0.28。在过去三年中该交叉口的碰撞数分别为28、30和31，AADTs分别为8450、9150和9850。计算实施对策后的前三年，预计的碰撞减少量，如果实施第一年ADT为10,850，并且实施后预计交通增长率为每年4%。
+
+Known conditions:
+Four countermeasures with CRFs: 0.25, 0.30, 0.17, 0.28
+Past three years crashes: 28, 30, 31
+Past three years AADT: 8,450, 9,150, 9,850
+First year of implementation AADT: 10,850
+Traffic growth rate: 4% per annum
+
+Steps and equations:
+(1) Calculate combined crash reduction factor (CR):
+CR = CR1 + (1-CR1)CR2 + (1-CR1)(1-CR2)CR3 + (1-CR1)(1-CR2)(1-CR3)CR4
+CR = 0.25 + (1-0.25)0.30 + (1-0.25)(1-0.30)0.17 + (1-0.25)(1-0.30)(1-0.17)0.28
+CR = 0.25 + 0.225 + 0.0906 + 0.1246 = 0.69
+(2) Calculate average annual crashes:
+Average crashes = (28 + 30 + 31) ÷ 3 = 29.67
+(3) Calculate average past AADT:
+Average past AADT = (8,450 + 9,150 + 9,850) ÷ 3 = 9,150
+(4) Calculate Year 1 crash reduction:
+Y1 reduction = 29.67 × 0.69 × (10,850 ÷ 9,150) = 24.3 crashes
+(5) Calculate Year 2 crash reduction (with 4% growth):
+Y2 reduction = 29.67 × 0.69 × (10,850 × 1.04 ÷ 9,150) = 25.3 crashes
+(6) Calculate Year 3 crash reduction (with additional 4% growth):
+Y3 reduction = 29.67 × 0.69 × (10,850 × 1.04^2 ÷ 9,150) = 26.3 crashes
+

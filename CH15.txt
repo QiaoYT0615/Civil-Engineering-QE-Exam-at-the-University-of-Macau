@@ -1,0 +1,634 @@
+CHAPTER 15 Geometric Design of Highway Facilities
+
+[m]垂直曲线设计
+公式: Minimum radius of horizontal curvature: R=u^2/(15*(e+fs))
+曲线半径 Minimum length of crest vertical curves: L=KA=K(G1-G2)
+曲率度R=5829.6/Da°  [最大曲率度对应最小曲线半径]
+crest vertical curve最小视距: SSD小于L, L=AS^2/2158; SSD大于L, L=2S-2158/A
+sag vertical curve最小停车视距: SSD小于L, L=AS^2/(400+3.5S)
+sag vertical curve舒适性: L=Au^2/46.5
+sag vertical curve总体外观: L=100A
+
+[m]垂直曲线设计
+BVC-PVI G1=+2%, PVI-EVC G2=-1% (crest vertical curve)
+PVI=535+24.25 (El. 300ft)
+Design speed u=65mi/h, k=193
+step 1: determine the vertical curve
+L=KA=K(G1-G2)
+step 2: calculation of stations for BVC and EVC
+BVC和EVC位于校订PVI两侧，各距离L/2=579/2=289.5 ft
+已知：PVI station = 535+24.25 = 535.2425
+BVC station = PVI-L/2=535.2425-289.5=532.3475 (532+34.75)
+EVC station = PVI+L/2=535.2425+289.5=538.1375 (538+13.75)
+step 3: calculation BVC elevation
+已知BVC位于第一段坡度(+2%)的切线上。
+BVC到PVI的水平距离L/2=289.5 ft
+deltaH 高度变化=距离*坡度=L/2*G1=289.5*0.02=5.79ft
+BVC elevation=PVI elevation - deltaH=300-5.79=294.21 ft
+step 4: Calculate the elevations of each 100ft station. (计算切线上的高程，然后减去偏移量)
+(1)切线高程计算: 对于任意station到BVC的距离上: 切线高程=BVC elevation+距离*G1
+Distance from BVC: station 533+00.00到BVC的距离X=533.0000-532.3475=0.6525 -- 65.25 ft
+Tagent elevation 切线高度=294.21+65.25*0.02=295.52ft
+(2)偏移量 Y=AX^2/(200L) where L=曲线总长=579 ft
+station 533+00.00 offset: Y=3*65.25^2/(200*579)=0.11 ft
+(3)曲线高程 curve elevation=切线高程-偏移量
+station 533+00.00 elevation = 295.52-0.11=295.41 ft
+step 5: calculate the high point station and elevation
+(1)high point to BVC distance: Xhigh=LG/A=LG1/(G1-G2)=579*0.02/0.03=386 ft (3.86)
+(2)high point station: station=BVC station+Xhigh=532.3475+3.86=536.2075 (536+20.75)
+(3)high point elevation相对于BVC的变化: Yhigh=LG1^2/(200A)
+(4)high point elevation=BVC elevation+Yhigh=294.21+3.86=298.07 ft
+
+[m]水平曲线设计
+
+公式 (a) intersection angle 交角 Δ=40°; Tangent length 切线长度 T=436.76 ft.
+step 1: curve radius R=T/tan(Δ/2)=436.76/tan(40°/2)=1200ft
+step 2: For R=u^2/[15*(e+fs)]
+design speed u=[15*R*(e+fs)]^0.5=[15*1200*(0.08+0.12)]^0.5=60 mi/h
+(b) PI =2700+10.65 -- 2700.1065
+T=436.76ft --4.3676
+PC桩号可通过从PI桩号减去切线长度计算 station of PC: PC=PI-T=2700.1065 - 4.3676 = 2695.7389 (2695+73.89)
+(c) step 1: curve length L=paiRΔ/180=3.14*1200*40/180=837.76 ft
+step 2: PC =2695+73.89 -- 2695.7389
+L=837.76 ft --8.3776
+PT桩号可通过将曲线长度加到PC桩号上获得 station of PT: PT=PC+L=2695.7389 + 8.3776= 2704.1165 (2704+11.65)
+(d) step 1:determine the first full station: 2696+00.00 (located between PC and PT)
+step 2: start point (PC) to first full distance: L1=(2696+00.00)-(2695+73.89)=0+26.11=26.11ft
+step 3: find the deflection angle to the first full station: δ1=180L1/(paiR)
+δ1/2=180L1/(paiR)*1/2
+step 4: the chord to the first full station: C1=2Rsin(δ_1/2)=2*1200*sin(1.24666/2)=26.11ft
+
+[m]公式 (a) the central angle of the curve
+N 45° 54' 36" E --- 45.91°
+N 1° 22' 30" W --- 1.375°
+曲线的中心角 Δ=45.91°+1.375°=47.285°
+(b) external ordinate E=43 ft
+intersection angle Δ=47.285° --- Δ/2=47.285°/2
+E=Rsec(Δ/2)-R=R(1/cos(Δ/2) -1)
+曲线的切线长度 R=E/(1/cos(Δ/2) -1)=43/(1/cos(47.285°/2) -1)=469.30ft
+
+--------------------------------------------
+--------------------------------------------
+
+1.公路基本设计参数
+
+[m]15-1 A rural collector highway located in a mountainous terrain is designed to carry a design volume of 800 veh/day. Determine the following:
+(a) a suitable design speed (b) lane and usable shoulder widths (c) maximum desirable grade
+15-1 一个位于山地地形的乡村集散公路，设计通行量为800辆/天。请确定以下内容：
+(a) 合适的设计速度 (b) 车道和可用路肩宽度 (c) 最大建议坡度
+
+Known conditions:
+Rural collector highway in mountainous terrain
+Design volume: 800 veh/day
+
+Steps:
+(1) Determine suitable design speed
+From Table 15.1: minimum design speed = 30 mi/h for mountainous terrain
+(2) Determine lane and usable shoulder widths
+Lane width = 12 ft
+Usable shoulder width = 10 ft
+(3) Determine maximum desirable grade
+From Table 15.3: maximum desirable grade = 10%
+
+--------------------------------------------
+
+[m]15-2 Repeat Problem 15-1 for an urban freeway in rolling terrain.
+15-2 针对滚动地形中的城市高速公路重复第15-1题。
+
+Known conditions:
+Urban freeway in rolling terrain
+(Repeat of problem 15-1 with different terrain/road type)
+
+Steps:
+(1) Determine suitable design speed
+From Table 15.2: minimum design speed = 50 mi/h for urban freeway
+(2) Determine lane and usable shoulder widths
+Lane width = 12 ft
+Usable shoulder width = 12 ft
+(3) Determine maximum desirable grade
+From Table 15.3: maximum grade = 5% (for freeway in rolling terrain with design speed of 50 mi/h)
+
+--------------------------------------------
+
+
+[m]15-3 A rural collector is to be constructed in an area of rolling terrain where the ADT is 650 veh/day. For this situation, determine the following design values:
+(a) Minimum design speed (b) Recommended lane width (c) Preferable shoulder width (d) Maximum grade
+15-3 在一个起伏地形区域内将修建一条乡村集散公路，其日均交通量（ADT）为650辆/天。针对这种情况，确定以下设计值：
+(a) 最低设计速度 (b) 推荐车道宽度 (c) 理想的路肩宽度 (d) 最大坡度
+
+Known conditions:
+Rural collector in rolling terrain
+ADT = 650 veh/day
+
+Steps:
+(1) Determine minimum design speed
+From Table 15.1: minimum design speed = 40 mi/h for rolling terrain
+(2) Determine lane width
+Lane width = 12 ft
+(3) Determine shoulder width
+Shoulder width = 10 ft
+(4) Determine maximum grade
+From Table 15.3: maximum desirable grade = 8%
+
+--------------------------------------------
+
+[m]15-17 For the data provided in Problem 15-1, determine:
+(a) Minimum radius of horizontal curvature
+(b) Minimum length of crest vertical curves
+(c) Minimum length of sag vertical curves, for the maximum grade
+15-17 根据第15-1题的数据，确定：
+(a) 水平曲线的最小半径 (b) 凸形竖曲线的最小长度 (c) 凹形竖曲线的最小长度，以最大坡度为准
+公式: Minimum radius of horizontal curvature: R=u^2/(15*(e+fs))
+Minimum length of crest vertical curves: L=KA=K(G1-G2)
+
+Known conditions:
+Based on problem 15-1 data
+Rural collector in mountainous terrain
+
+Steps:
+(1) Calculate minimum radius
+R = u^2/[15(e+fs)] = 30^2/[15(0.08+0.16)] = 60/(0.24) = 250 ft
+(2) Calculate minimum crest vertical curve length
+L = KA = 19×(10-(-10)) = 380 ft
+(3) Calculate minimum sag vertical curve length
+L = KA = 37×(10-(-10)) = 740 ft
+
+--------------------------------------------
+
+[m]15-18 Repeat Problem 15-17 for an urban freeway in rolling terrain.
+15-18 针对滚动地形中的城市高速公路重复第15-17题。
+
+Known conditions:
+Based on problem 15-2 data
+Urban freeway in rolling terrain
+
+Steps:
+(1) Calculate minimum radius
+R = u^2/[15(e+fs)] = 50^2/[15(0.08+0.14)] = 166.7/0.22 = 758 ft
+(2) Calculate minimum crest vertical curve length
+L = KA = 84×(5-(-5)) = 840 ft
+(3) Calculate minimum sag vertical curve length
+L = KA = 96×(5-(-5)) = 960 ft
+
+--------------------------------------------
+
+[m]15-19 For the data provided in Problem 15-3, determine:
+(a) Minimum length of crest vertical curves
+(b) Minimum length of sag vertical curves, for the maximum grade
+(c) Maximum superelevation
+(d) Maximum degree of curve (use fs = 0.15)
+15-19 根据第15-3题的数据，确定：
+(a) 凸形竖曲线的最小长度 (b) 凹形竖曲线的最小长度，以最大坡度为准 (c) 最大超高 (d) 最大曲率度（fs = 0.15）
+
+Known conditions:
+Based on problem 15-3 data
+Rural collector in rolling terrain
+
+Steps:
+(1) Calculate minimum crest vertical curve length
+L = KA = 44×(8-(-8)) = 704 ft
+(2) Calculate minimum sag vertical curve length
+L = KA = 64×(8-(-8)) = 1024 ft
+(3) Determine maximum superelevation
+emax = 0.08 for rural roads in Virginia
+(4) Calculate minimum radius (fs = 0.15)
+R = 106.7/(0.08+0.15) = 106.7/0.23 = 463 ft
+
+--------------------------------------------
+--------------------------------------------
+
+2.垂直曲线设计
+
+[m]15-4 A +2 percent grade on an arterial highway intersects with a 1 percent grade at station (535+24.25) at an elevation of 300 ft. If the design speed of the highway is 65 mi/h, determine the stations and elevations of the BVC and EVC, the elevation of each 100-ft station, and the high point. Use L = KA.
+15-4 在某条干线公路上，+2%坡度与1%坡度交汇于(535+24.25)站点，其海拔高度为300英尺。如果该公路的设计速度为65英里/小时，请确定BVC和EVC的站点和海拔高度、每个100英尺站点的海拔高度以及最高点。使用L = KA。
+
+Solution:Known: BVC-PVI G1=+2%, PVI-EVC G2=-1% (crest vertical curve)
+PVI=535+24.25 (El. 300ft)
+Design speed u=65mi/h, k=193
+
+step 1: determine the vertical curve
+L=KA=K(G1-G2)
+
+step 2: calculation of stations for BVC and EVC
+BVC和EVC位于校订PVI两侧，各距离L/2=579/2=289.5 ft
+已知：PVI station = 535+24.25 = 535.2425
+BVC station = PVI-L/2=535.2425-289.5=532.3475 (532+34.75)
+EVC station = PVI+L/2=535.2425+289.5=538.1375 (538+13.75)
+
+step 3: calculate BVC elevation
+已知BVC位于第一段坡度(+2%)的切线上。
+BVC到PVI的水平距离L/2=289.5 ft
+deltaH 高度变化=距离*坡度=L/2*G1=289.5*0.02=5.79ft
+BVC elevation=PVI elevation - deltaH=300-5.79=294.21 ft
+
+step 4: calculate the elevations of each 100ft station. (计算切线上的高程，然后减去偏移量)
+(1)切线高程计算: 对于任意station到BVC的距离上: 切线高程=BVC elevation+距离*G1
+Distance from BVC: station 533+00.00到BVC的距离X=533.0000-532.3475=0.6525 -- 65.25 ft
+Tagent elevation 切线高度=294.21+65.25*0.02=295.52ft
+(2)偏移量 Y=AX^2/(200L) where L=曲线总长=579 ft
+station 533+00.00 offset: Y=3*65.25^2/(200*579)=0.11 ft
+(3)曲线高程 curve elevation=切线高程-偏移量
+station 533+00.00 elevation = 295.52-0.11=295.41 ft
+step 5: calculate the high point station and elevation
+(1)high point to BVC distance: Xhigh=LG/A=LG1/(G1-G2)=579*0.02/0.03=386 ft (3.86)
+(2)high point station: station=BVC station+Xhigh=532.3475+3.86=536.2075 (536+20.75)
+(3)high point elevation相对于BVC的变化: Yhigh=LG1^2/(200A)
+(4)high point elevation=BVC elevation+Yhigh=294.21+3.86=298.07 ft
+
+--------------------------------------------
+
+[m]15-5 Determine the minimum length of a crest vertical curve if the grades are +4% and -2%. Design speed is 70 mi/h. State assumptions used in solving this problem.
+15-5 若坡度分别为+4%和-2%，确定凸形竖曲线的最小长度。设计速度为70英里/小时。请说明解决该问题所用的假设条件。
+
+Known conditions:
+Grades: +4% and -2%
+Design speed: 70 mi/h
+
+Steps:
+(1) Calculate stopping sight distance (SSD)
+Using equation 3.27: SSD = 1.47ut + u^2/(30(a/g))
+SSD = 788 ft
+(2) Calculate minimum curve length using K-value method
+From Table 15.4: K = 151
+L = KA = 151 × |4-(-2)| = 151 × 6 = 906 ft
+(3) Alternative calculation using SSD formula
+L = A×S^2/2158 = 6 × 788^2/2158 = 1727 ft
+
+--------------------------------------------
+
+[m]15-6 Determine the minimum length of a sag vertical curve if the grades are -4% and +2%. Design speed is 70 mi/h. State assumptions used. Consider the following criteria:(a) Stopping sight distance (b) Comfort (c) General appearance
+15-6 若坡度分别为-4%和+2%，确定凹形竖曲线的最小长度。设计速度为70英里/小时。请说明所用假设。考虑以下标准：(a) 停车视距 (b) 舒适性 (c) 总体外观
+
+Known conditions:
+Grades: -4% and +2%
+Design speed: 70 mi/h
+
+Steps:
+(1) Calculate stopping sight distance (SSD)
+Using equation 3.27: SSD = 788 ft
+(2) Evaluate criteria:
+Stopping sight distance: L = A*S^2/(400+3.5S) = 6 * 788^2/(400+3.5×788) = 1179 ft
+Comfort criterion: L = A*u^2/46.5 = 6 * 70^2/46.5 = 633 ft
+General appearance: L = 100A = 100 × 6 = 600 ft
+(3) Select maximum value: L = 1179 ft
+
+--------------------------------------------
+
+[m]15-7 A +g1 grade is connected by a vertical curve to a - g2 grade (g2 ＜ g1). If the rate of change of gradient of the curve is constant, show that the height y of any point of the curve above the BVC is given as:
+15-7 一个+g1坡度通过竖曲线与a - g2 坡度（g2 ＜ g1）连接。若曲线的坡度变化率恒定，证明曲线上任意点的高度y与BVC的关系为：
+
+Known conditions:
++g1 grade connected to -g2 grade (g2 < g1)
+Rate of change of gradient is constant
+
+Steps:
+(1) Use parabola properties: Y = ax^2
+(2) Rate of change of slope: Y' = 2a
+(3) If L is curve length and A is grade change: 2a = A/100L
+(4) At any point on curve, vertical offset: Y = A*x^2/(200L)
+(5) Actual elevation: y = g1*x - (g1-g2)*x^2/(2L)
+(6) Multiply by 100: 100y = g1x - (g1-g2)x^2/(2L)
+
+--------------------------------------------
+
+[m]15-8 A sag vertical curve connects a -1.5 percent grade with a +2.5 percent grade on a rural arterial highway. If the criterion selected for design is the minimum stopping sight distance, and the design speed of the highway is 70 mi/h, compute the elevation of the curve at 100-ft stations if the grades intersect at station (475+00) at an elevation of 300 ft. Also, determine the elevation and station of the low point.
+15-8 一条凹形竖曲线将-1.5%坡度和+2.5%坡度连接在一起，位于乡村干线公路上。若选择最小停车视距作为设计准则，且公路的设计速度为70英里/小时，计算曲线在100英尺站点处的海拔高度，假设坡度在(475+00)站点交汇，海拔高度为300英尺。同时，确定曲线的最低点的海拔高度和站点。
+
+Known conditions:
+Sag vertical curve connecting -1.5% and +2.5% grades
+Rural arterial highway, design speed = 70 mi/h
+Grades intersect at station (475+00), elevation 300 ft
+
+Steps:
+(1) Determine K value and curve length
+From Table 15.5: K = 181
+L = KA = 181 × |2.5-(-1.5)| = 724 ft
+(2) Calculate BVC station and elevation
+BVC station = (475+00) - 724/2 = 471+38.00
+BVC elevation = 300 + (0.015)(724/2) = 305.43 ft
+(3) Calculate EVC station and elevation
+EVC station = (475+00) + 724/2 = 478+62.00
+EVC elevation = 300 + (-0.025)(724/2) = 290.95 ft
+(4) Calculate low point
+Xlow = L×G1/(G1-G2) = 724×(-0.015)/((-0.015)-0.025) = 271.50 ft
+Low point station = 471+38 + 271.50 = 474+09.50
+Low point elevation = 305.43 - 2.04 = 303.39 ft
+(5) Calculate elevation at each 100-ft station
+
+--------------------------------------------
+
+[m]15-9 A crest vertical curve connects a +4.44% grade and a -6.87% grade. The PVI is at station 43+50.00 at an elevation of 1240.00 ft. The design speed is 30 mi/h. Determine:
+(a) The length of the vertical curve using the AASHTO method (“K” factors) (b) The station of the BVC (c) The elevation of the BVC (d) The station of the EVC (e) The elevation of the EVC (f) The station of the high point (g) The elevation of the high point (h) The elevation of station 44+23.23
+15-9 一条凸形竖曲线连接+4.44%坡度和-6.87%坡度。PVI位于43+50.00站点，海拔高度为1240.00英尺。设计速度为30英里/小时。确定：
+(a) 使用AASHTO方法（“K”因子）计算竖曲线的长度 (b) BVC的站点 (c) BVC的海拔高度 (d) EVC的站点 (e) EVC的海拔高度 (f) 最高点的站点 (g) 最高点的海拔高度 (h) 44+23.23站点的海拔高度
+
+Known conditions:
+Crest vertical curve connecting +4.44% and -6.87% grades
+PVI at station 43+50.00, elevation 1240.00 ft
+Design speed = 30 mi/h
+
+Steps:
+(1) Determine curve length using K factor
+From Table 15.4: K = 19
+L = KA = 19 × |4.44-(-6.87)| = 19 × 11.31 = 214.89 ft
+(2) Calculate BVC station and elevation
+BVC station = (43+50) - 214.89/2 = 42+42.55
+BVC elevation = 1240 - (0.0444)(214.89/2) = 1235.23 ft
+(3) Calculate EVC station and elevation
+EVC station = (43+50) + 214.89/2 = 44+57.45
+EVC elevation = 1240 - (0.0687)(214.89/2) = 1232.62 ft
+(4) Calculate high point
+Xhigh = L×G1/(G1-G2) = 214.89×0.0444/(0.0444-(-0.0687)) = 84.36 ft
+High point station = 42+42.55 + 84.36 = 43+26.91
+High point elevation = 1235.23 + 1.87 = 1237.10 ft
+(5) Calculate elevation at station 44+23.23
+
+--------------------------------------------
+--------------------------------------------
+
+3.水平曲线设计
+
+[m]15-10 A horizontal curve is designed for a two-lane road in mountainous terrain. The following data are known:
+Intersection angle: 40 degrees; Tangent length: 436.76 feet; Station of PI: 2700+10.65; fs = 0.12; e = 0.08
+Determine the following: 
+(a) Design speed (b) Station of the PC (c) Station of the PT (d) Deflection angle and chord length to the first even 100 ft station
+15-10 一条水平曲线设计用于山地地形中的双车道公路。已知数据如下：
+交角：40度; 切线长度：436.76英尺; PI站点：2700+10.65; fs = 0.12; e = 0.08
+确定以下内容：(a) 设计速度 (b) PC的站点 (c) PT的站点 (d) 到第一个整100英尺站点的偏角和弦长
+
+Known conditions:
+Two-lane road in mountainous terrain
+Intersection angle: 40 degrees
+Tangent length: 436.76 feet
+Station of PI: 2700+10.65
+fs = 0.12
+e = 0.08
+
+Solution:(a) intersection angle 交角 Δ=40°; Tangent length 切线长度 T=436.76 ft.
+step 1: curve radius R=T/tan(Δ/2)=436.76/tan(40°/2)=1200ft
+step 2: For R=u^2/[15*(e+fs)]
+design speed u=[15*R*(e+fs)]^0.5=[15*1200*(0.08+0.12)]^0.5=60 mi/h
+
+(b) PI =2700+10.65 -- 2700.1065
+T=436.76ft --4.3676
+PC桩号可通过从PI桩号减去切线长度计算 station of PC: PC=PI-T=2700.1065 - 4.3676 = 2695.7389 (2695+73.89)
+
+(c) step 1: curve length L=paiRΔ/180=3.14*1200*40/180=837.76 ft
+step 2: PC =2695+73.89 -- 2695.7389
+L=837.76 ft --8.3776
+PT桩号可通过将曲线长度加到PC桩号上获得 station of PT: PT=PC+L=2695.7389 + 8.3776= 2704.1165 (2704+11.65)
+
+(d) step 1:determine the first full station: 2696+00.00 (located between PC and PT)
+step 2: start point (PC) to first full distance: L1=(2696+00.00)-(2695+73.89)=0+26.11=26.11ft
+step 3: find the deflection angle to the first full station: δ1=180L1/(paiR)
+δ1/2=180L1/(paiR)*1/2
+step 4: the chord to the first full station: C1=2Rsin(δ_1/2)=2*1200*sin(1.24666/2)=26.11ft
+
+--------------------------------------------
+
+[m]15-11 A proposed highway has two tangents of bearings N 45° 54' 36" E and N 1° 22' 30" W. The highway design engineer, attempting to obtain the best fit for the simple circular curve to join these tangents, decides that the external ordinate is to be 43.00 ft. The PI is at station 65+43.21. Determine:
+(a) The central angle of the curve
+(b) The radius of the curve
+(c) The length of the tangent of the curve
+(d) The station of the PC (e) The length of the curve
+(f) The station of the PT
+(g) The deflection angle and chord from the PC to the first full station on the curve
+15-11 一条拟建公路的两个切线的方位分别为N 45° 54' 36" E和N 1° 22' 30" W。公路设计工程师为了找到最佳拟合的单一圆曲线以连接这些切线，决定外距为43.00英尺。PI位于65+43.21站点。确定：
+(a) 曲线的中心角 (b) 曲线的半径 (c) 曲线的切线长度 (d) PC的站点 (e) 曲线的长度 (f) PT的站点 (g) PC到曲线上第一个完整站点的偏角和弦长
+
+solution: (a) the central angle of the curve
+N 45° 54' 36" E --- 45.91°
+N 1° 22' 30" W --- 1.375°
+曲线的中心角 Δ=45.91°+1.375°=47.285°
+
+(b) external ordinate E=43 ft
+intersection angle Δ=47.285° --- Δ/2=47.285°/2
+E=Rsec(Δ/2)-R=R(1/cos(Δ/2) -1)
+曲线的切线长度 R=E/(1/cos(Δ/2) -1)=43/(1/cos(47.285°/2) -1)=469.30ft
+
+(c) Calculate tangent length
+T = R×tan(Δ/2) = 469.30×tan(23.6425°) ≈ 205.44 ft
+
+(d\e\f) Calculate PC and PT stations
+PC = PI - T = 65+43.21 - 205.44 = 63+37.76
+L = πRΔ/180 = π×469.30×47.285/180 ≈ 387.31 ft
+PT = PC + L = 63+37.77 + 387.31 = 67+25.07
+
+(g) Calculate deflection angles and chords to stations
+
+--------------------------------------------
+
+[m]15-12 A simple circular curve exists with a degree of curve D = 12° and e = 0.08. A structure is proposed on land on the inside of the curve. Assume the road is on level grade. Determine:
+(a) The radius of the curve
+(b) The current maximum safe speed of the curve
+(c) The minimum distance allowable between the proposed structure and the centerline of the curve such that the current maximum safe speed of the curve would not need to be reduced
+15-12 一条简单圆曲线的曲线度D = 12°，且e = 0.08。在曲线内侧的土地上拟建一个结构。假设道路为水平坡度。确定：
+(a) 曲线的半径
+(b) 曲线的当前最大安全速度
+(c) 最小距离，即在曲线中心线与拟建结构之间，确保曲线的当前最大安全速度不需要降低
+
+Known conditions:
+Simple circular curve with degree D = 12°
+e = 0.08
+Structure on inside of curve
+Level grade road
+
+Steps:
+(1) Calculate radius
+R = 5729.58/D = 5729.58/12 = 477.47 ft
+(2) Determine maximum safe speed
+u = √[15×477.47×(0.08+0.16)] = 41.4 mi/h
+(3) Calculate stopping sight distance (SSD)
+SSD = 1.47×41.4×2.5 + 41.4^2/[30×0.35] = 315.3 ft
+(4) Calculate minimum offset distance
+m = R[1-cos(28.65×315/R)] = 477.47[1-cos(18.93°)] = 25.8 ft
+
+--------------------------------------------
+
+[m]15-13 A circular curve connects two tangents that intersect at an angle of 48°. The point of intersection of the tangents is located at station (948+67.32). If the design speed of the highway is 60 mi/h, determine both the point of the tangent and the deflection angles to whole stations for laying out the curve. (Select appropriate values for e and f.)
+15-13 一条圆曲线连接两条相交于48°角的切线。切线的交点位于(948+67.32)站点。若公路的设计速度为60英里/小时，确定切点位置和布设曲线的整站偏角。选择合适的e和f值。
+
+Known conditions:
+Circular curve connecting tangents with 48° angle
+PI at station 948+67.32
+Design speed = 60 mi/h
+
+Steps:
+(1) Select appropriate e and fs values
+e = 0.08, fs = 0.12
+(2) Calculate radius
+R = u^2/[15(e+fs)] = 60^2/[15(0.08+0.12)] = 1200 ft
+(3) Calculate tangent length
+T = R×tan(Δ/2) = 1200×tan(48°/2) = 534.27 ft
+(4) Calculate PC and PT stations
+PC = PI - T = 948+67.32 - 534.27 = 943+33.05
+L = πRΔ/180 = π×1200×48/180 = 1005.30 ft
+PT = PC + L = 943+33.05 + 1005.30 = 953+38.35
+(5) Calculate deflection angles and chords to stations
+
+--------------------------------------------
+
+[m]15-14 To determine the radius of an existing curve, two chords xy and yz of 135 ft each were marked out on the curve. The perpendicular distance between y and the chord xz was found to be 15 ft. Determine the radius of the curve and the angle you will set out from xz to get a line to the center of the curve.
+15-14 为确定现有曲线的半径，在曲线上标记了两段弦xy和弦yz，长度均为135英尺。y到弦xz的垂直距离为15英尺。确定曲线的半径以及从xz出发至曲线中心的角度。
+
+Known conditions:
+Two chords xy and yz of 135 ft each
+Perpendicular distance from y to chord xz = 15 ft
+
+Steps:
+(1) Calculate length of xw using Pythagorean theorem
+xy^2 = xw^2 + yw^2
+135^2 = xw^2 + 15^2
+xw = √(135^2 - 15^2) = 134.16 ft
+(2) Calculate radius using geometric relationships
+R^2 = 134.16^2 + (R-15)^2
+R^2 = 18000 + R^2 - 30R + 225
+30R = 18225
+R = 607.50 ft
+(3) Calculate angle from xz to center
+cos δ = xw/R = 134.16/607.50 = 0.220846
+δ = 77.2412°
+
+--------------------------------------------
+
+[m]15-21 Determine the distance required to transition pavement cross slope from a normal crown section with a normal crown cross slope of 2% to superelevation of 6% on a two-lane highway with a design speed of 50 mi/h.
+15-21 确定在双车道公路中，将路面横坡从2%的常规冠形横坡过渡到6%的超高所需的距离，设计速度为50英里/小时。
+
+Known conditions:
+Two-lane highway
+Normal crown cross slope = 2%
+Superelevation = 6%
+Design speed = 50 mi/h
+
+Steps:
+(1) Determine superelevation runoff length
+From Table 15.11: Lr = 144 ft
+(2) Calculate tangent runout length
+Lt = (eNC/ed)×Lr = (0.02/0.06)×144 = (1/3)×144 = 48 ft
+(3) Calculate total transition length
+Total = 144 + 48 = 192 ft
+
+--------------------------------------------
+
+[m]15-22 A building is located 19 ft from the centerline of the inside lane of a curved section of highway whose radius is 400 ft. The road is level, and e = 0.10. Determine the posted speed limit (to the nearest 5 mi/h) considering the following conditions:
+(1) Stopping sight distance
+(2) Curve radii
+15-22 一栋建筑物距离公路内车道中心线19英尺，该段公路半径为400英尺。假设道路为水平路面，e = 0.10。在以下条件下，确定发布的限速（取最接近的5英里/小时）：
+(1) 停车视距 (2) 曲线半径
+
+Known conditions:
+Building 19 ft from centerline of inside lane
+Curve radius = 400 ft
+Level road
+e = 0.10
+
+Steps:
+(1) Calculate sight distance
+S = (R/28.65)×cos^{-1}[(R-m)/R] = (400/28.65)×cos^{-1}[(400-19)/400] = 248 ft
+(2) Determine speed based on stopping sight distance
+248 = 1.47u×2.5 + u^2/(30×0.35)
+0.095238u^2 + 3.675u - 248 = 0
+u = 35.3 mi/h
+(3) Determine speed based on curve radius
+R = u^2/[15(e+fs)]
+400 = u^2/[15(0.10+0.15)]
+u = 38.7 mi/h
+(4) Select appropriate speed limit: 35 mi/h
+
+--------------------------------------------
+--------------------------------------------
+
+4.复合曲线设计
+
+[m]15-15 A compound circular curve having radii of 600 ft and 450 ft is to be designed to connect two tangents deflecting by 75°. If the deflection angle of the first curve is 45° and the PCC is located at station (675+35.25), determine the deflection angles and the corresponding chord lengths for setting out the curve.
+15-15 一条具有600英尺和450英尺半径的复合圆曲线用于连接相交角为75°的两条切线。若第一个曲线的偏角为45°，且PCC位于(675+35.25)站点，确定布设该曲线的偏角和对应的弦长。
+
+Known conditions:
+Compound curve with radii R1 = 600 ft, R2 = 450 ft
+Tangents deflecting by 75°
+First curve deflection angle = 45°
+PCC at station 675+35.25
+
+Steps:
+(1) Calculate second curve deflection angle
+Δ = Δ1 + Δ2
+75° = 45° + Δ2
+Δ2 = 30°
+(2) Calculate tangent lengths
+t1 = R1×tan(Δ1/2) = 600×tan(45°/2) = 248.53 ft
+t2 = R2×tan(Δ2/2) = 450×tan(30°/2) = 120.58 ft
+(3) Calculate curve lengths
+L1 = R1Δ1(π/180) = 600×45×(π/180) = 471.24 ft
+L2 = R2Δ2(π/180) = 450×30×(π/180) = 235.62 ft
+(4) Calculate PC and PT stations
+PC = PCC - L1 = 675+35.25 - 471.24 = 670+64.01
+PT = PCC + L2 = 675+35.25 + 235.62 = 677+70.87
+(5) Calculate deflection angles and chords for stations
+
+--------------------------------------------
+
+[m]15-16 An arterial road is to be connected to a frontage road by a reverse curve with parallel tangents. The distance between the centerline of the two roads is 60 ft. If the PC of the curve is located at station (38+25.31) and the deflection angle is 25°, determine the station of PT.
+15-16 一条主干道将通过反向曲线连接至沿路支道，且切线间距离为60英尺。若PC位于(38+25.31)站点，偏角为25°，确定PT的站点。
+
+Known conditions:
+Arterial road to frontage road with parallel tangents
+Distance between centerlines = 60 ft
+PC at station 38+25.31
+Deflection angle = 25°
+
+Steps:
+(1) Calculate radius of reverse curves
+R = d/[2(1-cos Δ)] = 60/[2(1-cos 25°)] = 60/0.1874 = 320.20 ft
+(2) Calculate length of each curve
+L = RΔπ/180 = 320.20×25×π/180 = 139.71 ft
+(3) Calculate PT station
+PT = PC + 2L = 38+25.31 + 2×139.71 = 41+04.73
+
+--------------------------------------------
+--------------------------------------------
+
+5.特殊设施设计
+
+[m]15-24 Determine the minimum radius of horizontal curves on a bicycle path if the average speed of bicycles is 20 mi/h and the minimum superelevation is 2% to facilitate drainage. If the total change in grade is 10%, determine the minimum length of the vertical curve.
+15-24 如果自行车的平均速度为20英里/小时，且最小超高为2%以利于排水，确定自行车道水平曲线的最小半径。如果总坡度变化为10%，确定竖曲线的最小长度。
+
+Known conditions:
+Average bicycle speed = 20 mi/h
+Minimum superelevation = 2%
+Total grade change = 10%
+
+Steps:
+Calculate minimum radius
+R = u^2/[15(e+fs)] = 20^2/[15(0.02+0.30)] = 400/4.8 = 83.33 ft
+Determine minimum vertical curve length
+From Figure 15.32: L = 180 ft
+
+--------------------------------------------
+
+[m]15-25 A parking lot is to be designed for a shopping center. If the area available is 400 ft × 500 ft, design a suitable layout for achieving each of the following objectives— that is, one layout for each objective:
+(a) Provide the maximum number of spaces
+(b) Provide the maximum number of spaces while facilitating traffic circulation by providing one-way flow on each aisle
+15-25 一个购物中心停车场的设计面积为400英尺 × 500英尺。为实现以下每个目标分别设计一种合适的布局：
+(a) 提供最大车位数
+(b) 在提供最大车位数的同时，通过提供单向流动通道以利于交通流通
+
+Known conditions:
+Area: 400 ft × 500 ft
+Shopping center parking lot
+
+Steps:
+(1) For maximum number of spaces (90° parking):
+Stall width = 8.5 ft, length = 18 ft
+Aisle width = 24 ft
+Aisle + two rows = 60 ft
+Number of aisles = 400 ft/60 ft = 6.67 → 6 aisles
+Spaces per row = [500 ft - 2(25 ft)]/8.5 ft = 52.94 → 52 spaces
+Total spaces = 6 × 2 × 52 = 624 spaces
+(2) For maximum spaces with one-way flow (45° herringbone):
+Aisle spacing = 500 ft/45 ft = 11.11 → 11 aisles
+Spaces per row = [400 ft - 2(25 ft)]/14 ft = 25 spaces
+Total spaces = 11 × 2 × 25 = 550 spaces
+
+
+
+

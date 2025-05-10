@@ -1,0 +1,461 @@
+CHAPTER 16 Highway Drainage
+
+[m]公式: step 1: 加权平均径流系数 Cw=Σ(Ci*Ai)/ΣAi
+step 2: 平均流速 v
+step 3: 水流通过时间 Ti=L/(3600v)
+step 4: 径流流量Q=C*I*A (单位ft^3/s) [I(in/h), A(acres)]
+
+[m]曼宁公式V=1/n*R^(2/3)*S^0.5
+水力半径R=A/P
+
+[m]路面渗水率计算：
+公式: 颗粒基层总宽度W=(车道数*车道宽度)+(路肩宽度*2)
+裂缝数量Nc=车道数N+1
+地下水入渗率q_i=Ic*(Nc/W+Wc/(W*Sc)+Kp (单位: ft^3/day/ft^2)
+
+------------------------------------------
+
+2.径流量计算
+
+[m]16-7 A 170-acre rural drainage area consists of four different watershed areas as follows:
+Steep grass-covered area: 40%; Cultivated area: 25%; Forested area: 30%; Turf meadows: 5%
+Using the rational formula, determine the runoff rate for a 100-year storm. Use Table 16.2 for runoff coefficients. Assume that the rainfall intensity curves in Figure 16.2 are applicable to this drainage area and that the following land characteristics apply. Use Figure 16.4 to calculate average velocity using fallow or minimum tillage cultivation ground cover:
+Overland flow length: 0.5 miles; Average slope of overland area: 3%
+16-7 一个170英亩的乡村排水区由以下四个不同的流域组成：
+陡坡草地区：40%; 耕地：25% 森林区：30%; 草坪草地：5%
+使用合理公式，确定100年一遇暴雨的径流率。参考表16.2中的径流系数。假设该排水区适用于图16.2中的降雨强度曲线，并且以下土地特性适用。使用图16.4，根据休耕或最小耕作覆盖计算平均流速：地表流动长度：0.5英里; 地表平均坡度：3%
+公式: step 1: 加权平均径流系数 Cw=Σ(Ci*Ai)/ΣAi
+step 2: 平均流速 v
+step 3: 水流通过时间 Ti=L/(3600v)
+step 4: 径流流量Q=C*I*A (单位ft^3/s) [I(in/h), A(acres)]
+
+Known Conditions:
+(1) Rural drainage area: 170 acres
+Four watershed types:
+Steep grass-covered area: 40%
+Cultivated area: 25%
+Forested area: 30%
+Turf meadows: 5%
+(2) Overland flow length: 0.5 miles
+(3) Average slope of overland area: 3%
+
+Steps and Equations:
+(1) Determine runoff coefficients for each groundcover type from Table 16.2:
+Steep grass-covered: C = 0.60
+Cultivated area: C = 0.30
+Forested area: C = 0.20
+Turf meadows: C = 0.25
+(2) Calculate weighted runoff coefficient using:
+Cw = (0.40 × 0.60) + (0.25 × 0.30) + (0.30 × 0.20) + (0.05 × 0.25) = 0.3875
+(3) Estimate average velocity using Figure 16.4:
+v = 0.8 ft/s (for fallow or minimum tillage cultivation with 3% slope)
+(4) Calculate travel time using:
+Ti = L/(3600 × v)
+Ti = (0.5 × 5280)/(3600 × 0.8) = 2640/2880 = 0.917 h
+Since only one segment is being investigated, Tc = Ti = 0.917h
+(5) Determine rainfall intensity using Figure 16.2:
+I = 3.0 in/h (for 100-year storm with Tc = 0.917h)
+(6) Calculate runoff flow rate using rational formula:
+Q = C × I × A
+Q = 0.3875 × 3.0 × 170 = 197.63 ft^3/s ≈ 198 ft^3/s
+
+------------------------------------------
+
+[m]16-8 Compute the rate of runoff using the rational formula for a 225-acre rural drainage area consisting of two different watershed areas as follows:
+Steep grass area: 45%; Cultivated fields: 55%
+If the time of concentration for this area is 2.4 hours, determine the runoff rate for a 50-year storm. Use the rainfall intensity curves in Figure 16.2. Use Table 16.2 for runoff coefficients.
+16-8 使用合理公式计算一个225英亩乡村排水区的径流率，该排水区包含两个不同的流域：
+陡坡草地区：45%; 耕地：55%
+如果该地区的集水时间为2.4小时，请确定50年一遇暴雨的径流率。参考图16.2中的降雨强度曲线，并使用表16.2中的径流系数。
+
+Known Conditions:
+(1) Rural drainage area: 225 acres
+(2) Two watershed areas:
+Steep grass area: 45%
+Cultivated fields: 55%
+(3) Time of concentration: 2.4 hours
+
+Steps and Equations:
+(1) Determine runoff coefficients from Table 16.2:
+Steep grass area: C = 0.60
+Cultivated fields: C = 0.30
+(2) Calculate weighted runoff coefficient:
+Cw = (0.45 × 0.60) + (0.55 × 0.30) = 0.435
+(3) Determine rainfall intensity using Figure 16.2:
+I = 1.45 in/h (for 50-year storm with Tc = 2.4h)
+(4) Calculate runoff flow rate using rational formula:
+Q = C × I × A
+Q = 0.435 × 1.45 × 225 = 141.9 ft^3/s ≈ 142 ft^3/s
+
+------------------------------------------
+
+[m]16-9 Using the TR-55 method, determine the depth of runoff for a 24-hour, 100-year precipitation of 9 inches if the soil can be classified as group B and the watershed is contoured pasture with good hydrologic condition and an antecedent moisture condition III.
+16-9 使用TR-55方法，确定24小时、100年一遇降水量9英寸的径流深度，假设土壤分类为B组，流域为有良好水文条件的等高牧草地，且前期土壤含水量条件为III。
+
+Known Conditions:
+24-hour, 100-year precipitation: 9 inches
+Soil: Group B
+Watershed: contoured pasture with good hydrologic condition
+Antecedent moisture condition: III
+
+Steps and Equations:
+(1)Determine CNⅡ value from Table 16.3:
+CNⅡ = 35 (for contoured pasture with good hydrologic condition and soil group B)
+(2)Convert to CNIII value using Table 16.5:
+CNIII = 55
+(3)Calculate potential maximum retention after runoff begins:
+S = (1000/CN) - 10 = (1000/55) - 10 = 8.18 in
+(4)Calculate depth of runoff using:
+h = (P - 0.2S)^2/(P + 0.8S)
+h = (9 - 0.2 × 8.18)^2/(9 + 0.8 × 8.18)
+h = (9 - 1.636)^2/(9 + 6.544)
+h = 7.364^2/15.544 = 3.49 in ≈ 3.5 in
+
+------------------------------------------
+
+[m]16-10 Determine the depth of runoff by the TR-55 method for a 24-hour, 100-year precipitation of 9 inches for an antecedent moisture condition III if the following land uses and soil conditions exist:
+Area Fraction	Land Use/Condition	Soil Group
+0.30	Wooded/fair condition	D
+0.25	Small grain/straight row/good condition	D
+0.20	Pasture/contoured/fair condition	D
+0.15	Meadow/good condition	D
+0.10	Farmstead	D
+16-10 使用TR-55方法，在24小时、100年一遇降水量9英寸条件下，计算径流深度，前期土壤含水量条件为III，具体土地用途和土壤条件如下：
+面积比例	土地用途/条件	土壤组别
+0.30	森林/一般条件	D
+0.25	小谷物/直行播种/良好条件	D
+0.20	牧草/等高/一般条件	D
+0.15	草地/良好条件	D
+0.10	农场场地	D
+
+Known Conditions:
+(1) 24-hour, 100-year precipitation: 9 inches
+(2) Antecedent moisture condition: III
+(3) Multiple land uses with soil group D:
+Wooded/fair condition: 30%
+Small grain/straight row/good condition: 25%
+Pasture/contoured/fair condition: 20%
+Meadow/good condition: 15%
+Farmstead: 10%
+
+Steps and Equations:
+(1) Determine CNⅡ values from Table 16.3 and corresponding CNIII values from Table 16.5:
+Wooded/fair: CNⅡ = 79, CNIII = 93.4
+Small grain/straight/good: CNⅡ = 87, CNIII = 97.4
+Pasture/contoured/fair: CNⅡ = 83, CNIII = 95.8
+Meadow/good: CNⅡ = 78, CNIII = 92.8
+Farmstead: CNⅡ = 86, CNIII = 97.2
+(2) Calculate weighted CNIII:
+Weighted CNIII = (0.30 × 93.4) + (0.25 × 97.4) + (0.20 × 95.8) + (0.15 × 92.8) + (0.10 × 97.2) = 95.17
+(3) Calculate potential maximum retention:
+S = (1000/CN) - 10 = (1000/95.17) - 10 = 0.51 in
+(4) Calculate depth of runoff:
+h = (P - 0.2S)^2/(P + 0.8S)
+h = (9 - 0.2 × 0.51)^2/(9 + 0.8 × 0.51)
+h = (9 - 0.102)^2/(9 + 0.408)
+h = 8.898^2/9.408 = 8.42 in
+
+------------------------------------------
+
+[m]16-11 Determine the peak discharge that will occur for the conditions indicated in Problem 16-10 if the drainage area is 0.5 square miles, and the time of concentration is 1.6 hours.
+16-11 若排水面积为0.5平方英里，且集水时间为1.6小时，请确定问题16-10中给定条件下的峰值流量。
+
+Known Conditions:
+Uses conditions from Problem 16-10
+Drainage area: 0.5 square miles
+Time of concentration: 1.6 hours
+
+Steps and Equations:
+(1) Use runoff depth from Problem 16-10:
+h = 8.42 inches
+(2) Determine unit peak discharge from Figure 16.5:
+q' = 240 ft^3/sec/mi^2/in (for Tc = 1.6 hours)
+(3) Calculate peak discharge:
+qp = q' × A × h
+qp = 240 × 0.5 × 8.42 = 1010 ft^3/sec
+
+------------------------------------------
+------------------------------------------
+
+3.渠道水力学
+
+[m]16-13 A trapezoidal channel with 2:1 side slope and 5-foot bottom width discharges a flow of 275 cubic feet per second. If the channel slope is 2.5% and the Manning coefficient is 0.03, determine:
+(a) Flow velocity (b) Flow depth (c) Type of flow
+16-13 一个梯形渠道的边坡为2:1，底宽5英尺，排放流量为275立方英尺/秒。若渠道坡度为2.5%，曼宁系数为0.03，请确定：
+(a) 流速 (b) 水深 (c) 流动类型
+
+Known Conditions:
+Trapezoidal channel with 2:1 side slope
+Bottom width: 5 feet
+Flow rate: 275 cubic feet per second
+Channel slope: 2.5%
+Manning coefficient: 0.03
+
+Steps and Equations:
+(1) Use graphical solution of Manning's equation from Figure 16.6 for the given parameters:
+Flow velocity = 11 ft/sec
+Flow depth = 2.6 ft
+(2) Determine type of flow:
+The intersection of discharge flow and 2.5% slope lies above the critical curve, therefore:
+Flow type = Supercritical
+
+------------------------------------------
+
+[m]16-14 A 6-foot wide rectangular channel lined with rubble masonry is required to carry a flow of 300 cubic feet per second. If the slope of the channel is 2% and n = 0.015, determine: (a) Flow depth (b) Flow velocity (c) Type of flow
+16-14 一个宽6英尺的矩形渠道衬有块石砌体，需要输送300立方英尺/秒的流量。若渠道坡度为2%且n = 0.015，请确定：(a) 水深 (b) 流速 (c) 流动类型
+
+Known Conditions:
+Rectangular channel width: 6 feet
+Channel lined with rubble masonry
+Flow rate: 300 cubic feet per second
+Channel slope: 2%
+Manning coefficient n = 0.015
+
+Steps and Equations:
+(1) Use graphical solution of Manning's equation from Figure 16.7:
+Flow depth = 2.8 ft
+Flow velocity = 18 ft/sec
+(2) Determine type of flow:
+The intersection of discharge flow line and 2% slope line lies above the critical curve, therefore:
+Flow type = Supercritical
+
+------------------------------------------
+
+[m]16-15 For the conditions given in Problem 16-14, determine the critical depth and the maximum channel slope at which subcritical flow can occur.
+16-15 对于问题16-14中的条件，确定临界水深和能发生亚临界流的最大渠道坡度。
+
+Known Conditions:
+Same as Problem 16-14 (rectangular channel)
+
+Steps and Equations:
+(1) Determine critical depth using Figure 16.7:
+The critical flow curve intersects the vertical line for flow of 300 ft3/sec at:
+Critical depth = 4.25 ft
+(2) Determine maximum slope for subcritical flow:
+From Figure 16.7, the associated channel slope is:
+Maximum slope = 0.007 (0.7%)
+(This is the slope at which subcritical flow will occur)
+
+------------------------------------------
+
+[m]16-16 Determine a suitable rectangular flexible-lined channel to resist erosion for a maximum flow of 20 cubic feet per second if the channel slope is 2%. Use the channel dimensions given for Problem 16-14.
+16-16 若渠道坡度为2%，为抵抗最大流量20立方英尺/秒的侵蚀，设计合适的矩形柔性衬砌渠道。使用问题16-14中的渠道尺寸。
+
+Known Conditions:
+Maximum flow: 20 cubic feet per second
+Channel slope: 2%
+Channel dimensions from Problem 16-14 (rectangular, 6 ft wide)
+
+Steps and Equations:
+(1) Determine normal depth of flow using Figure 16.7:
+Normal depth = 0.45 ft
+Flow velocity = 7 ft/sec
+(2) Add freeboard for safety:
+Revised channel depth = 0.45 + 1.0 = 1.45 ft
+(3) Check if jute mesh is suitable for erosion prevention:
+From Figure 16.9, determine:
+dmax = 0.62 ft
+(4) Calculate hydraulic radius:
+R = A/P = (0.62 × 6.0)/[(2 × 0.62) + 6.0] = 3.72/7.24 = 0.51 ft
+(5) Calculate flow velocity using Figure 16.13:
+V = 61.53 × R^1.028 × S^0.431
+V = 61.53 × (0.51)^1.028 × (0.02)^0.431 = 5.75 ft/sec
+(6) Calculate flow rate:
+Q = V × A = 5.75 × (0.62 × 6.0) = 5.75 × 3.72 = 21.4 ft^3/sec
+Since this is greater than the required 20 ft^3/sec, jute mesh is adequate.
+
+------------------------------------------
+
+[m]16-17 A trapezoidal channel with 2:1 side slope and 5-foot bottom width is to be used to discharge a flow of 200 cubic feet per second. If the channel slope is 2% and the Manning coefficient is 0.015, determine the minimum depth required for the channel. Is the flow supercritical or subcritical?
+16-17 一个梯形渠道的边坡为2:1，底宽5英尺，用于排放200立方英尺/秒的流量。若渠道坡度为2%，曼宁系数为0.015，请确定渠道的最小水深。该流动是超临界流还是亚临界流？
+
+Known Conditions:
+Trapezoidal channel with 2:1 side slope
+Bottom width: 5 feet
+Flow rate: 200 cubic feet per second
+Channel slope: 2%
+Manning coefficient: 0.015
+
+Steps and Equations:
+(1) Calculate Qn value:
+Qn = Q × n = 200 × 0.015 = 3.0
+(2) Determine depth of flow using Figure 16.6:
+Depth of flow = 1.6 ft
+(3) Determine flow type:
+The intersection of discharge flow line and 2% slope line lies above the critical curve, therefore:
+Flow type = Supercritical
+(4) Add freeboard for safety:
+Minimum required depth = 1.6 + 1.0 = 2.6 ft
+
+------------------------------------------
+------------------------------------------
+
+4.涵洞设计
+
+[m]16-18 Determine whether a 5-foot by 5-foot reinforced concrete box culvert with 45° flared wingwalls and beveled edge at the top of the inlet carrying a 50-year flow rate of 200 cubic feet per second will operate under inlet or outlet control for the following conditions. Assume ke = 0.5:
+Design headwater elevation (ELhd): 105 feet
+Elevation of stream bed at face of invert: 99.55 feet
+Tailwater depth: 4.75 feet
+Approximate length of culvert: 200 feet
+Slope of stream: 1.5%
+n = 0.012
+16-18 一条5英尺×5英尺的钢筋混凝土箱涵，带有45°扩展翼墙和入口顶部倒角，在50年一遇流量200立方英尺/秒条件下运行。判断该箱涵在下列条件下是入口控制还是出口控制。假设ke = 0.5：
+设计水头高度 (ELhd)：105英尺; 渠床面高度 (invert face)：99.55英尺; 尾水深度：4.75英尺 箱涵大致长度：200英尺; 溪流坡度：1.5%; n = 0.012
+
+Known Conditions:
+5-foot × 5-foot reinforced concrete box culvert with 45° flared wingwalls
+50-year flow rate: 200 cubic feet per second
+Design headwater elevation (ELhd): 105 feet
+Elevation of stream bed at face of invert: 99.55 feet
+Tailwater depth: 4.75 feet
+Approximate length of culvert: 200 feet
+Slope of stream: 1.5%
+Manning coefficient n = 0.012
+Entrance loss coefficient ke = 0.5
+
+Steps and Equations:
+(1) Calculate flow rate per ft of width:
+Q/B = 200/5 = 40.0 ft3/sec/ft
+(2) Determine headwater ratio using Figure 16.16:
+HW/D = 1.19 ft/ft
+(3) Calculate required headwater:
+HW = (HW/D) × D = 1.19 × 5 = 5.95 ft
+Neglecting approach velocity head: HWi = 5.95 ft
+Calculate design headwater depth:
+HWd = ELhd - ELcf = 105 - 99.55 = 5.45 ft
+(4) Determine the fall:
+Fall = HWi - HWd = 5.95 - 5.45 = 0.50 ft
+(5) Calculate culvert invert elevation:
+Invert elevation = 99.55 - 0.50 = 99.05 ft
+(6) Determine critical depth from Figure 16.23:
+dc = 3.7 ft (for Q/B = 40.0)
+(7) Calculate depth from outlet invert to hydraulic grade line:
+(dc + D)/2 = (3.7 + 5)/2 = 4.35 ft
+Since tailwater depth (4.75 ft) is greater, use ho = 4.75 ft
+Determine total head loss from Figure 16.21:
+H = 2.2 ft
+(8) Calculate required outlet headwater elevation:
+ELho = Eio + H + ho
+ELho = (99.05 - (0.015 × 200)) + 2.2 + 4.75
+ELho = 99.05 - 3 + 2.2 + 4.75 = 103.00 ft
+(9) Compare and determine control type:
+Since outlet headwater elevation (103 ft) < design headwater elevation (105 ft),
+the culvert is acceptable and inlet control governs.
+
+------------------------------------------
+
+
+[m]16-19 Repeat Problem 16-18 using a 6-foot, 6-inch diameter circular pipe culvert with ke = 0.5.
+16-19 使用直径6英尺6英寸的圆形管涵替换问题16-18中的箱涵，假设ke = 0.5。
+
+Known Conditions:
+6.5 ft diameter circular pipe culvert
+Other conditions same as Problem 16-18
+ke = 0.5
+
+Steps and Equations:
+(1) Determine headwater ratio using Figure 16.16:
+HW/D = 0.88 ft/ft (for 78 in diameter and 200 ft3/sec)
+(2) Calculate required headwater:
+HW = (HW/D) × D = 0.88 × 6.5 = 5.72 ft
+Neglecting approach velocity head: HWi = 5.72 ft
+(3) Calculate design headwater depth:
+HWd = ELhd - ELcf = 105 - 99.55 = 5.45 ft
+(4) Determine the fall:
+Fall = HWi - HWd = 5.72 - 5.45 = 0.27 ft
+(5) Calculate culvert invert elevation:
+Invert elevation = 99.55 - 0.27 = 99.28 ft
+(6) Determine critical depth from Figure 16.24:
+dc = 3.75 ft (for Q/B = 200/6.5 = 30.8)
+(7) Calculate depth from outlet invert to hydraulic grade line:
+(dc + D)/2 = (3.75 + 6.5)/2 = 5.13 ft
+Since tailwater depth is not greater, use ho = 5.13 ft
+(8) Determine total head loss from Figure 16.22:
+H = 1.05 ft
+(9) Calculate required outlet headwater elevation:
+ELho = Eio + H + ho
+ELho = (99.28 - (0.015 × 200)) + 1.05 + 5.13
+ELho = 99.28 - 3 + 1.05 + 5.13 = 102.46 ft
+(10) Compare and determine control type:
+Since outlet headwater elevation (102.46 ft) < design headwater elevation (105 ft),
+the culvert is acceptable and inlet control governs.
+
+------------------------------------------
+------------------------------------------
+
+
+5.地下水排水
+
+[m]16-20 Determine the ground-water infiltration rate for a new two-lane pavement with the following characteristics:
+Lane width: 12 feet
+Shoulder width: 10 feet
+Length of contributing transverse cracks (Wc): 20 feet
+Rate of infiltration (Kp): 0.05 cubic feet per day per square foot
+Spacing of transverse cracks: 30 feet
+16-20 计算新双车道路面的地下水入渗率，其特性如下：
+车道宽度：12英尺; 路肩宽度：10英尺; 横向裂缝长度 (Wc)：20英尺; 入渗率 (Kp)：0.05立方英尺/天/平方英尺; 横向裂缝间距：30英尺
+
+Known Conditions:
+Two-lane pavement
+Lane width: 12 feet
+Shoulder width: 10 feet
+Length of contributing transverse cracks (Wc): 20 feet
+Rate of infiltration (Kp): 0.05 cubic feet per day per square foot
+Spacing of transverse cracks: 30 feet
+
+Steps and Equations:
+(1) Calculate granular base width:
+W = (number of lanes × lane width) + (shoulder width × 2)
+W = (2 × 12) + (10 × 2) = 24 + 20 = 44 ft
+(2) Determine number of cracks for new pavement:
+Nc = N + 1 = 2 + 1 = 3
+(3) Calculate infiltration rate using Equation 16.24 (assuming Ic = 2.4):
+qi = Ic × (Nc/W + Wc/(W × Sc)) + Kp
+qi = 2.4 × (3/44 + 20/(44 × 30)) + 0.05
+qi = 2.4 × (0.0682 + 0.0152) + 0.05
+qi = 2.4 × 0.0834 + 0.05 = 0.25 ft^3/day/ft^2
+
+------------------------------------------
+
+[m]16-21 In addition to the infiltration determined in Problem 16-20, ground-water seepage due to gravity also occurs. Determine the thickness of a suitable drainage layer required to transmit the net inflow to a suitable outlet:
+Thickness of subgrade below drainage pipe: 12 feet
+Coefficient of permeability of native soil: 0.35 feet per day
+Height of water table above impervious layer: 21 feet
+Slope of drainage layer: 2%
+Permeability of drainage area: 2,000 feet per day
+Length of flow path: 44 feet
+16-21 除了问题16-20中确定的入渗量外，还存在因重力引起的地下水渗流。请确定合适的排水层厚度，以将净流量传输至合适的出口：
+排水管下的基土厚度：12英尺; 原生土渗透系数：0.35英尺/天; 水位距不透水层的高度：21英尺; 排水层坡度：2%; 排水区渗透率：2,000英尺/天; 流动路径长度：44英尺
+
+Known Conditions:
+Infiltration rate from Problem 16-20: 0.25 ft^3/day/ft^2
+Thickness of subgrade below drainage pipe: 12 feet
+Coefficient of permeability of native soil: 0.35 feet per day
+Height of water table above impervious layer: 21 feet
+Slope of drainage layer: 2%
+Permeability of drainage area: 2,000 feet per day
+Length of flow path: 44 feet
+
+Steps and Equations:
+(1) Calculate drawdown:
+H - H0 = 21 - 12 = 9 ft
+(2) Determine radius of influence:
+Li = 3.8 × (H - H0) = 3.8 × 9 = 34.2 ft
+(3) Compute parameters for gravity drainage:
+(Li + 0.5W)/H0 = (34.2 + 0.5 × 44)/12 = 56.2/12 = 4.68
+W/H0 = 44/12 = 3.67
+(4) Determine flow factor from Figure 16.34:
+k × (H - H0)/2q2 = 1.7
+(5) Calculate q2:
+q2 = k × (H - H0)/(2 × 1.7) = (0.35 × 9)/3.4 = 0.93 ft^3/day/ft^2
+(6) Calculate gravity seepage rate:
+qg = q2/(0.5W) = 0.93/(0.5 × 44) = 0.042 ft^3/day/ft^2
+(7) Calculate net inflow (from Problem 16-20, qi = 0.25 ft^3/day/ft^2):
+qn = qi + qg = 0.25 + 0.042 = 0.292 ft^3/day/ft^2
+(8) Calculate flow ratio:
+p = qn/kd = 0.292/2,000 = 1.46 × 10^{-4}
+(9) Determine drainage layer thickness using Figure 16.38:
+L/Hm = 200
+Hm = L/200 = 44/200 = 0.22 ft = 2.64 in
+Use 3.0 inches for design safety.
+

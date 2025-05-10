@@ -1,0 +1,489 @@
+Chapter 12 Forecasting Travel Demand
+
+[m]公式: (1)从区i到区j的出行量: T_ij=P_i*(A_j*F_ij*K_ij)/Σ(A_j*F_ij*K_ij)
+P_i:区i的出行生产量
+A_j:区j的吸引量(在迭代中会调整)
+F_ij:摩擦因子(根据出行时间)
+(2)调整后的吸引因子: A_jk=[A_j/C_j(k-1)]*A_j(k-1)
+
+[m]公式: Present totals 当前总出行量
+A\B\C\D分区
+Growth factor 增长系数
+对于不同的分区，present totals*growth factor=estimated future totals 未来出行总量
+Fratar公式: Tij=未来出行总量*Σ(现有流量*目标增长系数)/Σ(所有现有流量*相应增长系数)
+每次迭代完后计算新增长系数=期望总量/本次计算出的流量总和
+
+[m]公式: Dijkstra算法: 起点设为当前节点；找出连接的最短路径更新每个节点的临时最短距离；确定下一个节点，并重复更新；一直到所有节点的最短路径都找到。
+
+----------------------------------------------------
+
+3.引力模型
+[m]公式: (1)从区i到区j的出行量: T_ij=P_i*(A_j*F_ij*K_ij)/Σ(A_j*F_ij*K_ij)
+P_i:区i的出行生产量
+A_j:区j的吸引量(在迭代中会调整)
+F_ij:摩擦因子(根据出行时间)
+(2)调整后的吸引因子: A_jk=[A_j/C_j(k-1)]*A_j(k-1)
+
+----------------------------------------------------
+
+[m]12-8 A small town has been divided into three traffic zones. An origin-destination(OD) survey conducted earlier this year yielded the number of trips between each zone as shown in the table below. Travel times between zones were also determined. Provide a trip distribution calculation using the gravity model for two iterations. Assume Kij = 1.
+The following table shows the number of productions and attractions in each zone.
+The travel times (in minutes) between zones were as follows:
+The following table shows travel time versus friction factor.
+12-8 一个小镇被分为三个交通分区。在今年初进行的起点-终点调查产生了每个分区之间的出行量。还确定了各分区间的出行时间。使用引力模型进行两次迭代的出行分布计算，假设 Kij = 1。下表显示了每个分区的出行生成量和吸引量。各分区之间的出行时间（分钟）如下：下表显示了出行时间与摩擦因子的关系。
+
+Known Conditions:
+3 traffic zones with productions and attractions data
+Travel times between zones
+Friction factors for different travel times
+Kij = 1
+
+Steps and Equations:
+(1) Apply gravity model formula (first iteration):
+Formula: Tij = Pi × [(Aj × Fij)/Σ(Aj × Fij)]
+Example: T11 = 250 × [(395 × 26)/((395 × 26)+(180 × 41)+(425 × 52))] = 65
+T11,T12,T13,T21,T22,T23,T31,T32,T33
+(2) Create trip matrix for 1st iteration and calculate computed attractions
+Zone: 1,2,3 Productions
+1: 65,46,139 250
+2: 209,24,217 450
+3: 168,46,86 300
+Computed attractions: 442,116,442
+Given attractions: 395,180,425
+(3) Calculate adjusted attraction factors:
+Formula: Ajk = (Aj/C{j(k-1)}) × A{j(k-1)}
+Zone 1: A1k = (395/442) × 395 = 353
+Zone 2: A2k = (180/116) × 180 = 279
+Zone 3: A3k = (425/442) × 425 = 409
+(4) Apply gravity model for 2nd iteration using adjusted attraction factors
+(5) Create trip matrix for 2nd iteration and check convergence between computed attractions and given attractions
+
+----------------------------------------------------
+
+[m]12-9 The Jeffersonville Transportation Study Area has been divided into four large districts (traffic zones). The following data have been collected for those districts. Provide a trip distribution calculation using the gravity model for two iterations. Assume Kij = 1.
+12-9 杰斐逊维尔交通研究区域被划分为四个大型区域（交通分区）。为这些区域收集了以下数据。使用引力模型进行两次迭代的出行分布计算，假设 Kij = 1。
+
+Known Conditions:
+4 traffic zones with productions and attractions
+Travel times between zones
+Friction factors for different travel times
+Kij = 1
+
+Steps and Equations:
+(1) Similar to Problem 12-8, but with 4 zones:
+(2) Apply gravity model formula for 1st iteration
+(3) Create trip matrix and calculate computed attractions
+(4) Calculate adjusted attraction factors
+(5) Apply gravity model for 2nd iteration
+(6) Check convergence
+
+----------------------------------------------------
+
+
+[m]12-10 The following table shows the productions and attractions used in the first iteration of a trip distribution procedure and the productions and attractions that resulted. Determine the number of productions and attractions that should be used for each zone in the second iteration.
+12-10 下表显示了首次迭代的出行分布程序中使用的生产量和吸引量以及计算所得的生产量和吸引量。确定在第二次迭代中每个分区应使用的生产量和吸引量。
+
+Given:
+First iteration P and A values, and resulting P^1 and A^1 values:
+Zone 1: P=100, A=300, P^1=100, A^1=250
+Zone 2: P=200, A=100, P^1=200, A^1=150
+Zone 3: P=400, A=200, P^1=400, A^1=300
+Zone 4: P=600, A=700, P^1=600, A^1=600
+
+Steps:
+(1) Calculate adjusted attraction factors using equation: A_jk = A_j × (C_j(k-1) / A_j(k-1))
+Zone 1: A1^2 = 300 × (250/300) = 360
+Zone 2: A2^2 = 100 × (150/100) = 67
+Zone 3: A3^2 = 200 × (300/200) = 133
+Zone 4: A4^2 = 700 × (600/700) = 817
+(2) Production values remain unchanged in each iteration:
+Zone 1: P1^2 = 100
+Zone 2: P2^2 = 200
+Zone 3: P3^2 = 400
+Zone 4: P4^2 = 600
+(3) Results:
+Second iteration values:
+Zone; P^2; A^2
+1;100;360;
+2;200;67;
+3;400;133;
+4;600;817;
+
+----------------------------------------------------
+
+
+[m]12-11 The Jeffersonville Transportation Study Area has been divided into four large districts (traffic zones). The following data have been compiled:
+After the first iteration, the trip table was:
+Complete the second iteration.
+12-11 杰斐逊维尔交通研究区域被划分为四个大型区域（交通分区）。收集了以下数据：
+第一次迭代后的出行表为：
+完成第二次迭代。
+
+Given:
+First iteration trip table
+Productions and attractions for each zone
+Travel times and friction factors
+
+Steps:
+(1) Calculate adjusted attraction factors using equation: A_jk = A_j × (C_j(k-1) / A_j(k-1))
+Zone 1: A1^2 = 1000 × (869/1000) = 1151
+Zone 2: A2^2 = 700 × (707/700) = 693
+Zone 3: A3^2 = 6000 × (6110/6000) = 5892
+Zone 4: A4^2 = 500 × (514/500) = 486
+(2) Apply gravity model for second iteration using:
+T_ij = P_i × [(A_j × F_ij) / Σ(A_j × F_ij)]
+Example calculation for T11:
+T11= 1000 × [(1151 × 1.3) / ((1151 × 1.3) + (693 × 0.95) + (5892 × 0.8) + (486 × 0.65))]
+T11 = 1000 × (1496/7190) = 208
+(3) Complete all calculations for second iteration trip matrix
+(4) Results:
+Second iteration trip matrix with computed attractions approximating given attractions
+
+----------------------------------------------------
+
+
+[m]12-15 The amount of lumber produced and consumed by three states is shown in the following table. Intrastate shipment distances are 200 miles and interstate distances are 800 miles (between states 1 and 2), 1000 miles (between states 1 and 3), and 400 miles (between states 2 and 3). Assuming an impedance function of the form 1/d, estimate the tonnage of lumber that will travel between the three states:
+12-15 以下表格显示了三州的木材生产和消耗量。州内运输距离为200英里，州际运输距离为800英里（州1和州2之间）、1000英里（州1和州3之间）、400英里（州2和州3之间）。假设阻抗函数为1/d，估算三州之间的木材运输吨数。
+
+Given:
+Lumber production and consumption by three states
+Intrastate distance: 200 miles
+Interstate distances: 800 miles (states 1-2), 1000 miles (states 1-3), 400 miles (states 2-3)
+Impedance function: 1/d
+
+Steps:
+(1) Calculate impedance factors:
+State 1 to 1: 1/200 = 0.005
+State 1 to 2: 1/800 = 0.00125
+State 1 to 3: 1/1000 = 0.001
+State 2 to 2: 1/200 = 0.005
+State 2 to 3: 1/400 = 0.0025
+State 3 to 3: 1/200 = 0.005
+(1) Apply gravity model: T_ij = P_i × [(A_j × F_ij) / Σ(A_j × F_ij)]
+Example (State 1 to 2):
+T12 = 5880 × [(10000 × 0.00125) / ((980 × 0.005) + (10000 × 0.00125) + (8000 × 0.001))]
+T12 = 5880 × [(12.5) / (4.9 + 12.5 + 8)] = 5880 × (12.5/25.4) = 2894
+(2) Create initial trip matrix and check if calculated attractions match given attractions
+(3) Adjust attractions using: A_jk = A_j × (C_j(k-1) / A_j(k-1))
+Example for State 2:
+A2^2 = 10000 × (10000/8924) = 11206
+(4) Repeat iterations until convergence
+(5) Result:
+Final flow matrix after 5 iterations
+
+----------------------------------------------------
+
+
+[m]12-16 Suppose that traffic congestion has rendered the distance-based impedance function unsuitable for Problem 12-15. A detailed survey yields present-day commodity flows shown. In the future, state #1 lumber production will increase to 18,000 and state #2 lumber consumption will increase to 21,800. Estimate the lumber flows between the three states.
+12-16 假设交通拥堵使得基于距离的阻抗函数不适合问题12-15。一项详细调查显示了当前的商品流动情况。将来，州1的木材生产将增加到18,000，州2的木材消耗将增加到21,800。估算三州之间的木材流量。
+
+Given:
+Current lumber flow matrix between three states
+Future changes: State 1 production will increase to 18,000; State 2 consumption will increase to 21,800
+
+Steps:
+(1) Calculate growth factors:
+(1.1) Production growth factors:
+State 1: G1 = 18000/6000 = 3.0
+State 2: G2 = 3300/3300 = 1.0 (no change)
+State 3: G3 = 9000/9000 = 1.0 (no change)
+(1.2) Consumption growth factors:
+State 1: G1 = 1100/1100 = 1.0 (no change)
+State 2: G2 = 21800/9000 = 2.422
+State 3: G3 = 8200/8200 = 1.0 (no change)
+(2) Apply Fratar method formula:
+T_ij = (t_ij × G_i × G_j) / Σ(t_ij × G_j)
+Example (State 1 to State 2):
+T12 = [(6000 × 3) × (1800 × 2.42)] / [200×1 + 1800×2.42 + 4000×1] = 9168
+(3) Complete 10 iterations to achieve convergence
+Result:
+(4) Final flow matrix after iterations
+
+----------------------------------------------------
+
+
+[m]12-17 Survey data suggests the trip interchange matrix shown below. Calibrate the friction factors for one iteration, assuming travel times are 2.0 minutes for interzonal trips and 1.0 minute for all intra-zonal trips. Assume the friction factor takes the form t^(-b).
+12-17 调查数据显示了以下的出行交换矩阵。校准摩擦因子进行一次迭代，假设跨分区出行时间为2.0分钟，分区内出行时间为1.0分钟。假设摩擦因子的形式为t^(-b)。
+
+Known Conditions:
+Trip interchange matrix
+Travel times: 2.0 minutes for interzonal trips, 1.0 minute for intrazonal trips
+Friction factor form: t^(-b)
+Steps and Equations:
+(1) Calculate productions and attractions from trip table
+Zone 1: P=120, A=60
+Zone 2: P=150, A=150
+Zone 3: P=180, A=240
+(2) Make initial assumption (b = 1) for friction factors
+Intrazonal friction factor: 1/1 = 1
+Interzonal friction factor: 1/2 = 0.5
+(3) Apply gravity model with initial friction factors
+T_ij = P_i × [(A_j × F_ij) / Σ(A_j × F_ij)]
+Example (Zone 1 to Zone 1):
+T11 = 120 × [(60 × 1) / ((60 × 1) + (150 × 0.5) + (240 × 0.5))] = 28
+(4) Compare predicted vs. actual results
+Intrazonal actual: 10+50+90 = 150
+Intrazonal predicted: 28+75+125 = 228
+Interzonal actual: 40+70+20+80+30+60 = 300
+Interzonal predicted: 35+56+15+60+16+39 = 222
+(5) Calculate adjusted friction factors
+Intrazonal: (1 × 150)/228 = 0.658
+Interzonal: (0.5 × 300)/222 = 0.676
+(6) Use regression to determine b value:
+Formula: ln(F) = -b × ln(t)
+ln(0.658) = -b × ln(1)
+ln(0.676) = -b × ln(2)
+Solving: b = 0.565
+(7) Result:
+Friction factor form: t^(-0.565)
+
+----------------------------------------------------
+----------------------------------------------------
+
+4.弗拉特分布法
+[m]公式: Present totals 当前总出行量
+A\B\C\D分区
+Growth factor 增长系数
+对于不同的分区，present totals*growth factor=estimated future totals 未来出行总量
+Fratar公式: Tij=未来出行总量*Σ(现有流量*目标增长系数)/Σ(所有现有流量*相应增长系数)
+每次迭代完后计算新增长系数=期望总量/本次计算出的流量总和
+
+----------------------------------------------------
+
+[m]12-12 For the travel pattern in Figure 12.18, develop the Fratar method of trip distribution for two iterations.
+12-12 针对图12.18中的出行模式，开发弗拉特法（Fratar method）出行分布的两次迭代。
+
+Known Conditions:
+Travel patterns between zones A, B, C, D
+Growth factors for each zone
+Present trip interchange data
+
+Steps and Equations:
+(1) Calculate 1st iteration flows between zones:
+Formula: Tij = (Pi × tij × Gj)/Σ(tij × Gj)
+Example: TAB = 300 × [(25 × 4)/[(25 × 4)+(50 × 2)+(25 × 1)]] = 133.33
+TAC = 300 × [(50 × 2) / ((25 × 4) + (50 × 2) + (25 × 1))]=133.33
+TAD = 300 × [(25 × 1) / ((25 × 4) + (50 × 2) + (25 × 1))]=33.33
+For zone B: TBA, TBC, TBD
+For zone C: TCA, TCB, TCD
+For zone D: TDA, TDB, TDC
+(2) Calculate movement between zones and new growth factors:
+A-B = (133.33 + 166.67)/2 = 150
+A-C = (TAC + TCA)/2 = (133.33 + 126.32)/2 = 129.83
+A-D = (TAD + TDA)/2 = (33.33 + 29.03)/2 = 31.18
+Continue for all zone pairs
+New growth factor for A = 300/311.01 = 0.965
+For zone B: 1000/877.37 = 1.140
+For zone C: 800/877.43 = 0.912
+For zone D: 300/334.21 = 0.898
+(3) Use new growth factors for 2nd iteration
+Example calculation:
+TAB = 300 × [(150 × 1.14) / ((150 × 1.14) + (129.83 × 0.912) + (31.18 × 0.898))]=161.63
+(4) Calculate new movement between zones
+A-B = (161.63 + 179.56)/2 = 170.60
+A-C = (111.91 + 106.80)/2 = 109.36
+A-D = (26.46 + 26.65)/2 = 26.56
+(5) Compare results with desired totals
+Zone;New Total;Desired Total
+A;306;300
+B;937;1,000
+C;853;800
+D;304;300
+
+----------------------------------------------------
+
+[m]12-13 Redo Problem 12-12 using the average growth factor method.
+12-13 使用平均增长因子法重新做问题12-12。
+
+Steps:
+First Iteration:
+(1) Apply Average Growth Factor formula:
+Formula: Tij = tij × [(Gi + Gj)/2]
+Where:
+Tij = Future trips from zone i to zone j
+tij = Current trips from zone i to zone j
+Gi, Gj = Growth factors for zones i and j
+Example calculations:
+TAB = 25 × [(3 + 4)/2] = 25 × 3.5 = 87.5
+TAC = 50 × [(3 + 2)/2] = 50 × 2.5 = 125
+TAD = 25 × [(3 + 1)/2] = 25 × 2 = 50
+(2) Calculate remaining trip interchanges using the same formula
+(3) Sum trip ends for each zone:
+TA = TAB + TAC + TAD = 87.5 + 125 + 50 = 262.5
+TB = TBA + TBC + TBD = 87.5 + 450 + 187.5 = 725
+TC = TCA + TCB + TCD = 125 + 450 + 300 = 875
+TD = TDA + TDB + TDC = 50 + 187.5 + 300 = 537.5
+(4) Calculate new growth factors:
+New growth factor for A = 300/262.5 = 1.143
+New growth factor for B = 1000/725 = 1.379
+New growth factor for C = 800/875 = 0.914
+New growth factor for D = 300/537.5 = 0.558
+
+Second Iteration:
+(1) Apply Average Growth Factor formula with new growth factors:
+Example calculation:
+TAB = 87.5 × [(1.143 + 1.379)/2] = 87.5 × 1.261 = 110.3
+TAC = 125 × [(1.143 + 0.914)/2] = 125 × 1.0285 = 128.6
+TAD = 50 × [(1.143 + 0.558)/2] = 50 × 0.8505 = 42.5
+(2) Calculate remaining trip interchanges for second iteration
+(3) Sum trip ends for each zone:
+TA = TAB + TAC + TAD = 110.3 + 128.6 + 42.5 = 281
+TB = TBA + TBC + TBD = 110.3 + 515.9 + 181.6 = 808
+TC = TCA + TCB + TCD = 128.6 + 515.9 + 220.9 = 865
+TD = TDA + TDB + TDC = 42.5 + 181.6 + 220.9 = 445
+(4) Calculate new growth factors for potential third iteration:
+For zone A = (1.143 × 262.5)/281 = 1.066
+For zone B = (1.379 × 725)/808 = 1.238
+For zone C = (0.914 × 875)/865 = 0.924
+For zone D = (0.558 × 537.5)/445 = 0.674
+(5) Compare results:
+ZoneNew TotalDesired TotalA281300B8081,000C866800D445300
+Both methods (Fratar and Average Growth Factor) aim to distribute trips according to growth factors, but Fratar provides more accurate results while Average Growth Factor is simpler to calculate but less precise.
+
+----------------------------------------------------
+
+[m]12-14 What data are required to use (a) the gravity model and (b) the Fratar model? For a 100-zone region, which method requires more data collection?
+12-14 使用(a) 引力模型 和 (b) 弗拉特模型 需要哪些数据？对于100个分区的区域，哪种方法需要更多的数据收集？
+
+----------------------------------------------------
+----------------------------------------------------
+
+5.模式选择
+[m]公式: 效用函数公式: U_k=A_k+Σ(系数*参数)
+logit模型关键: P_k=(e^U_k)/(Σe^U_j) [注意在计算时，分子分母分开算指数再除]
+
+----------------------------------------------------
+
+[m]12-18 Determine the share (proportion) of person-trips by each of two modes (private auto and mass transit) using the multinomial logit model and given the following information:
+12-18 使用多项逻辑模型确定人次出行的比例（每种模式），即私人汽车和公共交通，并给定以下信息：
+
+Known Conditions:
+Utility function: Uk = Ak - 0.05Ta - 0.04Tw - 0.03Tr - 0.014C
+Parameters for private auto and mass transit
+
+Steps and Equations:
+(1) Calculate utility for each mode:
+Auto: Uauto = -0.01 - 0.05(5) - 0.04(0) - 0.03(25) - 0.014(150) = -3.11
+Transit: Utransit = -0.07 - 0.05(10) - 0.04(15) - 0.03(40) - 0.014(100) = -3.77
+(2) Apply logit model to calculate mode shares:
+Pauto = e^(Uauto)/(e^(Uauto) + e^(Utransit)) = e^(-3.11)/(e^(-3.11) + e^(-3.77)) ≈ 0.659
+Ptransit = e^(Utransit)/(e^(Uauto) + e^(Utransit)) = e^(-3.77)/(e^(-3.11) + e^(-3.77)) ≈ 0.341
+
+----------------------------------------------------
+
+
+[m]12-19 A mode choice logit model is to be developed based on the following information. A survey of travelers in an area with bus service found the following data:
+The following utility functions were calibrated based on an observed mode split of 84.9% private auto use and 15.1% bus use.
+After implementing service improvements to the buses, the mode split changed to 81.6% private auto use and 18.4% bus use. Determine a value for the calibration constant for the bus mode that reflects this shift in mode split.
+12-19 模式选择逻辑模型的开发基于以下信息。对一个有公交服务的地区的旅行者进行调查，并获得以下数据：
+以下效用函数基于观察到的模式分配校准，84.9%为私人汽车使用，15.1%为公交使用。
+实施公交服务改进后，模式分配变为 81.6%私人汽车使用和18.4%公交使用。确定反映模式分配变化的公交模式校准常数的值。
+
+Known Conditions:
+Mode split: 84.9% auto, 15.1% bus (before)
+Mode split after improvements: 81.6% auto, 18.4% bus
+Existing utility functions and parameters
+
+Steps and Equations:
+(1) Calculate existing utilities:
+Uauto = -0.33 - 0.10(0) - 0.13(20) - 0.12(5) - 0.0045(225) = -4.54
+Ubus = -0.27 - 0.10(10) - 0.13(35) - 0.12(0) - 0.0045(100) = -6.27
+(2) From new mode split, determine new bus utility value:
+0.184 = e^(Ubus)/(e^(-4.54) + e^(Ubus))
+Solving: Ubus = -6.03
+(3) Calculate new bus calibration constant (Abus):
+-6.03 = Abus - 0.10(10) - 0.13(35) - 0.12(0) - 0.0045(100)
+Abus = -0.03
+
+----------------------------------------------------
+
+
+[m]12-20 A previously developed elasticity model for improvements to a transit system found a midpoint arc elasticity value of 0.38 to describe the relationship between demand increase and route mileage. The system is now planning a 60% increase in route mileage. Estimate the expected demand increase.
+12-20 一个先前开发的弹性模型用于描述公交系统改进的需求，发现中点弧弹性为0.38，以描述需求增加与路线里程的关系。该系统现在计划路线里程增加60%。估算期望的需求增加量。
+
+Known Conditions:
+Midpoint arc elasticity value = 0.38
+Planned route mileage increase = 60%
+
+Steps and Equations:
+(1) Apply midpoint arc elasticity formula:
+Formula: em = (ΔD/Davg)/(ΔX/Xavg)
+0.38 = [(Df-1)/(1+Df)/2]/[(1.60-1)/((1+1.60)/2)]
+0.38 = [(Df-1)/((1+Df)/2)]/[0.60/1.30]
+0.38 = [(Df-1)/((1+Df)/2)]/0.46154
+(2) Solve for Df (future demand):
+0.38 × 0.46154 = (Df-1)/((1+Df)/2)
+0.17538 = (Df-1)/((1+Df)/2)
+0.17538 × (1+Df)/2 = Df-1
+0.08769(1+Df) = Df-1
+0.08769 + 0.08769Df = Df-1
+0.08769 + 1.08769Df = Df
+0.08769 = Df - 1.08769Df
+0.08769 = -0.08769Df
+0.91231Df = 1.08769
+Df = 1.08769/0.91231 ≈ 1.19
+(3) Conclude that demand will increase by 19%
+
+----------------------------------------------------
+----------------------------------------------------
+
+6.交通分配
+[m]公式: Dijkstra算法: 起点设为当前节点；找出连接的最短路径更新每个节点的临时最短距离；确定下一个节点，并重复更新；一直到所有节点的最短路径都找到。
+
+----------------------------------------------------
+
+
+[m]12-21 Determine the minimum path for nodes 1, 3, and 9 in Figure 12.19. Sketch the final trees.
+12-21 确定 节点1、3和9的最短路径，并绘制最终的路径树（见图12.19）。
+
+----------------------------------------------------
+
+
+[m]12-22 Assign the vehicle trips shown in the O-D trip table to the network shown in Figure 12.20 using the all-or-nothing assignment technique. Make a list of the links in the network and indicate the volume assigned to each. Calculate the total vehicle minutes of travel. Show the minimum path and assign traffic for each of the five nodes.
+12-22 将O-D出行表中的车辆出行分配到图12.20中的网络，使用全无分配方法。列出网络中的链接，并指出每条链接的分配量。计算总车辆分钟行程。显示最短路径并分配每个节点的交通。
+
+Known Conditions:
+O-D trip table for 5 zones
+Network with travel times on links
+
+Steps and Equations:
+(1) Determine minimum paths between all zones
+(2) Assign all trips to minimum paths
+(3) Sum volumes on each link
+(4) Calculate total vehicle-minutes of travel:
+Formula: Vehicle-minutes = Σ(Link volume × Link travel time)
+Total = 32,650 vehicle-minutes
+
+----------------------------------------------------
+
+[m]12-23 Figure 12.21 represents travel times on the links connecting six zonal centroids. Determine the minimum path from each zone to each other zone. Use the all-or-nothing trip assignment method to determine the total trips for each link after all of the trips from the two-way trip table have been loaded onto the network.
+12-23 图12.21展示了连接六个分区重心的链接的出行时间。确定每个分区到其他分区的最短路径。使用全无分配方法确定在将所有出行加载到网络后每条链接的总出行量。
+
+----------------------------------------------------
+
+
+[m]12-24 Given the following information, and using the generalized capacity restraint link performance function, perform two iterations of multipath traffic assignment. A flow of 10,500 vehicles in the peak hour is to be distributed between three routes whose properties are given in the following table:
+12-24 给定以下信息，并使用广义容量约束链接性能函数，进行两次多路径交通分配迭代。峰时车辆流量为10,500辆，需在以下三个路线中分配：
+
+Known Conditions:
+10,500 vehicles/hour to be distributed among 3 routes
+Route parameters: free-flow travel time, capacity, α and β parameters
+
+Steps and Equations:
+(1) First iteration:
+Calculate initial proportions based on free-flow travel times:
+p(j) = (1/t0(j))/Σ(1/t0(j))
+Calculate initial volumes: v(j) = p(j) × total flow
+Update travel times: t(j) = t0(j) × [1 + α × (v(j)/c)^β]
+(2) Second iteration:
+Calculate new proportions based on updated travel times
+Calculate new volumes
+Update travel times again
+
+----------------------------------------------------
+
+
+[m]12-25 Consider the user-equilibrium assignment and the lowest system cost assignment discussed in Section 12.5.1.4 (Figure 12.16). Zones 1, 2, and 3 represent a company’s warehouses all located on a privately-owned parcel of land. The vehicles shown are delivery trucks rather than passenger cars. Which method of traffic assignment is more appropriate?
+12-25 考虑在第12.5.1.4节（图12.16）中讨论的用户均衡分配和最低系统成本分配。区域1、2和3代表一家公司位于私人土地上的仓库。显示的车辆是配送卡车而非乘用车。哪种交通分配方法更适合？
+
+

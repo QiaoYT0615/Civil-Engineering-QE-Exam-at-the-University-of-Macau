@@ -1,0 +1,302 @@
+Chapter 3 - Characteristics of the Driver, the Pedestrian, the Bicyclist, the Vehicle, and the Road 
+[m]3.停车视距计算(停车距离/视距分析)
+公式: SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)] 其中u1是初速度，u2是终速度，对于停车u2=0.
+Dr=感知反应距离
+Db=制动距离
+[m]4.车辆加速与运动学(运动学/加速度分析)
+公式:加速度 a=du/dt=α-βu
+瞬时速度 u=α/β*(1-e^(-βt))+u_0*e^(-βt)
+ln[(α-βu_0)/(α-βu_t)]=β(t_0-t)
+assuming t_0=0
+时间 t=-1/β*ln[(α-βu_0)/(α-βu_t)]
+距离 x=(0-t)积分[α/β*(1-e^(-βt))+u_0*e^(-βt)]dt
+[m]5.马力计算(功率/阻力/爬坡分析)
+公式:(1) Horse power: P=(R_total*1.47*u)/550 [单位hp]
+(2) R_total = R_air + R_rolling + R_grade [单位lb]
+(3) R_air=0.5*(2.15*ρ*C_D*A*u^2)/g [单位lb]
+ρ=0.0766, C_D=0.4, g=32.2
+(4) R_rolling=(C_rs+2.15*C_rv*u^2)*W [单位lb]
+C_rs=0.012, C_rv=0.65*10^-6
+(5) R_grade=W*G [单位lb]
+[m]6.水平曲线设计(超高、半径)
+公式:R=u^2/[15*(e+f_s)]
+e_max = 0.10
+[m]7.标志与警示设计(标志设置距离题)
+公式: SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)] 其中u1是初速度，u2是终速度，对于停车u2=0.
+Dr=感知反应距离
+Db=制动距离
+读取距离=字母高度*每英寸能看清的距离
+标志应放置的位置=SSD-读取距离
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+[m]3.停车视距计算(停车距离/视距分析)
+公式: SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)] 其中u1是初速度，u2是终速度，对于停车u2=0.
+Dr=感知反应距离
+Db=制动距离
+
+[m]3-6 The design speed of a multilane highway is 60 mi/h. What is the minimum stopping sight distance that should be provided on the road if (a) the road is level and (b) the road has a maximum grade of 4%? Assume the perception-reaction time is 2.5 sec.
+3-6 一个多车道公路的设计速度为60英里/小时。如果(a) 道路平坦和(b) 道路有最大坡度4%，该道路应提供的最小停车视距是多少？假设感知-反应时间为2.5秒。
+公式: SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)]
+Solution: (a) since the roadway is level, G=0.
+(b) Since the roadway has a maximum grade of 4 percent, G=-0.03.
+The downgrade (negative) case provides the most conservative (higher) value of design.
+
+-------------------------------------------------------------------------
+
+[m]3-20 What is the distance required to stop an average passenger car when brakes are applied on a 2% downgrade if the vehicle was originally traveling at 40 mi/h?
+3-20 一辆普通乘用车在2%下坡时刹车需要多少距离才能从40英里/小时的速度停止？
+公式: Db=制动距离=(u1^2-u2^2)/[30*(0.35+-G)]
+Solution: Downgrade --- (-G)=-0.02
+
+-------------------------------------------------------------------------
+
+[m]3-21 A driver on a level two-lane highway observes a truck blocking the highway. The driver was able to stop 20 ft from the truck. If the driver was traveling at 60 mi/h, how far was she from the truck when she first observed it?
+3-21 一名驾驶员在平坦的双车道公路上看到前方有一辆卡车堵住了道路。驾驶员最终在离卡车20英尺处停下。如果驾驶员当时以60英里/小时的速度行驶，她首次看到卡车时距离有多远？
+公式: SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)]
+Solution: (1) determine the stopping sight distance used --- SSD=? (using G=0)
+(2) the distance from the point at which the driver observed the stopped truck to the truck is 20+SSD
+(3) determine braking distance: Db=(u1^2-u2^2)/[30*(0.35+-G)] (using u2=0, G=0).
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+[m]4.车辆加速与运动学(运动学/加速度分析)
+公式:加速度 a=du/dt=α-βu
+瞬时速度 u=α/β*(1-e^(-βt))+u_0*e^(-βt)
+ln[(α-βu_0)/(α-βu_t)]=β(t_0-t)
+assuming t_0=0
+时间 t=-1/β*ln[(α-βu_0)/(α-βu_t)]
+距离 x=(0-t)积分[α/β*(1-e^(-βt))+u_0*e^(-βt)]dt
+
+-------------------------------------------------------------------------
+
+[m]3-7 The acceleration of a vehicle takes the form du/dt=3.6-0.06u
+where u is the vehicle speed in ft/sec. The vehicle is traveling at 45 ft/sec at time To.
+(a) Determine the distance traveled by the vehicle when accelerated to a speed of 55 ft/sec.
+(b) Determine the time at which the vehicle attains a speed of 55 ft/sec.
+(c) Determine the acceleration of the vehicle after 3 sec.
+3-7 车辆加速度的形式为 du/dt=3.6-0.06u
+其中u是车辆速度，单位为英尺/秒。车辆在时间T0时以45英尺/秒行驶。
+(a) 确定车辆加速到55英尺/秒时行驶的距离。
+(b) 确定车辆达到55英尺/秒的时间。
+(c) 确定车辆在3秒后的加速度。
+Solution: (a) 距离 x=(0-t)积分[α/β*(1-e^(-βt))+u_0*e^(-βt)]dt
+(b) 时间 t=-1/β*ln[(α-βu_0)/(α-βu_t)]
+(c) 瞬时速度 u=α/β*(1-e^(-βt))+u_0*e^(-βt)
+加速度 a=du/dt=α-βu
+
+-------------------------------------------------------------------------
+
+[m]3-8 The gap between two consecutive automobiles (distance between the back of a vehicle and the front of the following vehicle) is 65 ft. At a certain time, the front vehicle is traveling at 45 mi/h and the following vehicle at 35 mi/h. If both vehicles start accelerating at the same time, determine the gap between the two vehicles after 15 sec if the acceleration of the vehicles takes the following forms: 
+du/dt=3.4-0.07u (leading vehicle), du/dt=3.3-0.065u (following vehicle)
+where ut is the vehicle speed in ft/sec.
+3-8 两辆连续汽车之间的间隙（前车尾部与后车前部之间的距离）为65英尺。在某一时刻，前车的行驶速度为45英里/小时，后车的行驶速度为35英里/小时。如果两辆车同时开始加速，假设加速度的形式如下：du/dt=3.4-0.07u (前车), du/dt=3.3-0.065u (后车)
+其中ut是车辆速度，单位为英尺/秒。在15秒后两辆车之间的间隙是多少？
+Solution: 距离 x=(0-t)积分[α/β*(1-e^(-βt))+u_0*e^(-βt)]dt
+Gap=X1-X2 + 65ft
+
+-------------------------------------------------------------------------
+
+[m]3-9 The driver of a vehicle on a level road determined that she could increase her speed from rest to 50 mi/h in 34.8 sec and from rest to 65 mi/h in 94.8 sec. If the acceleration of the vehicle takes the form du/dt=α-βu determine the maximum acceleration of the vehicle.
+3-9 一辆车的驾驶员在平坦道路上确定她可以将车速从静止加速到50英里/小时需34.8秒，从静止加速到65英里/小时需94.8秒。假设车辆的加速度形式为 du/dt=α-βu 确定车辆的最大加速度。
+Solution: 瞬时速度 u=α/β*(1-e^(-βt))+u_0*e^(-βt)
+
+-------------------------------------------------------------------------
+
+[m]3-10 If the vehicle in Problem 3-9 is traveling at a speed of 40 mi/h, how long will it take after the driver starts accelerating for the vehicle to achieve a speed of 45 mi/h?
+3-10 如果问题3-9中的车辆以40英里/小时的速度行驶，驾驶员开始加速后，车辆达到45英里/小时所需的时间是多少？
+Solution: 时间 t=-1/β*ln[(α-βu_0)/(α-βu_t)]
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+[m]5.马力计算(功率/阻力/爬坡分析)
+公式:(1) Horse power: P=(R_total*1.47*u)/550 [单位hp]
+(2) R_total = R_air + R_rolling + R_grade [单位lb]
+(3) R_air=0.5*(2.15*ρ*C_D*A*u^2)/g [单位lb]
+ρ=0.0766, C_D=0.4, g=32.2
+(4) R_rolling=(C_rs+2.15*C_rv*u^2)*W [单位lb]
+C_rs=0.012, C_rv=0.65*10^-6
+(5) R_grade=W*G [单位lb]
+
+-------------------------------------------------------------------------
+
+[m]3-11 Determine the horsepower developed by a passenger car traveling at a speed of 60 mph on an upgrade of 4% with a smooth pavement. The weight of the car is 4500 lb, and the cross-sectional area of the car is 45 ft2.
+3-11 确定一辆乘用车以60英里/小时的速度在4%坡度的平滑路面上行驶时的马力。车辆的重量为4500磅，横截面积为45平方英尺。
+公式: (1) R_air=0.5*(2.15*ρ*C_D*A*u^2)/g
+ρ=0.0766, C_D=0.4, A=45, u=60, g=32.2
+(2) R_rolling=(C_rs+2.15*C_rv*u^2)*W
+C_rs=0.012, C_rv=0.65*10^-6, u=60, W=4500
+(3) R_grade=W*G
+W=4500, G=0.04
+(4) R_total = R_air + R_rolling + R_grade
+(5) P=(R_total*1.47*u)/550
+
+-------------------------------------------------------------------------
+
+[m]3-12 Repeat Problem 3-11 for a 24,000-lb truck with a cross-sectional area of 100 ft2 and coefficient of drag of 0.5 traveling at 50 mi/h.
+3-12 重复问题3-11，但车辆为24,000磅的卡车，横截面积为100平方英尺，阻力系数为0.5，行驶速度为50英里/小时。
+
+-------------------------------------------------------------------------
+
+[m]3-13 A 2500-lb passenger vehicle originally traveling on a straight and level road gets onto a section of the road with a horizontal curve of radius 850 ft. If the vehicle was originally traveling at 55 mi/h, determine
+(a) the additional horsepower on the curve the vehicle must produce to maintain the original speed,
+(b) the total resistance force on the vehicle as it traverses the horizontal curve, and
+(c) the total horsepower. Assume the vehicle is traveling at sea level and has a front cross-sectional area of 30 ft2.
+3-13 一辆2500磅重的乘用车原本在平直道路上行驶，进入了半径为850英尺的水平曲线。如果车辆最初以55英里/小时的速度行驶，确定：
+(a) 在曲线上保持原速度所需的额外马力，
+(b) 车辆在曲线上行驶时的总阻力，
+(c) 总马力。假设车辆行驶在海平面，前部横截面积为30平方英尺。
+公式: (1) R_air=0.5*(2.15*ρ*C_D*A*u^2)/g
+ρ=0.0766, C_D=0.4, A=45, u=60, g=32.2
+(2) R_rolling=(C_rs+2.15*C_rv*u^2)*W
+C_rs=0.012, C_rv=0.65*10^-6, u=60, W=4500
+(3) P=(R_total*1.47*u)/550 
+this case, P=((R_air+R_rolling)*1.47*u)/550
+(4) the curve resistance Rc=0.5*[(2.15*u^2*W)/gR]
+g=32.2 R=850
+(5) the additional horsepower for the curve section of the roadway:
+P=(Rc*1.47*u)/550
+(6) the total required for the vehicle to maintain its original speed:
+hp{required}=hp{curve}+hp{straight}
+(7) the total resistive force acting on the vehicle while in the curve is:
+Rtotal=R+Rr+Rc
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+[m]6.水平曲线设计(超高、半径)
+公式:R=u^2/[15*(e+f_s)]
+e_max = 0.10
+
+-------------------------------------------------------------------------
+
+[m]3-14 A horizontal curve is to be designed for a section of a highway with a design speed of 60 mi/h.
+(a) If the physical conditions restrict the radius of the curve to 500 ft, what value is required for the superelevation at this curve?
+(b) Is this a good design?
+3-14 为一个设计速度为60英里/小时的高速公路段设计一个水平曲线。
+(a) 如果物理条件将曲线半径限制为500英尺，该曲线需要的超高是多少？
+(b) 这是一个好的设计吗？
+
+-------------------------------------------------------------------------
+
+[m]3-15 Determine the minimum radius of a horizontal curve required for a highway if the design speed is 70 mi/h and the superelevation rate is 0.08.
+3-15 如果设计速度为70英里/小时，超高率为0.08，确定公路水平曲线的最小半径。
+
+-------------------------------------------------------------------------
+
+[m]3-16 The posted speed limit on a section of highway is 55 mi/h and studies have shown the current 85th percentile speed is 65 mi/h. If the posted speed limit is to be increased to the current 85th percentile speed, what should be the increase in the radius of a curve that is adequate for the existing posted speed limit? Assume a superelevation rate of 0.08 for the existing and redesigned curve.
+3-16 在某段公路上，现有限速为55英里/小时，研究显示当前85百分位速度为65英里/小时。如果要将限速提高到当前85百分位速度，应将现有曲线的半径增加多少才能满足新限速？假设现有和重新设计的曲线的超高率为0.08。
+
+-------------------------------------------------------------------------
+
+[m]3-17 The radius of a horizontal curve on an existing highway is 750 ft. The superelevation rate at the curve is 0.08, and the posted speed limit on the road is 65 mi/h. Is this a hazardous location? If so, why? What action will you recommend to correct the situation?
+3-17 现有公路的水平曲线半径为750英尺，曲线的超高率为0.08，道路的限速为65英里/小时。这是一个危险路段吗？如果是，原因是什么？你会建议采取哪些措施来纠正这种情况？
+Solution: (a) R=u^2/[15*(e+f_s)] --- e=?
+For 65mi/h,fs=0.11,e=0.266
+The superelevation that is required for a speed of 65 mi.h is much higher than that provided at the curve.
+The curve is therefore a hazardous location as.
+Also, the superelevation of 0.266 is much higher than the maximum of 0.1 normally used.
+(b) Corrective measures:
+(1) Determine a maximum safe speed for a radius of 750 ft and e of 0.08 and post this speed at the curve.
+Try a speed of 50mi/h, fs=0.14 --- u=49.8mi/h
+(2) Reconstruct the curve with a large radius that will be adequate for the speed limit of 65 mi/h and an e of 0.08.
+For 65 mi/h, fs=0.11
+Minimum radius for this condition is obtained from R=u^2/[15*(e+f_s)]
+
+-------------------------------------------------------------------------
+
+[m]3-18 A section of highway has a superelevation of 0.05 and a curve radius of 300 ft. What speed limit will you recommend at this section of the highway?
+3-18 某公路段的超高率为0.05，曲线半径为300英尺。你会建议在此公路段设置的限速是多少？
+Solution: u=35mi/h, e=0.05
+R=u^2/[15*(e+f_s)] --- fs=0.22
+For u=35mi/h, fs=0.18
+0.22＞0.18 NOT OK
+Using a lower speed of u to try. Assume u=30mi/h --- fs=0.15
+From table u=35mi/h, fs=0.20.
+0.15＜0.20 OK
+
+-------------------------------------------------------------------------
+
+[m]3-19 A curve of radius 250 ft and e = 0.08 is located on a section of an existing rural highway, which restricts the safe speed to 50% of the design speed. This drastic reduction has resulted in a high crash rate. To reduce the crash rate, a new alignment is to be designed with a horizontal curve. Determine the minimum radius if the safe speed should be increased to the design speed of the highway. Assume fs = 0.17 for the existing curve and the new curve to be designed with e = 0.08.
+3-19 一条半径为250英尺且e = 0.08的曲线位于现有的农村公路上，将该路段的安全速度限制在设计速度的50%，导致高碰撞率。为降低碰撞率，需设计一个新的路线并设置水平曲线。如果要将安全速度提高到公路的设计速度，确定该曲线的最小半径。假设现有曲线的摩擦系数为0.17，新曲线的超高率为0.08。
+Solution: (1) R=250ft, e=0.08, fs=0.17.
+R=u^2/[15*(e+f_s)] --- u=?
+(2) Design speed=Existing speed /0.50
+(3) For design speed find the fs
+(4) R=u^2/[15*(e+f_s)]
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+[m]7.标志与警示设计(标志设置距离题)
+公式: SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)] 其中u1是初速度，u2是终速度，对于停车u2=0.
+Dr=感知反应距离
+Db=制动距离
+读取距离=字母高度*每英寸能看清的距离
+标志应放置的位置=SSD-读取距离
+
+[m]3-22 A temporary diversion has been constructed on a highway with a 4% gradient due to bridge repairs. The maximum speed allowed on the diversion is 10 mi/h. Determine the minimum distance from the diversion that a road sign should be placed to inform drivers of the temporary change.
+Maximum allowable speed on highway = 70 mi/h
+Letter height of road sign = 4"
+Perception-reaction time = 2.5 sec
+Assume that a driver can read a road sign at 40 ft per inch of letter height.
+3-22 由于桥梁维修，在坡度为4%的公路上建造了一条临时绕行路。绕行路的最高限速为10英里/小时。确定在绕行路前的最小距离放置路标，以通知驾驶员临时变更。
+高速公路上的最大允许速度 = 70英里/小时
+路标字母高度 = 4英寸
+感知-反应时间 = 2.5秒
+假设驾驶员可以在每英寸字母高度40英尺的距离内读取路标。
+Solution:(1) SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)]
+where u=70,t=2.5,u1=70,u2=10,G=+0.04.
+(2) Readability = (Letter height in inches) * 40feet/inch of letter height
+(3) x=SSD-readability distance
+
+[m]3-23 Repeat Problem 3-22 for a highway with a 3.5% downgrade and a diversion speed of 15 mi/h.
+Assume that a driver can read a road sign at 40 ft per inch of letter height.
+3-23 重复问题3-22，假设公路的坡度为3.5%，绕行路的限速为15英里/小时。
+假设驾驶员可以在每英寸字母高度40英尺的距离内读取路标。
+Solution: downgrade : G=-3.5%
+
+[m]3-24 An elevated expressway goes through an urban area and crosses a local street as shown in Figure 3.10. The cloverleaf exit ramp is on a 2% downgrade, and vehicles must stop at the intersection with the local street. Determine
+(a) minimum ramp radius, and
+(b) length of the ramp for the following conditions:
+Maximum speed on expressway = 60 mi/h
+Distance between exit sign and ramp = 260 ft
+Letter height of road sign = 3"
+Perception-reaction time = 2.5 sec
+Maximum superelevation = 0.08
+Expressway grade = 0%
+Assume a driver can read a road sign at 50 ft per inch of letter height and sees the stop sign upon entering the ramp.
+3-24 一条高架快速路穿过市区并跨越一条本地街道，如图3.10所示。四叶形出口匝道有2%下坡，所有驶出快速路的车辆在与本地街道交叉口处必须停车。确定：
+(a) 最小匝道半径，
+(b) 匝道的长度，以下条件下：
+快速路上的最高速度 = 60英里/小时
+出口标志到匝道的距离 = 260英尺
+路标字母高度 = 3英寸
+感知-反应时间 = 2.5秒
+最大超高 = 0.08
+快速路坡度 = 0%
+假设驾驶员可以在每英寸字母高度50英尺的距离内读取路标，并在进入匝道时看到停车标志。
+(1) Readability = (Letter height in inches) * 50feet/inch of letter height
+(2) x=SSD-readability distance=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)]-readability distance
+u=60,t=2.5,u1=60,G=0
+Calculate u2=?
+(3) R=u^2/[15*(e+f_s)] -- using u2
+(4) SSD=Dr+Db=1.47ut+(u1^2-u2^2)/[30*(0.35+-G)] --- using u2,G=-0.02
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+8.超车视距设计
+
+[m]3-25 Calculate the minimum passing sight distance required for a two-lane rural roadway with a posted speed limit of 45 mi/h. A speed study found:
+Average speed of passing vehicle = 47 mi/h
+Average acceleration = 1.43 mi/h/sec
+Average speed of impeder vehicles = 40 mi/h
+3-25 计算两车道农村公路的最小超车视距，假设限速为45英里/小时。速度研究显示：
+超车车辆的平均速度 = 47英里/小时
+平均加速度 = 1.43英里/小时/秒
+
+

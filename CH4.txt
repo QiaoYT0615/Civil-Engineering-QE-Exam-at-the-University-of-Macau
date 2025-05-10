@@ -1,0 +1,289 @@
+Chapter 4 - Traffic Engineering Studies
+
+[m]公式：使用标准正态分布Z值的样本容量计算 N=(Z*sigma/d)^2
+Z=1.96 (95%置信度); sigma=standard deviation 标准差; d=acceptable error limit 容忍误差。
+variance 方差=sigma^0.5
+
+[m]公式(t检验)：标准差平方 standard deviation^2: S^2= [Σ(ui-均u)^2]/(N-1)
+合并标准差 pooled standard deviation: Sd=[((S_b^2/n_b)+(S_a^2/n_a))/1]^0.5
+平均速度差 |均u_b-均u_a|
+临界值 Z*Sd
+|均u_b-均u_a|大于Z*Sd --- 差异显著
+|均u_b-均u_a|小于Z*Sd --- 差异不显著
+
+[m]公式:T=(ΣT)/n {运行编号n，旅行时间T}
+{N方向: 对向车辆平均数N_S, 超车本测试车车辆平均数O_N,被测车超越车辆平均数P_N,行驶时间(两方向平均)}
+V_N = [(N_S+D_N-P_N)*60]/(T_N+T_S)
+V_S = [(N_N+D_S-P_S)*60]/(T_N+T_S)
+调整后的行程时间: T_N'=T_N(观测) - [60*(O_N-P_N)]/V_N
+
+[m]公式：使用t分布的样本容量计算 N=(t_α*sigma/d)^2
+t_α=1.833 (5%显著性水平); sigma=standard deviation 标准差; d=acceptable error limit 容忍误差。
+variance 方差=sigma^0.5
+
+[m]公式: 停车场需求的“空间小时数” D=Σ(车辆比例*总车辆数*平均停放时间)
+
+[m]公式: 停车位数量 N=[D*(1+vancy rate)]/(E*总时间)
+
+[m]公式: 新增停车位N=新增需求delta D/(效率系数E*停车时段)
+D_5年后=D_现有*(1+r)^n
+新增需求delta D=D_5年后- D_现有
+
+---------------------------------------------------------------
+
+2.速度研究与统计分析
+
+[m]公式：使用标准正态分布Z值的样本容量计算 N=(Z*sigma/d)^2
+Z=1.96 (95%置信度); sigma=standard deviation 标准差; d=acceptable error limit 容忍误差。
+variance 方差=sigma^0.5
+
+[m]公式(t检验)：标准差平方 standard deviation^2: S^2= [Σ(ui-均u)^2]/(N-1)
+合并标准差 pooled standard deviation: Sd=[((S_b^2/n_b)+(S_a^2/n_a))/1]^0.5
+平均速度差 |均u_b-均u_a|
+临界值 Z*Sd
+|均u_b-均u_a|大于Z*Sd --- 差异显著
+|均u_b-均u_a|小于Z*Sd --- 差异不显著
+
+---------------------------------------------------------------
+
+[m]4-3 Speed data collected on an urban roadway yielded a standard deviation in speeds of ±4.8 mi/h.
+(a) If an engineer wishes to estimate the average speed on the roadway at a 95% confidence level so that the estimate is within 2 mi/h of the true average, how many spot speeds should be collected?
+(b) If the estimate of the average must be within ±1 mi/h, what should the sample size be?
+4-3 在城市道路上收集的速度数据显示标准差为±4.8 mi/h。
+(a) 如果一名工程师希望在95%置信水平下估计道路的平均速度，并且估计结果在真平均值±2 mi/h的范围内，那么应收集多少个点速度？
+(b) 如果估计的平均值需在±1 mi/h的范围内，所需的样本量是多少？
+Known Conditions:
+Standard deviation of speed data: ±4.8 mi/h
+Confidence level: 95% (z = 1.96)
+Desired tolerance in part (a): ±2 mi/h
+Desired tolerance in part (b): ±1 mi/h
+Formulation:
+N = [(z·σ)/d]^2
+Steps:
+For part (a) with tolerance d = 2 mi/h:
+N = [1.96(4.8)/2]^2 = 22.1 ≈ 23 spot speeds
+For part (b) with tolerance d = 1 mi/h:
+N = [1.96(4.8)/1]^2 = 88.5 ≈ 89 spot speeds
+
+---------------------------------------------------------------
+
+[m]4-4 An engineer wishing to obtain the speed characteristics on a bypass around her city at a confidence level of 95% and an acceptable limit of ±1.0 mi/h collected a total of 130 spot speed samples and determined that the variance is 25 (mi/h)2. Has the engineer met all of the requirements of the study?
+4-4 一位工程师希望在城市外环路上获得速度特性，并设置95%的置信水平和±1.0 mi/h的允许误差，她收集了130个点速度样本，并确定方差为25 (mi/h)2。工程师是否满足了研究的所有要求？
+Known Conditions:
+Confidence level: 95% (z = 1.96)
+Acceptable error limit: ±1.0 mi/h
+Collected samples: 130
+Variance: 25 (mi/h)^2 → Standard deviation (σ) = 5 mi/h
+Formulation:
+N = [(z·σ)/d]^2
+Steps:
+Calculate required minimum sample size:
+N = [1.96(5)/1]^2 = 96.04 ≈ 97 samples
+Compare with actual samples collected (130)
+Since 130 > 97, the sample size is adequate
+
+---------------------------------------------------------------
+
+[m]4-5 An engineer wishing to determine whether there is a statistically significant difference between the average speed of passenger cars and large trucks on a section of highway collected the data shown below. Determine whether the engineer can conclude that the average speed of large trucks is the same as that for passenger cars.
+	Trucks	Passenger Cars
+Average Speed mi/h	62 	59
+Standard Deviation ±mi/h	5.5	6.3
+Sample Size	275	175
+4-5 一名工程师希望确定乘用车与大型卡车在一段公路上的平均速度是否有显著性差异。根据以下数据，确定工程师是否能得出结论，即大型卡车的平均速度与乘用车相同。
+	卡车	乘用车
+平均速度 mi/h	62	59
+速度标准差 mi/h	5.5	6.3
+样本量	275	175
+
+Known Conditions:
+Data for trucks: Average speed = 62 mi/h, Standard deviation = 5.5 mi/h, Sample size = 275
+Data for passenger cars: Average speed = 59 mi/h, Standard deviation = 6.3 mi/h, Sample size = 175
+Confidence level: 95% (z = 1.96)
+Formulation:
+Pooled standard deviation: Sd = √[(S1^2/n1) + (S2^2/n2)]
+Test statistic: |μ1 - μ2| > z·Sd indicates significant difference
+Steps:
+Calculate pooled standard deviation:
+Sd = √[(5.5^2/275) + (6.3^2/175)] = √(0.11 + 0.2268) = √0.3368 ≈ 0.58
+Calculate critical value:
+Critical value = 1.96 × 0.58 = 1.137
+Calculate absolute difference in means:
+|62 - 59| = 3
+Compare difference with critical value:
+3 > 1.137, therefore the difference is statistically significant
+
+---------------------------------------------------------------
+
+[m]4-6 Assuming that the data shown in Table 4.2 were collected on a rural road in your state and consideration is being made to set the speed limit on the road. Speed limits of 50, 55, 60, and 65 mi/h are being considered. Plot the expected non-compliance percentages versus the associated speed limit on a graph and recommend the speed limit for the road. Give reasons for your selection.
+4-6 假设在您所在州的乡村道路上收集了表4.2中的数据，并且正在考虑设置道路的限速。考虑的限速有50、55、60和65 mi/h。在图表上绘制预期的违规百分比与相关的限速的关系，并推荐该道路的限速。说明您选择的理由。
+
+---------------------------------------------------------------
+
+[m]4-7 The accompanying data show spot speeds collected at a section of highway located in a residential area. Using the student’s t-test, determine whether there was a statistically significant difference in the average speeds at the 95% confidence level.
+4-7 附带的数据显示在一个居民区的高速公路路段上收集的点速度。使用学生t检验，确定在95%置信水平下，是否存在平均速度的显著差异。
+公式：标准差平方 standard deviation^2: S^2= [Σ(ui-均u)^2]/(N-1)
+合并标准差 pooled standard deviation: Sd=[((S_b^2/n_b)+(S_a^2/n_a))/1]^0.5
+平均速度差 |均u_b-均u_a|
+临界值 Z*Sd
+|均u_b-均u_a|大于Z*Sd --- 差异显著
+|均u_b-均u_a|小于Z*Sd --- 差异不显著
+
+Solution: Calculate pooled standard deviation:
+Sd = √[(3.209^2/30) + (5.444^2/30)] = 1.154
+Calculate critical value:
+Critical value = 1.96 × 1.154 = 2.262
+Calculate absolute difference in means:
+|35.1 - 27.5| = 7.6
+Compare difference with critical value:
+7.6 > 2.262, therefore the difference is statistically significant
+
+---------------------------------------------------------------
+
+[m]4-8 Using the data furnished in Problem 4-7, draw the histogram frequency distribution and cumulative percentage distribution for each set of data and determine:
+(a) average speed (b) 85th-percentile speed (c) 15th-percentile speed (d) mode (e) median (f) pace
+4-8 使用问题4-7中的数据，绘制每组数据的频率分布直方图和累计百分比分布，并确定：
+(a) 平均速度 (b) 85百分位速度 (c) 15百分位速度 (d) 众数 (e) 中位数 (f) 流行速度区间
+
+Solution:
+Calculate basic statistics:
+Average speed: Before = 35.1 mi/h, After = 27.5 mi/h
+Create frequency distribution and cumulative percentage plots
+Determine from the plots:
+85th percentile speed: Before = 38.4 mi/h, After = 33.6 mi/h
+15th percentile speed: Before = 30.8 mi/h, After = 20.5 mi/h
+Mode: Before = 35 mi/h, After = 21 mi/h
+Median: Before = 34.5 mi/h, After = 31 mi/h
+Pace: Before = 30-40 mi/h, After = 21-31 mi/h
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+4.行程时间与延误研究
+
+[m]公式:T=(ΣT)/n {运行编号n，旅行时间T}
+{N方向: 对向车辆平均数N_S, 超车本测试车车辆平均数O_N,被测车超越车辆平均数P_N,行驶时间(两方向平均)}
+V_N = [(N_S+D_N-P_N)*60]/(T_N+T_S)
+V_S = [(N_N+D_S-P_S)*60]/(T_N+T_S)
+调整后的行程时间: T_N'=T_N(观测) - [60*(O_N-P_N)]/V_N
+
+[m]公式：使用t分布的样本容量计算 N=(t_α*sigma/d)^2
+t_α=1.833 (5%显著性水平); sigma=standard deviation 标准差; d=acceptable error limit 容忍误差。
+variance 方差=sigma^0.5
+
+---------------------------------------------------------------
+
+[m]4-14 Table 4.10 shows data obtained in a travel time study on a section of highway using the moving-vehicle technique. Estimate: (a) the travel time (b) the volume in each direction at this section of the highway
+4-14 表4.10显示在使用移动车辆技术进行的行程时间研究中获得的数据。估算：(a) 行程时间 (b) 此公路路段上双向的交通流量
+公式:T=(ΣT)/n {运行编号n，旅行时间T}
+{N方向: 对向车辆平均数N_S, 超车本测试车车辆平均数O_N,被测车超越车辆平均数P_N,行驶时间(两方向平均)}
+V_N = [(N_S+D_N-P_N)*60]/(T_N+T_S)
+V_S = [(N_N+D_S-P_S)*60]/(T_N+T_S)
+调整后的行程时间: T_N'=T_N(观测) - [60*(O_N-P_N)]/V_N
+
+Formulation:
+Volume: v = [(N + O - P)·60]/(Tw + Ts)
+Adjusted travel time: T = Tobserved - [60(O - P)/v]
+Steps:
+Calculate traffic volume in each direction:
+VN = [(93.9 + 1.6 - 1.1)·60]/(5.25 + 4.90) = 558 veh/h
+VS = [(104.2 + 1.1 - 1.0)·60]/(5.25 + 4.90) = 617 veh/h
+Calculate adjusted travel times:
+TN = 5.25 - [60(1.6 - 1.1)/558] = 5.20 min
+TS = 4.90 - [60(1.1 - 1.0)/617] = 4.89 min
+
+---------------------------------------------------------------
+
+[m]4-15 An engineer, wishing to determine the travel time and average speed along a section of an urban highway as part of an annual trend analysis on traffic operations, conducted a travel time study using the floating-car technique. He carried out 10 runs and obtained a standard deviation of ±3 mi/h in the speeds obtained. If a 5% significance level is assumed, is the number of test runs adequate?
+4-15 一名工程师希望在城市高速公路的某段上测定行程时间和平均速度，作为交通运营年度趋势分析的一部分，使用浮动车法进行了行程时间研究。他进行了10次测试，并获得了±3 mi/h的速度标准。假设显著性水平为5%，测试次数是否足够？
+公式：使用t分布的样本容量计算 N=(t_α*sigma/d)^2
+t_α=1.833 (5%显著性水平); sigma=standard deviation 标准差; d=acceptable error limit 容忍误差。
+variance 方差=sigma^0.5
+
+Formulation:
+N = [(t·σ)/d]^2
+Steps:
+Calculate required number of test runs:
+N = [1.833(3)/3]^2 = 3.36 runs
+Compare with actual number of runs (10)
+Since 10 > 3.36, the number of test runs is adequate
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+5. 停车研究
+
+[m]公式: 停车场需求的“空间小时数” D=Σ(车辆比例*总车辆数*平均停放时间)
+
+[m]公式: 停车位数量 N=[D*(1+vancy rate)]/(E*总时间)
+
+[m]公式: 新增停车位N=新增需求delta D/(效率系数E*停车时段)
+D_5年后=D_现有*(1+r)^n
+新增需求delta D=D_5年后- D_现有
+
+---------------------------------------------------------------
+
+[m]4-18 Data collected at a parking lot indicate that a total of 300 cars park between 8 a.m. and 6 p.m.:
+10% of these cars are parked for an average of 2 hr;
+30% for an average of 4 hr;
+The remaining cars are parked for an average of 10 hr;
+Determine the space-hours of demand at the lot.
+4-18 在一个停车场收集的数据表明，从早上8点到下午6点共有300辆车停放：10%的车辆平均停放2小时，30%的车辆平均停放4小时，其余车辆的平均停放时间为10小时。计算停车场的空间需求小时数。
+公式: 停车场需求的“空间小时数” D=Σ(车辆比例*总车辆数*平均停放时间)
+
+Known Conditions:
+Total cars: 300
+Parking durations:
+10% park for average of 2 hours
+30% park for average of 4 hours
+60% park for average of 10 hours
+Formulation:
+D = Σ(percentage of cars × total cars × average parking time)
+Steps:
+Calculate space-hours for each category:
+D = (0.10×300×2) + (0.30×300×4) + (0.60×300×10)
+D = 60 + 360 + 1800 = 2,220 space-hours
+
+---------------------------------------------------------------
+
+[m]4-19 If 10% of the parking bays are vacant on average (between 8 a.m. and 6 p.m.) at the parking lot of Problem 4-18, determine the number of parking bays in the parking lot. Assume an efficiency factor of 0.85.
+4-19 如果在问题4-18的停车场中，平均10%的停车位空置（时间为早8点到下午6点），计算停车场中的停车位数量。假设效率系数为0.85。
+公式: 停车位数量 N=[D*(1+vancy rate)]/(E*总时间)
+
+Known Conditions:
+Demand: 2,220 space-hours (from Problem 4-18)
+Vacancy rate: 10%
+Efficiency factor: 0.85
+Parking period: 10 hours (8 a.m. to 6 p.m.)
+Formulation:
+N = [D×(1+vacancy rate)]/[E×parking period]
+Steps:
+Adjust demand for vacancy:
+Adjusted demand = 2,220×1.10 = 2,442 space-hours
+Calculate number of required spaces:
+N = 2,442/(0.85×10) = 287.29 ≈ 288 spaces
+
+---------------------------------------------------------------
+
+[m]4-20 The owner of the parking lot in Problems 4-18 and 4-19 is planning an expansion of her lot to provide adequate demand for the following 5 years. If she has estimated that parking demand for all categories will increase by 5% a year, determine the number of additional parking bays that will be required.
+4-20 问题4-18和4-19中的停车场的业主计划扩建停车场，以满足未来5年的需求。如果估计所有类别的停车需求每年将增长5%，计算所需的新增停车位数量。
+公式: 新增停车位N=新增需求delta D/(效率系数E*停车时段)
+D_5年后=D_现有*(1+r)^n
+新增需求delta D=D_5年后- D_现有
+
+Known Conditions:
+Current demand: 2,442 space-hours (from Problem 4-19)
+Annual growth rate: 5%
+Planning period: 5 years
+Efficiency factor: 0.85
+Parking period: 10 hours
+Formulation:
+Future demand = Current demand × (1 + growth rate)^years
+Additional spaces = [Additional demand]/[E×parking period]
+Steps:
+Calculate future demand:
+Future demand = 2,442 × (1.05)^5 ≈ 3,117 space-hours
+Calculate additional demand:
+Additional demand = 3,117 - 2,442 = 675 space-hours
+Calculate additional parking spaces needed:
+N = 675/(0.85×10) = 79.4 ≈ 80 spaces
+
