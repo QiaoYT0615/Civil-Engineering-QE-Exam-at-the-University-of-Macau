@@ -1,0 +1,141 @@
+4. 粘土矿物、土壤和岩石结构及演示分类
+
+4.1 比表面积计算 Specific Surface Area Calculation
+
+[m]Q4-1. 比表面积（立方体） Specific Surface of Cubes:
+Calculate the specific surface of a cube with the following side lengths: (a)10 mm,(b) 1 mm,(c) 1 μm, and (d) 1 nm. Calculate the specific surface in terms of both areas and m2/kg. Assume for the latter case that ρs = 2.65 Mg/m3.
+
+[m]公式: Surface area (cube): A=6*L^2 (L = side length of cube, in meters)
+Volume: V=L^3 (L = side length of cube, in meters)
+Specific surface per unit volume: S=A/V=(6L^2)/L^3=6/L
+Specific surface per unit mass: S_m=A/m=A/(ρV)=S*1000/ρs (ρs = specific gravity in Mg/m^3)
+1mm=10^-3 m, 1μm=10^-6 m, 1nm=10^-9 m.
+
+[m]SOLUTION: Solve using Eq. 4.2: Specific surface = surface area/unit volume
+(a) For a cube with side length 10 mm:
+Surface area = 6 × (100 mm2) = 600 mm2
+Volume = (10 mm)3 = 1000 mm3
+Specific surface = 600 mm2 / 1000 mm3 = 60 mm-1
+Specific surface in m2/kg:
+= (60 mm-1 × 1000 mm/m) / 2.65 Mg/m3 = 22,641 m2/Mg = 22.6 m2/kg
+(b) For a cube with side length 1 mm:
+Surface area = 6 × (1 mm2) = 6 mm2
+Volume = (1 mm)3 = 1 mm3
+Specific surface = 6 mm2 / 1 mm3 = 6 mm-1
+Specific surface in m2/kg:
+= (6 mm-1 × 1000 mm/m) / 2.65 Mg/m3 = 2264 m2/Mg = 2.26 m2/kg
+(c) For a cube with side length 1 μm:
+Surface area = 6 × (1 μm2) = 6 μm2
+Volume = (1 μm)3 = 1 μm3
+Specific surface = 6 μm2 / 1 μm3 = 6 μm?1
+Specific surface in m2/kg:
+= (6 μm-1 × 1000 μm/m) / 2.65 Mg/m3 = 2,264,151 m2/Mg = 2264 m2/kg
+(d) For a cube with side length 1 nm:
+Surface area = 6 × (1 nm2) = 6 nm2
+Volume = (1 nm)3 = 1 nm3
+Specific surface = 6 nm2 / 1 nm3 = 6 nm-1
+Specific surface in m2/kg:
+= (6 nm-1 × 1000 nm/m) / 2.65 Mg/m3 = 2,264,151,943 m2/Mg = 2,264,151,943 m2/kg
+
+[m]Q4-2. 比表面积（球体） Specific Surface of Spheres:
+Calculate the specific surface of (a) tennis balls, (b) ping pong balls, (c) ball bearings 1.5 mm in diameter, and (d) fly ash with approximately spherical particles 60 μm in diameter.
+
+[m]公式: Surface area (sphere): A=4pai*r^2 (r = radius in meters)
+Volume: V=(4/3)pai*r^3
+Specific surface per unit volume: S=A/V=(4pai*r^2)/((4/3)pai*r^3)=3/r
+
+[m]SOLUTION: Solve using Eq. 4.2: Specific surface = surface area/unit volume
+sphere surface area = 4πr2; sphere volume = 4/3*πr^3
+(a) Tennis ball (Dia. = 67 mm): 
+Specific surface = (3)(4)π(67/2 mm)^2 / [(4)π(67 mm/2)^3] = 0.089 mm-1
+(b) Ping pong ball (Dia. = 40 mm): 
+Specific surface = 3 / (40 mm/2) = 0.15 mm-1
+(c) Ball bearings (Dia. = 1.5 mm): 
+Specific surface = 3 / (1.5 mm/2) = 4.0 mm-1
+(d) Fly ash (Dia. = 60 μm): 
+Specific surface = 3 / (60 μm/2) = 0.10 μm-1 = 1 × 10^5 mm-1 = 100,000 mm-1
+
+[m]4.2 土壤颗粒排列与孔隙比 Particle Packing & Void Ratio
+
+[m]Q4-5. Verify that the maximum and minimum void ratios for perfect spheres given in Table 4.5 are reasonable.
+[m]SOLUTION: Three-dimensional particle arrangement of equal spheres has been studied in depth by mathematicians, statisticians, and materials scientists since the 1600s. A quick internet search on packing of equal spheres will reveal numerous mathematical theories and approaches for estimating the densest and loosest possible packing. In general, the loosest arrangement of equal spheres yields a void fraction of about 0.48, regardless of sphere size. The densest possible packing of equal-size spheres yields a solids volume of about: Vs = π / √18 ≈ 0.7405.
+(These values are approximate – there is not a unified consensus in the literature.)
+(A) Loosest packing:
+For Vt = 1.0, void volume: Vv = 0.48, and solid volume: Vs = 1 - 0.48 = 0.52;
+Porosity, n_max = (Vv / Vt) × 100 = (0.48 / 1.0) × 100 = 48%
+Void ratio, e_max = (Vv / Vs) = 0.48 / 0.52 = 0.92
+(B) Densest packing:
+Vs = 0.7405, Vt = 1.0 - 0.7405 = 0.2595, thus;
+n_min = (0.2595 / 1.0) × 100 = 26%
+e_min = 0.2595 / 0.7405 = 0.35
+These agree with the values of e_max and e_min in Table 4.5 for equal spheres.
+
+[m]4.3 粘土颗粒相互作用与结构 Clay Structure & Water Content
+
+[m]公式: 粒子体积 Volume of one particle: Vp = L * W * T
+总固体体积 Total solid volume: Vs = No. of particles * Vp
+孔隙体积 Void volume: Vv = Vt - Vs
+空隙比 Void ratio: e = Vv / Vs
+干土质量 Dry mass: Ms = Gs * Vs * ρs
+水质量 Water mass: M_w = Vw * ρ_w
+含水率 Water content: w = (M_w / Ms) * 100%
+
+[m]Q4-7. A specially processed clay has particles that are 500 nm thick and 10,000 nm x 10,000 nm wide. The specific gravity of solids is 2.80. The particles lie perfectly parallel with an edge-to-edge spacing of 400 nm (i.e., they look like thin bricks stacked perfectly parallel). (a) Initially, the cation valence in the double layer is +1, resulting in a face-to-face spacing of 1500 nm. How many particles per cm3 will there be at this spacing? What are the void ratio and water content, assuming that the soil is at 100% saturation?
+[m]SOLUTION:
+Assume symmetrical edge-to-edge spacing of 400 nm and only include whole particles.
+(a) No. of particles in horizontal plane along one edge = [(1×10^7)-(2*10,000)] / (10,000 + 400) = 959.6
+Truncate and add 2 for edges = 959 + 2 = 961
+No. of particles in plan = 961 × 961 = 923,521
+No. of particles in vertical plane along one edge = [(1×10^7) - (2 ×500)] / (500 + 1500) = 4999.5
+Truncate and add 2 for edges = 4999 + 2 = 5001
+Total number of particles = 923,521 × 5001 = 4,618,528,521
+Volume of one particle = (10,000 × 10,000 × 500) = 5.0 × 10^10 nm3 = 5 × 10^-11 cm3
+Vs = 4,618,528,521 × (5.0 × 10^10) = 2.30926 × 10^20nm3 = 0.23093 cm3
+For S = 100%: Vw = Vv = Vt - Vs = 1 - 0.23093 = 0.7691 cm3
+e = Vv / Vs = 0.7691 / 0.23093 = 3.33
+M_s = G_s × Vs × ρ_s = (2.80)(0.23093)(1 g/cm3) = 0.6466 g
+M_w = Vw × ρ_w = (0.7691)(1 g/cm3) = 0.7691 g
+Water content w = (M_w / M_s) × 100 = (0.7691 / 0.6466) × 100 = 118.9%
+(b) Another sample of the clay is mixed such that the cation valence is +2. What are the new void ratio and water content under these conditions?
+SOLUTION:
+Assume the face-to-face spacing doubles for a cation valence of +2.
+No. of particles in horizontal plane along one edge = (1×10^7) -(2× 10,000) / (10,000 + 400) = 959.6
+Truncate and add 2 for edges = 959 + 2 = 961
+No. of particles in plan = 961 × 961 = 923,521 (same as part a)
+No. of particles in vertical plane along one edge = (1×10^7)-  (2 ×500) / (500 + 3000) = 2856.9
+Truncate and add 2 for edges = 2856 + 2 = 2858
+Total number of particles = 923,521 × 2858 = 2,639,423,018
+Volume of one particle = (10,000 × 10,000 × 500) = 5.0 × 10^10nm3 = 5 × 10^-11 cm3
+Vs = 2,639,423,018 × (5.0 × 10^10) = 1.31971 × 10^20 nm3 = 0.13197 cm3
+For S = 100%: Vw = Vv = Vt - Vs = 1 - 0.13197 = 0.868 cm3
+e = Vv / Vs = 0.868 / 0.13197 = 6.58
+M_s = G_s × Vs × ρ_s = (2.80)(0.13197)(1 g/cm3) = 0.3695 g
+M_w = Vw × ρ_w = (0.868)(1 g/cm3) = 0.868 g
+Water content w = (M_w / M_s) × 100 = (0.868 / 0.3695) × 100 = 234.9%
+
+[m]4. 岩石质量分级 Rock Quality Designation
+
+[m]公式: 核心回收率 Core recovery: CR = (Σ L_recovered / L_total) * 100%
+岩石质量指数 RQD: RQD = (Σ L_sound > 100mm) / L_total * 100%
+
+[m]Q4-15. Three sections of rock core are shown in Fig. 4.32. The rock comes from near Cumberland, RI, and is called Corbormite (Capt. James T. Kirk, personal communication, 2007). The length of the first (top) run is 56 in. and the computed RQD is 82%. For the second run (middle), a length of 60 in. was recovered and the RQD is 100%. Finally, the third run (bottom) is also 5 ft long and the RQD is 95%. Verify that the calculated RQD values for the top and bottom runs are correct.
+[m]SOLUTION:
+RQD =[ Σ Length of sound pieces > 4 in ]/ Total core run length
+Determine numerator values by closely examining photographs in Fig. 4.32:
+(a) Top run RQD = (7 + 9 + 4 + 8.5 + 8 + 9) / 56 × 100 = 45.5 / 56 × 100 = 81.3%
+Thus, the given value of 82% appears reasonable.
+(b) Bottom run RQD = (7.5 + 8.5 + 7 + 11) / 60 × 100 = 34 / 60 × 100 = 57%
+The RQD value of 57% assumes all joints are natural (i.e., no mechanical breaks in this core run).
+Even if all the breaks and joints shown in Fig. 4.32 are mechanical, the reported value of 95% is still too high based on the percent recovery visible in the photo.
+
+[m]Q4-16. In one core run of 1500 mm selected from cores obtained during drilling for a bridge foundation in hard limestone, the following core recovery information was obtained: Determine (a) the percent core recovery, and (b) the RQD. Based on this RQD, what is the rock quality?
+[m]SOLUTION:
+(a) Core Recovery, CR = (Total length of rock recovered / Total core run length) × 100
+CR = (250 + 50 + 50 + 75 + 100 + 125 + 75 + 100 + 150 + 100 + 50 + 125) / 1500 × 100
+CR = 1250 / 1500 × 100 = 83.3%
+(b) RQD = ([Σ Length of sound pieces > 100 mm] / Total core run length) × 100
+RQD = (150 + 100 + 125 + 100 + 150 + 100 + 125) / 1500 × 100
+RQD = 850 / 1500 × 100 = 56.7%
+Based on the Rock Mass Classifications shown in Table 4.13, the limestone rock quality would be deemed fair.
+
+

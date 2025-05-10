@@ -1,0 +1,638 @@
+Ch11 莫尔圆、破坏理论及土壤和岩石的强度试验
+
+[m]公式: 
+(1) σ压正拉负; τ逆正顺负
+(2) A=(σ_y+σ_x)/2; B=(σ_y-σ_x)/2; C=τ_xy
+(3) σ_1=A+(B^2+C^2)^0.5; σ_3=A-(B^2+C^2)^0.5
+(4) tan2θs=C/B --- 主应力角方向 θp=(1/2)*tan^{-1}(C/B)=XXX rad
+1 rad=180/pai °
+(5) Pole: a1=XXX° from horizontal --- k1=tan(a1)
+a2=XXX° from horizontal --- k2=tan(a2)
+(y-τ_xy)/(x-σ_x)=k1
+(y-τ_yx)/(x-σ_y)=k2
+Pole = (x,y)
+(6) 斜截式求与水平面倾斜xx°的平面上应力。
+设应力(σ,τ) --- (τ-y)/(σ-x)=tan(xx°)
+圆方程(σ-a)^2+τ^2=r^2 
+圆心(a,0)=[(σ_3+(σ_1-σ_3)/2),0]
+tan2θs=-B/C --- θs=(1/2)*tan^{-1}(-B/C)=XXX rad
+Also θs=θp±45°
+
+11.1 点应力分析
+11.1.1 给定单元的应力分析
+
+[m]Q11-1. Given an element with stresses as indicated in the figure, find:
+(a) The major and minor principal stresses and the planes on which they act.
+(b) The stresses on a plane inclined at 30° from the horizontal.
+(c) The max. shear stress and the inclination of the plane on which it acts.
+Known: σ_x = 20 kPa, τ_xy = - 35 kPa (clockwise)
+σ_y = 100 kPa, τ_yx = 35 kPa (counter-clockwise)
+[m]SOLUTION:
+(6.85,0) (113.15,0)
+pole (20,35)
+(49.69,52.14) (60,53.15)
+(a) step 1: Calculate center and radius of Mohr's circle:
+A=(σ_y+σ_x)/2
+B=(σ_y-σ_x)/2
+C=τ_xy
+radius = (B^2+C^2)^0.5=√(40^2 + (-35)^2) = 53.15 kPa
+step 2: The major and minor principal stresses are:
+σ_1 = center + radius = A+(B^2+C^2)^0.5 =60 + 53.15 = 113.15 kPa
+σ_3 = center - radius = A-(B^2+C^2)^0.5 =60 - 53.15 = 6.85 kPa
+step 3: Calculate principal angle:
+tan2θ=C/B = -35/40=-0.875
+θ_p=(1/2)*tan^{-1}(-0.875)=-20.59°
+(b) Pole: a1=0° from horizontal --- k1=tan(a1)
+a2=0° from horizontal --- k2=tan(a2)
+(y-τ_xy)/(x-σ_x)=k1
+(y-τ_yx)/(x-σ_y)=k2
+Pole = (x,y)
+Calculate stresses at 30° using:
+(τ-y)/(σ-x)=tan(30°)
+(σ-a)^2+τ^2=r^2
+(a,0)=[(σ_3+(σ_1-σ_3)/2),0]
+So (σ,τ)= (49.69,52.14)
+(c) Maximum shear stress:
+τ_max = radius = 53.15 kPa --- (60,53.15)
+The orientation of the maximum shear stress is given by:
+tan2θs=-B/C
+θs=(1/2)*tan^{-1}(-B/C)= -24.41° measured CCW from the horizontal.
+
+[m]Q11-9. For the element shown in the figure:  
+(a) Find the magnitude of the unknown stresses σ_h and τ_h on the horizontal plane.  
+(b) Find the orientation of the principal stresses; clearly indicate their orientation in a small sketch.  
+(c) Show the orientation of the planes of maximum as well as minimum shear.
+(2, -2); (5, 3)
+[m]Solution  
+(1.3,0) (7.5,0)
+r=(4.4,0)
+(2,-2) (5,3) (4.4,-3.1) (4.4,3.1) 
+Solve using Mohr's circle and the pole method using the given stresses.
+Given:
+- Point 1: (2, -2)  
+- Point 2: (5, 3)
+圆的一般式: （x-A)^2+y^2=R^2 --- x^2+y^2-2Ax+A^2+R^2=0
+代入(2, -2) and (5, 3)
+解二元一次方程组，得到A=4.33, R=3.07
+即(x-4.33)^2+y^2=3.07^2
+当y=0时，求出小σ3=（1.26,0), 大σ1=(7.41,0)
+沿着给出平面方向在莫尔圆上画平行线，
+获得交点即为pole
+
+11.1 点应力分析
+11.1.2 单元旋转后的应力分析
+
+[m]Q11-2. Work Problem 11.1 with the element rotated 30° clockwise from the horizontal.
+σ_x = 20 kPa, σ_y = 100 kPa, τ_xy = - 35 kPa
+提醒: pole会变，(σ,τ)会变。
+[m]SOLUTION:
+(6.85,0) (113.15,0)
+pole (70,52)
+(60,53.15)(9.3,16)
+Solve using Mohr's circle and the pole method (see plot on next page).
+Given: σ_x = 20 kPa, σ_y = 100 kPa, τ_xy = -35 kPa
+The center of Mohr's circle is:
+center = (σ_x + σ_y) / 2 = (20 + 100) / 2 = 60 kPa
+The radius of Mohr's circle is:
+radius = √[((σ_x - σ_y) / 2)^2 + τ_xy^2] = √[((20 - 100) / 2)^2 + (35)^2] = 53.15 kPa
+(a) The major and minor principal stresses are:
+σ_1 = center + radius = 60 + 53.15 = 113.15 kPa
+σ_3 = center - radius = 60 - 53.15 = 6.85 kPa
+The principal angle, θ_p1, is given by:
+θ_p1 = 1/2 * cos^(-1)[(σ_y - σ_x) / 2R] 
+θ = θ_p1 + 30 = 1/2 * cos^(-1)[(100 - 20) / (2 * 53.15)] + 30 = 50.6° measured clockwise from the x-axis at σ_1.
+(b) At the given orientation of 30°:
+as show in the question image:
+σ_x1 =20kPa    λ_x1y1 = -35kPa   &  σ_y1 =100kPa    λ_x1y1 = 35kPa    
+(c) The maximum shear stress is given by the radius of the circle:
+λ_max = radius = 53.15 kPa
+The orientation of the maximum shear stress is given by:
+θ_s = 1/2 * tan^(-1)[(σ_x - σ_y) / 2τ_xy] = 1/2 * tan^(-1)[(20 - 100) / (2 * 35)] = 5.6° measured counterclockwise from the horizontal.
+
+11.1 点应力分析
+11.1.3 特定平面上的应力分析
+
+[m]Q11-3. With the element of Problem 11.1 rotated 40° clockwise from the horizontal, find the magnitude and direction of the stresses on the vertical plane.
+σ_x = 20 kPa, σ_y = 100 kPa, τ_xy = -35 kPa
+[m]SOLUTION:
+(6.85,0) (113.15,0)
+pole (98,37)
+(100,35) (98,-37) (20,-35)
+Solve using Mohr's circle and the pole method (see plot on next page).
+Given: σ_x = 20 kPa, σ_y = 100 kPa, τ_xy = 35 kPa
+The center of Mohr's circle is:
+center = (σ_x + σ_y) / 2 = (20 + 100) / 2 = 60 kPa
+The radius of Mohr's circle is:
+radius = √[((σ_x - σ_y) / 2)^2 + τ_xy^2] = √[((20 - 100) / 2)^2 + (35)^2] = 53.15 kPa
+The major and minor principal stresses are:
+σ_1 = center + radius = 60 + 53.15 = 113.15 kPa
+σ_3 = center - radius = 60 - 53.15 = 6.85 kPa
+From the Mohr circle:
+Pole (98, 37) indicates the principal stresses, and the stresses on a vertical plane are (98, -37).
+Thus, the stresses on the vertical plane are:
+σ = 98 kPa, τ = -37 kPa
+Answer:
+The magnitude of the stresses on the vertical plane is σ = 98 kPa and τ = -37 kPa.
+The direction is measured counterclockwise from the horizontal.
+
+[m]Q11-4. Work Example 11.3 with the element rotated 30° clockwise from the horizontal. In addition, find the stresses (magnitude and direction) on the horizontal plane.
+σ_x = -4 kPa, σ_y = 6 kPa, τ_xy = -2 kPa
+[m]SOLUTION:
+(-4.38,0) (6.38,0)
+pole (0.6,5.4)
+(-4,-2) (6,2)
+Solve using Mohr's circle and the pole method (see plot on next page).
+Given: σ_x = -4 kPa, σ_y = 6 kPa, τ_xy = 2 kPa
+The center of Mohr's circle is:
+center = (σ_x + σ_y) / 2 = (-4 + 6) / 2 = 1 kPa
+The radius of Mohr's circle is:
+radius = √(((σ_x - σ_y) / 2)^2 + τ_xy^2) = √((-4 - 6) / 2)^2 + (2)^2 = 5.38 kPa
+The major and minor principal stresses are:
+σ_1 = center + radius = 1 + 5.38 = 6.38 kPa
+σ_3 = center - radius = 1 - 5.38 = -4.38 kPa
+From the Mohr circle:
+Pole = (0.6, 5.4)
+(a) Stress on a horizontal plane:
+The stress on the horizontal plane is (0.6, 5.4).
+(b) The principal stresses are:
+σ_1 = 6.38 kPa, σ_3 = -4.38 kPa
+(c) The principal angles are:
+θ_p-1 = 43° (rotated cw from the x-axis)
+θ_p-3 = 47° (rotated ccw from the x-axis)
+(d) The max shear stress is:
+τ_max = 5.38 kPa
+Answer:
+The stresses on the horizontal plane are σ = 0.6 kPa and τ = 5.4 kPa.
+The principal stresses are σ_1 = 6.38 kPa and σ_3 = -4.38 kPa.
+The maximum shear stress is 5.38 kPa.
+
+11.1 点应力分析
+11.1.4 不同应力状态的莫尔圆分析
+
+[m]Q11-6. The state of plane stress in a body is described by the following stresses:
+σ1 = 8500 kN/m^2 (compression), σ3 = 1500 kN/m^2 (tension). 
+Determine by means of the Mohr circle the normal stress and shear stress on a plane inclined at 20° to the plane on which the minor principal stress acts. Check the results analytically. (After A. Casagrande.)
+σ_1 = 8.5 MPa, σ_3 = -1.5 MPa, τ_xy = 0
+[m]SOLUTION: 
+(-1.5,0) (8.5,0)
+pole (-1.5,0)
+(7.33,3.21)
+Solve using Mohr's circle and the pole method.
+Given: σ_1 = 8.5 MPa, σ_3 = -1.5 MPa, τ_xy = 0
+Center of the Mohr circle:
+Center = (σ_x + σ_y) / 2 = (8.5 + (-1.5)) / 2 = 3.5 MPa
+Radius of the Mohr circle:
+Radius = √[(σ_x - σ_y) / 2]^2 + (τ_xy)^2 = √[(8.5 - (-1.5)) / 2]^2 + (0)^2 = 5 MPa
+Assuming σ_3 acts in the horizontal direction on a vertical plane, the pole is (-1.5, 0).
+Normal stress and shear stress on the inclined plane:
+σ_α = (σ_1 + σ_3) / 2 + (σ_1 - σ_3) / 2 * cos(2 *α) = (8.5 + (-1.5)) / 2 + (8.5 - (-1.5)) / 2 * cos(2 * 20) = 7.33 MPa
+λ_α= (σ_1 - σ_3) / 2 * sin(2 *α) = (8.5 - (-1.5)) / 2 * sin(2 * 20) = 3.21 MPa
+Results:
+Normal stress (σ_α) = 7.33 MPa
+Shear stress (λ_α) = 3.21 MPa
+
+[m]Q11-7. At a certain critical point in a steel beam, on a vertical plane, the compressive stress is 115 MPa, and the shearing stress is 31.5 MPa. There is no normal stress on the longitudinal (horizontal) plane. Find the stresses acting on the principal planes and the orientation of principal planes with the horizontal. (After Taylor, 1948.)
+σ_x = 115 MPa, σ_y = 0 MPa, τ_xy = 31.5 MPa.
+[m]Solution
+(-8.1,0) (123,0)
+pole (115,-31.5)
+(115.31.5)
+Solve using Mohr's circle and the pole method (see plot below).
+Given:
+- Normal stress, σ_x = 115 MPa
+- Shear stress, τ_xy = 31.5 MPa
+- No normal stress on the horizontal plane, so σ_y = 0 MPa
+1. Calculate the center of the Mohr's circle:
+   center = (σ_x + σ_y) / 2 = (115 + 0) / 2 = 57.5 MPa
+2. Calculate the radius of Mohr's circle:
+   radius = √(((σ_x - σ_y) / 2)^2 + τ_xy^2) = √(((115 - 0) / 2)^2 + (31.5)^2) = 65.56 MPa
+3. Calculate the principal stresses:
+   σ_1 = center + radius = 57.5 + 65.56 = 123.1 MPa
+   σ_3 = center - radius = 57.5 - 65.56 = -8.06 MPa
+4. Determine the orientation of the principal planes:
+   The angle θ_p is given by:
+   θ_p-1 = 1/2 * tan^(-1)(2 * τ_xy / (σ_x - σ_y))
+   θ_p = 1/2 * tan^(-1)(2 * 31.5 / 115) = 76° (rotated counterclockwise from the x-axis)
+   The other principal plane angle:
+   θ_p-2 = 14° (rotated clockwise from the x-axis)
+
+
+[m]Q11-8. A soil sample is under a biaxial state of stress. On plane 1, the stresses are (13, 4), while on plane 2, the stresses are (5.8, -2). Find the major and minor principal stresses.
+σ_1 = 13 MPa, τ_xy = 4 MPa; σ_2 = 5.8 MPa, τ_xy = -2 MPa
+[m]Solution
+(5.3,0) (15.1,0)
+r=(9.8,0)
+Solve using Mohr's circle and the pole method (see plot below).
+Given:
+- On plane 1: σ_1 = 13 MPa, τ_xy = 4 MPa
+- On plane 2: σ_2 = 5.8 MPa, τ_xy = -2 MPa
+1. Plot the points:
+   - Point 1: (13, 4)
+   - Point 2: (5.8, -2)
+2. Construct a perpendicular bisector:
+   - The perpendicular bisector crosses the x-axis at the center of the Mohr’s circle, at (9.8, 0).
+3. Draw the Mohr’s circle:
+   - The center of the circle is at (9.8, 0).
+4. Determine the principal stresses:
+   - The major principal stress σ_1 = 15.1 MPa
+   - The minor principal stress σ_3 = 5.3 MPa
+
+[m]Q11-10. Given the element with stresses as shown in the figure:  
+(a) Find the magnitude and direction of σ_H and τ_H.  
+(b) Find the magnitude and direction of σ_1 and σ_3.  
+(4, 3) ; (8, -2)
+[m]Solution  
+(2.05,0) (8.65,0)
+r=(5.35,0)
+pole (8.65,0.3)
+(4,3) (8,-2)
+(2.05,0.3)
+Solve using Mohr's circle and the pole method using the given stresses.
+Given:
+- Point 1: (4, 3)  
+- Point 2: (8, -2)
+1. Plot the points:
+   - Plot the given points (4, 3) and (8, -2).
+   - Construct the perpendicular bisector, which crosses the x-axis at the center of the circle.
+2. Center and Radius:
+   - The center of the circle is (5.35, 0).
+   - The radius of the circle is 3.3.
+3. Graphically determine the pole:
+   - The pole is located at (8.65, 0.3).
+(a) Magnitude and direction of the unknown stresses on the horizontal plane:
+   - σ_H = 2.05 MPa
+   - τ_H = 0.3 MPa
+(b) Principal stresses:
+   - σ_1 = 8.65 MPa (on a plane oriented 87.4° clockwise from the horizontal)
+   - σ_3 = 2.05 MPa (on a plane oriented 2.6° counterclockwise from the horizontal)
+
+[m]Q11-11. Given the data of Example 11.5:  
+(a) Find the magnitude of the stresses on the horizontal plane.  
+(b) Find the maximum shear stress, and determine the angle between the plane on which it acts and the major principal plane.
+[m]Solution  
+(3.17,0) (8.83,0)
+pole (4,2)
+(8,-2) (8,2) (6,2.83)
+Solve using Mohr's circle and the pole method.
+Given:
+- Normal stress σ_x = 8 kPa
+- Normal stress σ_y = 4 kPa
+- Shear stress τ_xy = 2 kPa
+1. Calculate the center of the Mohr's circle:
+   center = (σ_x + σ_y) / 2 = (8 + 4) / 2 = 6 kPa
+2. Calculate the radius of the Mohr's circle:
+   radius = sqrt(((σ_x - σ_y) / 2)^2 + τ_xy^2) = sqrt(((8 - 4) / 2)^2 + (2)^2) = 2.83 kPa
+(a) Magnitude of the stresses on the horizontal plane:
+   - σ_h = 8 kPa
+   - τ_h = 2 kPa (on the horizontal plane)
+(b) Maximum shear stress and the angle:
+   - τ_max = 2.83 kPa on a plane rotated 45° counterclockwise from the major principal plane.
+
+
+11.2 莫尔-库伦破环准则 
+
+[m]公式: 
+(1)Use σ1 and σ3 to get phimax:
+sinphimax=(σ1-σ3)/(σ1+σ3+2c*ctgphi)
+where phimax＜phi (safe state), phimax=phi (critical state - failed), phimax＞phi (impossible state - failed).
+(2)Use σ3 to get σ_1f:
+σ_1f=σ_3*tan^2(45°+phi/2)+2c*tan(45°+phi/2)
+where σ_1＜σ_1f (safe state), σ_1=σ_1f (critical state - failed).
+(3)Use σ1 to get σ_3f:
+σ_3f=σ_1*tan^2(45°-phi/2)+2c*tan(45°-phi/2)
+where σ_3＞σ_1f (safe state), σ_1=σ_1f (critical state - failed).
+(4) Typical values of friction angles in sand:
+Sand, Rounded grains, loose: phi'=27°-30°
+Sand, Angular grains, dense: phi'=40°-45°
+Gravel with some sand: phi'=34°-48°
+Silts: phi'=26°-35°
+
+11.2.1 应力状态与破坏关系分析
+
+[m]Q11-12. The state of stress on a small element is σ_v = 21 kPa, σ_h = 10 kPa, and the shear stress on the horizontal plane is +3 kPa.  
+(a) Find the magnitude and directions of the major and minor principal stresses.  
+(b) If the material is a loose sand, can you say whether the element is in a state of failure? If it isn’t, how close is it? Why? State your assumptions clearly. (Assume φ' = 28° for the loose sand.)
+[m]Solution  
+Solve using Mohr's circle and the pole method.
+Given:
+- σ_x = 21 kPa
+- σ_y = 10 kPa
+- τ_xy = 3 kPa
+1. Calculate the center of the Mohr's circle:
+   center = (σ_x + σ_y) / 2 = (21 + 10) / 2 = 15.5 kPa
+2. Calculate the radius of the Mohr's circle:
+   radius = sqrt(((σ_x - σ_y) / 2)^2 + τ_xy^2) = sqrt(((21 - 10) / 2)^2 + (3)^2) = 6.265 kPa
+(a) Magnitude and directions of the principal stresses:
+   - σ_1 = center + radius = 15.5 + 6.265 = 21.76 kPa
+   - σ_3 = center - radius = 15.5 - 6.265 = 9.24 kPa
+   Principal stress directions: tan2θ=C/B=τ_xy/[(σ_y - σ_x)/2]
+   - θ_p-1 = 14.3° (rotated cw from horizontal)
+   - θ_p-3 = 104.3° (rotated cw from horizontal)
+(b) State of failure:
+   The element is not in a state of failure. The shear stress on the failure plane is about 1.2 kPa less than the shear stress on the failure plane at failure. This could be expressed as a factor of safety:
+   FS = shear stress on the failure plane / shear stress on the failure plane at failure = 6.44 / 5.28 = 1.2
+step 1: sinphimax=(σ1-σ3)/(σ1+σ3+2c*ctgphi)
+where c=0 
+sinphimax=(21.765-9.235)/(21.765+9.235)=0.404
+phimax=23.84° ＜ phi=28° 
+safe state
+step 2: σ_1f=σ_3*tan^2(45°+phi/2)=9.24*tan^2(45°+28°/2)
+σ_3f=σ_1*tan^2(45°-phi/2)=21.76*tan^2(45°-28°/2)
+σ_ff=(σ_1f+σ_3f)/2-[(σ_1f+σ_3f)/2]*sinphi
+τ_ff=σ_ff*tanphi
+τ_available=σ_n*tanphi=[(σ_1f+σ_3f)/2]*tanphi
+F.S.=τ_available/τ_ff
+
+[m]Q11-13. Given the vertical and horizontal normal stresses of Problem 11.12. Find the maximum values of shear stress on the horizontal and vertical planes to cause failure in a medium dense sand. Assume the angle of internal friction for the sand is 32°.
+[m]Solution  
+As shown in the Mohr circle diagram, a value of τ = 6.1 kPa on the vertical and horizontal planes will result in a failure condition.
+From the Mohr circle, the stresses for the failure condition are:
+- σ_1 = 21 kPa
+- σ_3 = 10 kPa
+Maximum shear stress is given by:
+τ_max = (σ_1 - σ_3) / 2 = (21 - 10) / 2 = 5.5 kPa
+The failure condition occurs at τ = 6.1 kPa, which is greater than the calculated maximum shear stress. Therefore, the element is at failure when the shear stress reaches 6.1 kPa.
+
+
+[m]Q11-14. The state plane stress in a mass of dense cohesionless sand is described by the following stresses:  
+- Normal stress on the horizontal plane = 296 kPa  
+- Normal stress on the vertical plane = 160 kPa  
+- Shear stress on horizontal and vertical planes = ±64 kPa  
+Determine by means of the Mohr circle the magnitude and direction of the principal stresses. Is this state of stress safe against failure?
+[m]Solution  
+Solve using Mohr's circle and the pole method.
+Given:
+- σ_x = 160 kPa
+- σ_y = 296 kPa
+- τ_xy = 64 kPa
+1. Calculate the center of the Mohr's circle:
+   center = (σ_x + σ_y) / 2 = (160 + 296) / 2 = 228 kPa
+2. Calculate the radius of the Mohr's circle:
+   radius = sqrt(((σ_x - σ_y) / 2)^2 + τ_xy^2) = sqrt(((160 - 296) / 2)^2 + (64)^2) = 93.38 kPa
+(a) Magnitude and directions of the principal stresses:
+   - σ_1 = center + radius = 228 + 93.38 = 321.38 kPa
+   - σ_3 = center - radius = 228 - 93.38 = 134.62 kPa
+   Principal stress directions:
+   - θ_p-1 = 21.63° (rotated cw from horizontal)
+   - θ_p-3 = 111.63° (rotated cw from horizontal)
+(b) State of failure:
+   For dense sand, assume φ' = 38°.
+   The element is not in a state of failure. The shear stress on the failure plane is about 61 kPa less than the shear stress on the failure plane at failure. This could be expressed as a factor of safety:
+   FS = shear stress on the failure plane / shear stress on the failure plane at failure = 125 / 64 = 2.0
+
+11.2 莫尔-库伦破环准则
+11.2.2 莫尔图解及不同平面的应力分析
+
+[m]Q11-15. At a given point within a sand deposit, the major, intermediate, and minor principal stresses are 10, 6, and 4 Mn/m^2, respectively. Construct the Mohr diagram, and from it scale the normal and shearing stresses and the obliquity angles on planes at 35°, 50°, 65°, and 80° from the major principal plane. (After Taylor, 1948.)
+[m]Solution  
+Given:
+- σ_1 = 10 MN/m2 (major principal stress)
+- σ_2 = 6 MN/m2 (intermediate principal stress)
+- σ_3 = 4 MN/m2 (minor principal stress)
+The following data for angles and the corresponding normal and shear stresses are given:
+| Angle (deg) | Normal Stress (MN/m2) | Shear Stress (MN/m2) |
+|---------|----------------|---------------|
+| 35          | 8.5                   | 2.60                 |
+| 50          | 7.75                  | 2.89                 |
+| 65          | 7.30                  | 2.97                 |
+| 80          | 7.05                  | 3.00                 |
+1. Construct the Mohr Circle:
+   - The center of the Mohr circle is at the average of the major and minor principal stresses:
+     center = (σ_1 + σ_3) / 2 = (10 + 4) / 2 = 7 MN/m^2
+   - The radius of the Mohr circle is half the difference between the major and minor principal stresses:
+     radius = (σ_1 - σ_3) / 2 = (10 - 4) / 2 = 3 MN/m^2
+2. Scale the normal and shear stresses:
+   - The Mohr diagram can be constructed by plotting the normal and shear stresses for the given angles: 35°, 50°, 65°, and 80°.
+3. Obliquity angles on planes:
+   - The obliquity angles are derived from the Mohr circle and the corresponding stresses for each plane.
+
+
+[m]Q11-16. A 1-m cube within a mass of stressed soil has a stress of 200 kPa on its top and bottom faces, 100 kPa on one pair of vertical faces, and 60 kPa on the other pair of vertical faces. There is no shear stress on any face. Fill in the following table. (After Taylor, 1948.)
+[m]Solution  
+Given:
+- σ_1 = 200 kPa (major principal stress)
+- σ_2 = 100 kPa (intermediate principal stress)
+- σ_3 = 60 kPa (minor principal stress)
+1. Calculate the center of the Mohr's circle:
+   center = (σ_1 + σ_3) / 2 = (200 + 60) / 2 = 130.0 kPa
+2. Calculate the radius of the Mohr's circle:
+   radius = sqrt(((σ_1 - σ_3) / 2)^2 + τ_xy^2) = sqrt(((200 - 60) / 2)^2 + (0)^2) = 70.0 kPa = λ_max
+3. sinφ' = R / C  → φ' =32.58°
+cos(90-φ') =x / R ; σ_ff = C-x
+cos(90-32.58) =x / 70  → x=37.693,  σ_ff =92.3kPa
+sin(90-φ')=τ_ff / R; τ_ff = 70*sin(90-32.58) = 58.98 kPa
+4. Principal Stresses and Planes:
+- Major Principal Plane:
+  σ_1 = 200 kPa, τ = 0 kPa, α = 0°
+- Intermediate Principal Plane:
+  σ_2 = 100 kPa, τ = 0 kPa, α = 90°
+- Minor Principal Plane:
+  σ_3 = 60 kPa, τ = 0 kPa, α = 90°
+- Plane of Maximum Shearing Stress:
+  σ = 130.0 kPa, τ = 70.0 kPa, α = 45°
+- Plane of Maximum Obliquity:
+  σ = 92.3 kPa, τ = 58.98 kPa, α = 32.58°
+
+
+[m]Q11-17. In Problem 11.16, what is φ, assuming c = 0?
+[m]Solution  
+Given:
+- σ_1 = 200 kPa (major principal stress)
+- σ_2 = 100 kPa (intermediate principal stress)
+- σ_3 = 60 kPa (minor principal stress)
+1. Calculate the center of the Mohr's circle:
+   center = (σ_1 + σ_3) / 2 = (200 + 60) / 2 = 130.0 kPa
+2. Calculate the radius of the Mohr's circle:
+   radius = sqrt(((σ_1 - σ_3) / 2)^2 + τ_xy^2) = sqrt(((200 - 60) / 2)^2 + (0)^2) = 70.0 kPa = λ_max
+3. Calculate the angle φ:
+   sin(φ') = R / C → φ' = 32.58°
+
+11.2 莫尔-库伦破环准则
+11.2.3 带破坏准则的莫尔圆分析
+
+[m]Q11-19. (a) Draw the Mohr circle for this point, showing the pole location.  
+(b) What are the stresses acting on a horizontal plane passing through this point?  
+(c) The cohesion intercept for this soil is given, and the friction angle is If the major principal stress remains the same, what would the minor principal stress have to be to cause failure?
+[m]Solution  
+Given:
+- σ_1 = 40 psi (major principal stress)
+- σ_3 = 10 psi (minor principal stress)
+- τ_xy = 10 psi
+1. Plot the points (40, 10) and (20, 10), and construct a perpendicular bisector.
+   - The perpendicular bisector crosses the x-axis at the center of the circle.
+2. Center and Radius of Mohr's Circle:
+   - Center = (30, 0)
+   - Radius = 14.14 psi
+(a) Mohr Circle and Pole Location:
+   - The Mohr circle is drawn with the center at (30, 0) and the radius of 14.14 psi.
+   - The pole is located at (26.2, 13.5).
+- σ_1 = 40 psi； - σ_3 = 15.9 psi
+(b) Stresses on the Horizontal Plane:
+   - On the horizontal plane:
+     - σ_H = 34.1 psi
+     - τ_H = 13.5 psi
+(c) Minor Principal Stress for Failure:
+   - The minor principal stress for failure is 2.05 psi.
+
+
+[m]Q11-20. The figure shows an element of soil at the interface between two dry sand layers on a 28° slope. The interface is 10 ft below the ground surface, and for both sand layers, the friction angle is 34° and Ko = 0.44. Assume that the shear stress is zero on both the vertical and horizontal planes.
+(a) Draw the Mohr circle for this point, and determine the pole location.  
+(b) Determine the normal and shear stresses on the soil interface (i.e., on the 28° plane).  
+(c) What is the shear stress on the failure plane (τf) and what is the shear stress on the failure plane at failure (τ_ff)? 
+Use these values to determine the factor of safety.
+[m]Solution  
+Given:
+- σ'_v = (112 pcf)(10 ft) = 1120 psf
+- σ'_h = Ko * σ'_v = (0.44)(1120) = 492.8 psf
+(a) Draw the Mohr circle and determine the pole location:
+   - Plot the points (1120, 0) and (492.8, 0), and draw the Mohr circle.
+   - The center of the Mohr circle is at (806.4, 0).
+   - The radius of the Mohr circle is 313.6 psf.
+   - Graphically determine the pole location at (492.8, 0).
+Principal stresses:
+- σ_1 = 44.1 psf
+- σ_3 = 15.9 psf
+(b) Normal and shear stresses on the soil interface (28° plane):
+   - Normal stress: σ_28 = 1008 psf
+   - Shear stress: τ_28 = 241 psf at 28° from the horizontal plane.
+(c) Shear stress on the failure plane and at failure:
+45+φ' / 2 = 45 + 34 / 2 = 62°
+The failure plane is drawn from σ_3 at 62° from the horizontal.
+From the Mohr circle:
+τ_f = 259 psf
+τ_ff = 352 psf
+The factor of safety (FS) is calculated as:
+FS = τ_ff / τ_f = 352 / 259 = 1.36
+
+11.3 土壤和岩石强度试验分析
+11.3.1 直剪试验和简单剪切试验分析
+
+[m]Q11-26. In a direct shear test on a specimen of cohesionless sand, the vertical normal stress on the specimen is 240 kN/m^2 and the horizontal shear stress at failure is 160 kN/m^2.  (a) Assuming uniform stress distribution within the failure zone and a straight line failure envelope which goes through the origin, determine by means of the Mohr circle the magnitude and direction of the principal stresses at failure.  
+[m]Solution  
+Given:
+- Vertical normal stress σ_v = 240 kN/m^2
+- Horizontal shear stress at failure τ_xy = 160 kN/m^2
+1. Plot the points (240, 160) and (0, 0), which define the failure envelope at 33.69°.  
+   - A normal to the failure envelope crosses the x-axis at the center of the Mohr circle.
+2. Center and Radius of Mohr's Circle:
+   - Center = (346.66, 0)
+   - Radius = 192.29 kPa
+3. (a) Draw a horizontal line from (240, 160) to locate the pole at (453.32, 160).
+Principal stresses:
+- σ_1 = 538.95 kPa at 61.8° clockwise from the horizontal.
+- σ_3 = 154.37 kPa at 28.2° counterclockwise from the horizontal.
+
+
+[m]Q11-27. A specimen of sand is tested in direct simple shear. The stress conditions are shown.  
+- Initial conditions: σ_v = 3.12 kg/cm^2, K_o = 0.5  
+- At failure: σ_v = 3.12 kg/cm^2, τ_hv = 1.80 kg/cm^2
+(a) Draw the Mohr circles for both initial and final stress conditions.  
+(b) Show clearly the locations of the poles of these circles.  
+(c) Determine the magnitude and orientation of the principal stresses at failure.  
+(d) What is the orientation of the failure plane?  
+(e) If the shear strain at failure is 10° as shown in the figure, what are the stresses on the sides of the specimen at failure?
+[m]Solution  
+Given:
+- σ_v = 3.12 kg/cm2
+- K_o = 0.5
+- τ_hv = 1.80 kg/cm2
+σ_h = K_o* σ_v = 0.5*3.12 = 1.56 kg/cm^2
+1. Initial Circle:
+   - Center = (2.34, 0)
+   - Radius = 0.78 kg/cm^2
+   - Pole = (1.56, 0)
+2. Final Circle:
+   - Center = (2.34, 0)
+   - Radius = 1.96 kg/cm^2
+   - Pole = (1.56, -1.8)
+(a) Draw the Mohr circles for initial and final stress conditions:
+   - The Mohr circle for the initial and final conditions are drawn based on the center, radius, and pole location provided.
+(b) Locations of the poles:
+   - Initial circle pole: (1.56, 0)
+   - Final circle pole: (1.56, -1.8)
+(c) Magnitude and orientation of the principal stresses at failure:
+   - σ_1 = 4.30 kg/cm2 at 33.3° counterclockwise from horizontal
+   - σ_3 = 1.96 kg/cm2 at 56.7° clockwise from horizontal
+(d) Orientation of the failure plane:
+   - The orientation of the failure plane is determined from the Mohr circle diagram.
+(e) Stresses on the sides of the specimen at failure:
+   - From the Mohr circle:
+     - σ_s = 2.22 kg/cm^2
+     - τ_s = 1.96 kg/cm^2 at 10° from horizontal.
+
+11.3 莫尔-库伦破环准则
+11.3.2 三轴试验分析
+
+[m]Q11-28. Two conventional CD triaxial compression tests were conducted on a dense angular dry sand at the same void ratio. Test A had a confining pressure of 150 kPa, while in test B the confining pressure was 600 kPa; these stresses were held constant throughout the test. At failure, tests A and B had maximum principal stress differences of 600 and 2550 kPa, respectively.  
+(a) Plot the Mohr circles for both tests at initial conditions and at failure.  
+(b) Assuming c = 0, determine ψ.  
+(c) What is the shear stress on the failure plane at failure for both tests?  
+(d) Determine the theoretical orientation of the failure plane in each specimen.  
+(e) What is the orientation of the plane of maximum obliquity?
+[m]Solution  
+Given:
+- Test A: σ_1 = 750 kPa, σ_3 = 150 kPa, τ_xy = 0
+- Test B: σ_1 = 3150 kPa, σ_3 = 600 kPa, τ_xy = 0
+Known:
+center = (σ_x+σ_y)/2
+radius = √[((σ_x-σ_y)/2)^2+λ_xy^2]
+1. Mohr Circle for Initial Conditions and Failure:
+   - Test A:
+     - Center = (435, 0)
+     - Radius = 285 kPa
+     - Pole = (150, 0)
+   - Test B:
+     - Center = (1875, 0)
+     - Radius = 1275 kPa
+     - Pole = (600, 0)
+(a) Plot the Mohr circles for both tests at initial conditions and at failure:
+   - The Mohr circles are plotted based on the given center, radius, and pole locations.
+(b) Determine ψ (friction angle):
+   - From the plot:
+     φ' = 43°
+(c) Shear stress on the failure plane at failure for both tests:
+λ_α = (σ_1+σ_3)/2 *sin(2α)
+   - Test A:
+     - α = 66.5°, λ_αA = (750 - 150)/2 *sin(2*66.5) = 219.4 kPa
+   - Test B:
+     - α = 66.5°, λ_αB = (3150-600)/2 *sin(2*66.5) = 932.5 kPa
+(d) Theoretical orientation of the failure plane:
+   - Test A: α = 66.5°
+   - Test B: α = 66.5°
+(e) Orientation of the plane of maximum obliquity:
+   - The orientation of the plane of maximum obliquity is α = 66.5°,  θ_max = φ'= 43°.
+
+
+[m]Q11-29. Two consolidated–drained triaxial tests were performed on specimens of the same clay, with the following results at failure:
+- Test 1: σ'_1 = 73.4 psi, σ'_3 = 26.6 psi
+- Test 2: σ'_1 = 48.0 psi, σ'_3 = 12.0 psi
+Determine the effective Mohr–Coulomb failure envelope (φ' and c) based on these test results.
+[m]Solution：
+From the Mohr-Coulomb plot:
+- φ' = 17°
+- c = 10 psi
+
+11.3 莫尔-库伦破环准则
+11.3.3 侧向伸长与压缩试验分析
+
+[m]Q11-30. A triaxial specimen of loose sand is first consolidated nonhydrostatically, with σ_1 = 15 kPa and σ_3 = 10 kPa. The sample is then failed by holding the vertical stress constant and decreasing the horizontal stress (this is a lateral extension test). The angle of internal friction is 30° (c = 0).
+(a) Draw the Mohr circles for both initial and “at failure” conditions.
+(b) What will be the major and minor principal stresses at failure?
+[m]Solution :
+(a) Mohr Circle Representation:
+   - See the Mohr circle plot in the figure provided.
+(b) Principal Stresses at Failure:
+   - σ_1 = 15 kPa
+   - σ_3 = 5 kPa
+
+
+[m]Q11-31. Another sample of the same sand tested in Problem 11.30 (consolidated nonhydrostatically, with σ_1 = 15 kPa and σ_3 = 10 kPa) is tested by holding the vertical stress constant and increasing the horizontal stress (this is a lateral compression test). The angle of internal friction is 30° (c = 0).
+(a) Draw the Mohr circles for both initial and “at failure” conditions.
+(b) What will be the major and minor principal stresses at failure?
+[m]Solution ：
+(a) Mohr Circle Representation:
+   - See the Mohr circle plot in the figure provided.
+(b) Principal Stresses at Failure:
+   - σ_1 = 45 kPa
+   - σ_3 = 15 kPa
+

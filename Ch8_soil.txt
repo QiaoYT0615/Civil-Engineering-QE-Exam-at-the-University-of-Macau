@@ -1,0 +1,825 @@
+Ch8 土壤和岩土的压缩性 Compressibility of Soils and Geomaterials
+
+[m]8.4.4 应用类沉降问题 Field Settlement Estimation & Engineering Application
+
+公式 1: 常固结土沉降公式 / Settlement in Normally Consolidated Clay
+适用于OCR = 1的土层，沉降由主压缩主导。
+For NC clay (OCR = 1), settlement is governed by virgin compression.
+sc = Ccε * H_0 * log((σ′vo + Δσv) / σ′vo)
+(Ccε = modified compression index; H_0 = clay layer thickness [m or ft]; σ′vo = initial vertical effective stress [kPa or psf]; Δσv = stress increase [kPa or psf])
+
+公式 2: 超固结土沉降（两段式）/ Settlement in Overconsolidated Clay (Two-Part Formula)
+用于OCR > 1的土体，沉降由回压缩与主压缩两段组成。
+For OC clay, settlement includes recompression and virgin compression phases.
+sc = Crε * H_0 * log(σ′p / σ′vo) + Ccε * H_0 * log((σ′vo + Δσv) / σ′p)
+(Crε = modified recompression index; σ′p = preconsolidation pressure)
+
+公式 3: 卸载引起的膨胀 / Swell Due to Unloading
+当外荷移除时土层会回弹膨胀。
+Upon unloading, swelling occurs due to stress release.
+s_swell = Crε * H_0 * log(σ′before / σ′after)
+(σ′before = effective stress before unloading; σ′after = after unloading)
+
+公式 4: 双折线压缩曲线计算 / Bilinear Compression Curve
+适用于存在两个不同斜率的e–logσ′段落。
+Used when compression curve has two slopes.
+εv = C_1 * log(σ′2 / σ′1) + C_2 * log(σ′3 / σ′2)
+(C_1, C_2 = slope of each segment; σ′ = effective stress)
+sc = εv * H_0
+(εv = total vertical strain; H_0 = layer thickness)
+
+公式 5: 压缩曲线估算 Cr 与 Cc / Estimating Cr and Cc from Compression Curve
+根据e–logσ′图中不同区段的斜率求得。
+Derived from slopes of e–logσ′ plot.
+Cc = (e_1 - e_2) / log(σ′2 / σ′1) (Virgin 压缩段）
+Cr = (e_1 - e_2) / log(σ′2 / σ′1) (回压缩段）
+(e = void ratio; σ′ = effective vertical stress)
+
+公式 6: 使用应变计算沉降 / Settlement from Vertical Strain
+由已知应变计算沉降。
+Compute settlement from vertical strain.
+sc = ε * H_0
+(ε = vertical strain; H_0 = layer thickness)
+
+公式 7: 对数插值法 / Logarithmic Interpolation
+在半对数坐标中估算中间应力。
+Estimate unknown stress along log scale.
+x = (x_2)^f * (x_1)^(1-f), f = a / (a + b)
+(x_1, x_2 = known stress points; f = interpolation factor)
+
+单位与换算参考 / Units & Conversions:
+1 ft = 0.3048 m
+1 psf = 47.88 Pa
+1 kPa = 1 kN/m^2
+log 表达式 = 常用以10为底 log_10
+e, Cc, Cr, ε = dimensionless (无单位)
+Ccε, Crε = 修正指数，常用于图像回归
+
+------------------------------------------------------------
+
+[m]Q8-31. Figure P8.31 shows a proposed foundation site, with 10 ft of sand overlying 15 ft of clay with consolidation properties shown. The clay is normally consolidated. Assume 1-D conditions. 
+(a) Compute the initial σ'v at the middle of the clay layer prior to excavation and construction. 
+(b) After excavation and during construction, the foundation area will be heavily loaded with the structure and equipment so that σ'v at the middle of the clay layer will be increased to 3900 psf. Determine the settlement that will occur under these conditions. 
+(c) After construction is completed, the equipment will be removed and the final σ'v at the middle of the clay layer will be 3200 psf. 
+
+[m]SOLUTION: 
+Normal consolidation --- OCR=1 σ'p=σ'v0
+Eq. σ'v0 = (γ_d*H)_Sand+(γ_d*H)_Clay = (γ_d*H)_Sand+((γt-γw)*H)_Clay
+(a) σ'v0 = (10 ft)(110 pcf) + (7.5 ft)(120 - 62.4 pcf) = 1532 psf
+(b) σ'v0+Δσv = 3900 psf
+Δσv = (σ'v0+Δσv)-σ'v0 = 3900 - 1532 = 2368 psf
+Now (σ'v0+Δσv)＞σ'p, normal consolidation --- using Ccε.
+Given: Ccε = 0.165, Crε = 0.033, H0 = 15 ft
+Eq. 8.13: sc = Ccε * H0 * log((σ'v0 + Δσv) / σ'v0)
+sc = (0.165)(15 ft) * log((1532 + 2368) / 1532) = 1.0 ft
+(c) Δσv = 3200 - 1532 = 1668 psf
+3200 psf ＜ 3900 psf 历史最大超过现有 --- 回弹 swell
+Compute the swell that occurs after equipment is removed (part b to part c):
+s_swell = Crε * H0 * log(σb - σc)
+s_swell = (0.033)(15) * (log(3900) - log(3200)) = 0.0425 ft
+The final settlement = 1.0 - 0.0425 = 0.96 ft
+
+------------------------------------------------------------
+
+[m]Q8-32. As part of a construction project, a 7.5 m thick layer of clay is to be loaded with a temporary 3 m thick sand layer (refer to Fig. P8.32). The figure shows the water-table location, soil unit weights, and the compression curve properties for the clay. Assume the sand layer remains dry.
+(a) Calculate the value of σ'v in the middle of the clay layer (at 3.75 m below the water table) before the sand layer is applied, and after consolidation is complete.
+(b) Based on your answer in part (a), and the compression curve characteristics, calculate the settlement that will occur under these conditions.
+(c) How much will the clay layer heave when the 3 m sand layer is removed?
+
+[m]Solution:
+(a) To calculate the value of σ'v before the sand layer is applied:
+σ'v0 = (γ_d*H)_Clay = ((γt-γw)*H)_Clay
+σ'v0 = (3.75 m) × (20.5 - 9.81 kN/m^3) = 40.09 kN/m^2
+(b) For the settlement calculation, first, find Δσv:
+Δσv = (3 m) × (16 kN/m^3) = 48.0 kN/m^2
+Next, calculate the OCR (Over Consolidation Ratio):
+OCR = σ'p / σ'vo = 74 kPa / 40.09 kPa = 1.85＞1
+σ'vo+Δσv＞σ'p --- consider Crε+Ccε
+Now, use the formula from Eq. 8.19b to calculate the settlement sc:
+sc = Crε H0 log(σ'p / σ'vo) + Ccε H0 log((σ'v0 + Δσv) / σ'p)
+Substituting the values:
+sc = (0.03)(7.5 m) log(74 / 40.09) + (0.18)(7.5 m) log((40.09 + 48) / 74)
+sc = (7.5 m)*(0.00799)+(7.5m)*0.01362
+sc = 0.05992 + 0.1022 = 0.162 m = 162 mm
+(c) To calculate the heave when the sand layer is removed:
+removed之后就剩 σ'v=σ'vo＜σ'vo+Δσv --- consider Csε
+s_swell = Csε Ho log(σ'vf / σ'vo)
+s_swell = (0.03)(7.5 m) log((40.09 + 48.0) / 40.09) = (7.5 m)*(0.01026)
+s_swell = 0.077 m = 77.0 mm
+
+------------------------------------------------------------
+
+[m]Q8-33. Refer to Fig. 8.5a. Determine: 
+(a) Using log interpolation between 100 and 1000, determine the σv value at a vertical strain, εv = 20%. 
+(b) If the initial void ratio, e0 = 2.6, determine Cr and Cc for this soil. For Cc, use the portion of the curve between σ'v = 100 and 500 kPa. 
+(c) If the original clay layer thickness is 9.5 m, determine the settlement that occurs in the layer when it is loaded from 200 to 400 kPa. 
+[Note: You don’t need the results from part (b) to do this.]
+
+[m]Solution:
+(a) There are various approaches for interpolating logarithmic scales. One approach for interpolating the desired x (or σv) value is as follows:
+x = (x2)^f * (x1)^(1-f) where, f = a / (a + b)
+In this case, the x data point at εv = 20% is 18.2% of the way between 100 and 1000 kPa.
+Thus, f = 0.182 and:
+x = (1000^0.182) × (100^0.182) = (3.5156)(43.2514) = 152 kPa
+Therefore, at εv = 20%, σv' = 152 kPa.
+(b) Modified Compression index Ccε:
+Ccε = (ε2 - ε1) / (log σ'2 - log σ'1) = (0.34 - 0.13) / (log 500 - log 100) = 0.300
+Eq. Ccε = Cc/(1 + e0)
+So, Compression index Cc:
+Cc = Ccε(1 + e0) = (0.30)(1 + 2.6) = 1.08
+Modified Recompression index Crε:
+Crε = (ε2 - ε1) / (log σ'2 - log σ'1) = (0.07 - 0.0) / (log 1000 - log 10) = 0.035
+Recompression index Cr:
+Cr = Crε(1 + e0) = (0.035)(1 + 2.6) = 0.126
+(c) For the load increment from 200 to 400 kPa:
+Δε = 32 - 23 = 9.0% (From plot in Fig. 8.5a)
+Settlement sc:
+sc = (Δε) × (H0) = (0.09)(9.5 m) = 0.855 m = 855 mm
+
+------------------------------------------------------------
+
+[m]Q8-34. A large embankment is to be built on the surface of a 15-ft clay layer. Before the embankment is built, the initial σ’v at the middle of the clay layer is 480 psf. The results from a 1-D consolidation test on the clay from the middle of the layer are as follows: 
+σ'p = 1800 psf; Crε = 0.0352; Ccε = 0.180 
+If the final σ'v at the middle of the layer after the embankment loading is 2100 psf, what is the settlement, in inches, of the clay layer resulting from this loading? 
+
+[m]SOLUTION: 
+(a) σ'vo = 480 psf, σ'vf = 2100 psf, 
+OCR = σ'p / σ'vo = 1800 psf / 480 psf = 3.75 ＞ 1
+σ'vf ＞ σ'p --- using Crε+Ccε
+Use Eq. 8.19b: 
+sc = Crε * H0 * log(σ'p / σ'vo) + Ccε * H0 * log((σ'v0 + Δσv) / σ'p)
+sc = (0.0352)(15 ft)log(1800 / 480) + (0.18)(15 ft)log(2100 / 1800)
+sc = 0.3031 + 0.1808
+sc = 0.4839 ft = 5.8 inches
+Thus, the settlement is 5.8 inches.
+
+------------------------------------------------------------
+
+[m]Q8-35. Figure P8.35 shows a proposed site where an excavation will be made. The 10 ft layer of sand will be removed, so that the top of the 24 ft normally consolidated clay layer will be exposed. Assume full capillarity in the clay only. 
+(a) Assume that the water-table location remains the same during excavation. Compute the σv, σ'v, and u values at the middle of the clay layer before and after the excavation. 
+(b) Assuming 1-D conditions, compute how much the clay layer will deform due to this excavation, in inches. Specify whether this is settlement or heave. 
+
+[m]SOLUTION: 
+(a) Before excavation:
+σv = (10 ft)(110 pcf) + (12 ft)(120 pcf) = 2540 psf
+u = (12 - 3 ft)(62.4 pcf) = 561.6 psf
+σ'v = 2540 - 561.6 = 1978 psf
+After excavation:
+σv = (12 ft)(120 pcf) = 1440 psf
+u = (12 - 3 ft)(62.4 pcf) = 561.6 psf
+σ'v = 1440 - 561.6 = 878 psf
+(b) Δσ'v = 1978 - 878 = 1100 psf, 
+σ'p = σ'v = 1978 psf ＞ 878 psf --- 现有有效小于历史最大 --- using Csε
+S_swell = Csε * H0 * log(σ'p / σ'v) = (0.035)(24 ft) * log(1978 / 878) 
+S_swell = (24 ft)(0.01234) = 0.2963 ft
+S_swell = 0.2963 ft * 12 in/ft = 3.5 inches (heave)
+
+------------------------------------------------------------
+
+[m]Q8-36. Figure P8.36 shows the soil profile at a site where you plan to lower the water table. You have results from two consolidation tests, one from the upper 12 ft thick overconsolidated crust, and another from the lower 32 ft thick normally consolidated zone. You plan to lower the water table from its current 12 ft depth to 20 ft below ground surface. The consolidation properties for each layer are shown. Assume full capillarity. 
+(a) Compute the σ'v in the middle of each layer before and after the water table is lowered. 
+(b) Determine the total settlement that will result from lowering the water table.
+
+[m]SOLUTION: 
+(a) Step1: Center of layer 1: original water table at 12 ft
+σv = (6 ft)(120 pcf) = 720 psf; u = 0; σ'v0 = 720 psf
+Center of layer 2: original water table at 12 ft
+σv = (12 ft)(120 pcf) + (16 ft)(118 pcf) = 3328 psf
+u = (28 - 12 ft)(62.4 pcf) = 998.4 psf
+σ'v0 = 3328 - 998.4 = 2329.6 psf
+
+Step2: Center of layer 1: water table lowered to 20 ft
+σv = (6 ft)(120 pcf) = 720 psf; u = 0; σ'vf = 720 psf (no change)
+[始终在水位线以上，处于干燥状态]
+Center of layer 2: water table lowered to 20 ft
+σv = (12 ft)(120 pcf) + (16 ft)(118 pcf) = 3328 psf
+[注意降低水位线前后土体各自的重度没变、土质没变；所以这块在计算时不能受到水位线变化的干扰]
+u = ((12+16) - 20 ft)(62.4 pcf) = 499.2 psf
+σ'v = 3328 - 499.2 = 2828.8 psf
+
+(b) Consolidation settlement will occur in layer 2.
+Δσ = 2828.8 - 2329.6 = 499.2 psf
+Layer 2: σ'p2 = σ'v0 = 2329.6 psf
+OCR=1, σ'vf ＞ σ'v0 --- normal consolidation
+Given: Ccε = 0.185, Crε = 0.034, H0 = 32 ft
+Using equation 8.13: Sc = Ccε * H0 * log((σ'vo + Δσv) / σ'vo)
+Sc = (0.185)(32 ft) * log((2329.6 + 499.2) / 2329.6)
+Sc = 0.499 ft = 6.0 in (settlement)
+
+------------------------------------------------------------
+
+[m]Q8-37. When a consolidation test is performed on some soils, the virgin compression region is not linear, but bilinear. Figure P8.37 shows such a compression curve from a 15 ft thick layer. Required: 
+(a) What vertical strain, ε, occurs when the soil is loaded from an initial σ'v1 = 560 psf to σ'v2 = 3000 psf? 
+(b) If you load the soil further, to σ'v3 = 4000 psf, how much additional settlement occurs? 
+(c) Finally, if you unload from 4000 psf back to σ'v4 = 3000 psf, what additional deformation (in ft) occurs? 
+
+[m]SOLUTION: 
+Eq. εv = Crε*log(σ'p/σ'v)+Ccε*log(σ'v2/σ'p)
+(a) Vertical strain when loading from σ'v1 = 560 psf to σ'v2 = 3000 psf:
+εv = (0.032) * log(980 / 560) + (0.14) * log(3000 / 980) = 0.00778 + 0.068 = 0.0758
+εv = 7.58%
+Settlement, s_c = H*εv = (15 ft)(0.0758) = 1.14 ft
+(b) For loading further to σ'v3 = 4000 psf:
+εv = (0.17) * log(4000 / 3000) = 0.0212 = 2.12%
+Additional settlement, s_c = (15 ft)(0.0212) = 0.318 ft
+Total settlement, Sc_total = 1.14 ft + 0.318 ft = 1.46 ft
+(c) For unloading from σ'v3 = 4000 psf back to σ'v4 = 3000 psf:
+ε_swell = (0.032) * log(4000 / 3000) = 0.004 = 0.4% (heave)
+Swell, s_swell = (15 ft)(0.004) = 0.06 ft = 0.72 in
+Aside : Net settlement (s_net) for loading and unloading described in parts a, b, and c:
+s_net = 1.146 ft - 0.06 ft = 1.09 ft or approximately 1 ft.
+
+------------------------------------------------------------
+
+[m]Q8-38. Refer to the compression curve marked Soil 13 in Fig. 8.9a. Disregard the small unloading cycle in the middle of the curve. The initial void ratio for this soil is 1.17, and the preconsolidation pressure is 290 kPa. Note: the right-hand vertical boundary of this graph is at σ'vc = 2000 kPa. Required: (a) Determine the Cr and Cc for this soil based on the compression curve. (b) If a layer of this soil 12 m thick is loaded from 50 to 800 kPa (two of the data points shown on the curve), what settlement will result, in m?
+
+[m]SOLUTION: Known: e1=1.17, σ'p=290kPa.
+(a) From the compression curve:
+    Cr = (1.17 - 1.135) / log(2000 / 1) = 0.0106
+    Cc = (1.35 - 0.67) / log(2000 / 100) = 0.523
+(b) For loading from 50 kPa to 800 kPa: σ'v0 = 50 kPa
+    Δσv = 800 kPa - 50 kPa = 750 kPa
+    σ'p = 290 kPa; e0 = 1.17; H0 = 12 m
+    OCR = 290 / 50 = 5.8 ＞ 1
+    Using Equation 8.18b for settlement:
+    s_c = Cr * [H0/(1+e0)] * log(σ'p / σ'vo) + Cc * [H0/(1+e0)] * log((σ'vo + Δσ )/ σ'p)
+    s_c = (0.0106)(12 m/(1+1.17)) * log(120 / 50) + (0.523)(12 m/(1+1.17)) * log((50 + 750) / 290)
+    s_c = 0.0223+1.2745 = 1.30 m
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.3.3 密度与饱和度计算
+
+公式 10 [ρ_d - 干密度 Dry Density]
+Meaning: Dry density is the mass of solids divided by total volume.
+ρ_d = Ms / Vt 
+(Ms: dry mass in grams; Vt: total volume in cm^3)
+
+公式 11 [ρ_t - 湿密度 Wet Density]
+Meaning: Wet density is total mass divided by total volume.
+ρ_t = M_total / Vt 
+(M_total: total mass in grams)
+
+公式 12 [S - 饱和度 Degree of Saturation]
+Meaning: S is the ratio of water volume to void volume.
+S = (Vw / Vv) × 100 
+(Vw: volume of water; Vv: volume of voids in cm^3)
+
+公式 13 [S from w and e]
+Meaning: S estimated using water content and void ratio.
+S = (ρs × w) / (ρw × e) × 100
+(ρs: solid density in Mg/m^3; w: water content in decimal; ρw: water density = 1.0 Mg/m^3; e: void ratio)
+
+Unit Conversion Reference: 1 Mg/m^3 = 1000 kg/m^3 = 1 g/cm^3
+
+------------------------------------------------------------
+
+[m]Q8-14. The initial water content of the sample in Problem 8.12 is 105.7%, and the density of the solids ρs = 2.70 Mg/m3. 
+(a) Compute the wet and dry density and degree of saturation of the consolidation test sample if the dry weight of the sample is 52.8 g. 
+(b) If the final water content is 59.6%, compute the degree of saturation and dry density at the end of consolidation.
+
+[m]SOLUTION:
+(a) Given: w = 105.7%, Ms = 52.8 g
+w = Mw / Ms
+Wet weight (Mw) = (1.057)(52.8 g) = 55.81 g
+Total weight (Mt) = 55.81 g + 52.8 g = 108.61 g
+Volume of solids (Vs) = Ms / ρs = 52.8 g / 2.70 g/cm3 = 19.55 cm3
+Volume of water (Vw) = Mw / ρw = 55.81 g / 1.0 g/cm3 = 55.81 cm3
+Volume of voids (Vv) = e * Vs = (2.765)(19.55 cm3) = 54.071 cm3
+Total volume (Vt) = Vs + Vv = 19.55 cm3 + 54.071 cm3 = 73.621 cm3
+Dry density (ρd) = Ms / Vt = 52.8 g / 73.621 cm3 = 0.717 Mg/m3
+Wet density (ρt) = Mt / Vt = 108.61 g / 73.621 cm3 = 1.47 Mg/m3
+Degree of saturation (S) = Vw / Vv = (55.81 cm3 / 54.071 cm3) × 100 = 103.2% (not possible)
+(b) Given: w = 59.6%
+Saturation (S) = (ρs * w) / (ρw * e) *100= (2.70 * 0.596) / (1.0 * 1.499) *100= 107% (not possible)
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.4.3 超固结压力与沉降分析 Preconsolidation Pressure and Settlement Analysis
+
+公式 4：[修正压缩指数定义式 Modified Compression Index from Strain-Pressure Data]
+[公式含义]Ccε 表示应变–logσ' 曲线中的斜率。
+[Meaning]Ccε represents the slope of the strain–logσ' curve.
+Ccε = (ε2 - ε1) / log10(σ'2 / σ'1)
+(ε：百分应变，单位 %；σ'：有效应力，单位 kPa)
+
+公式 5：[饱和单位重计算 Saturated Unit Weight Estimate]
+[公式含义]用于估算饱和条件下土的单位重。
+[Meaning]Estimation of saturated unit weight from dry density and water content.
+ρ_sat = ρ_dry x (1 + w)
+(ρ_dry：干密度[Mg/m^3]；w：含水率，小数)
+
+公式 6：[有效应力估算 Estimate Vertical Effective Stress at Mid-Layer]
+[公式含义]整合填土和饱和土层单位重估算总有效应力。
+[Meaning]Combined vertical effective stress from fill and underlying saturated clay.
+σ'v = [Σ(γ_i x h_i)] x g
+(γ_i：单位重[Mg/m^3]；h_i：厚度[m]；g = 9.81 m/s^2)
+Δσv 通常为填土引起的荷载 = γ_fill x h_fill x g
+
+------------------------------------------------------------
+
+[m]Q8-18. Plot the following data and determine the preconsolidation pressure and the modified compression index. Specimen height is 25.4 mm, wn = 32.5%, ρd = 1.45 Mg/m3. Sample is from a depth of -11.5 m.
+
+[m]SOLUTION:
+Modified Compression index Ccε = (e2 - e1) / log(σ'2 / σ'1)
+Ccε = (0.25 - 0.031) / log(8000 / 300) = 0.154
+From the semilogarithmic plot, the preconsolidation pressure σ'p is approximately 260 kPa.
+Plot the data as:
+- X-axis: Effective Stress (kPa, logarithmic scale)
+- Y-axis: Percent Strain (%)
+Data points to be plotted are the pairs of effective stress (Pressure) and Percent Strain values provided in the table.
+
+------------------------------------------------------------
+
+[m]Q8-19:At the site where the sample of Problem 8.18 was taken, the soil profile consists of about 6.5 m of sand and rubble fill and then 9.1 m of clay. The water table is about 1.8 m below the ground surface. Average densities of the sand and rubble fill are 1.45 Mg/m3 above the water table and 1.70 Mg/m3 below the water table. Estimate the consolidation settlement if the average stress increase in the compressible layer is: (a) 50 kPa (b) 100 kPa (c) 250 kPa
+
+[m]Solution: Known 0-1.8m, ρ=1.45Mg/m^3 (dry); 1.8-6.5m, ρ=1.70Mg/m^3 (wet).
+(a) Δσ_v = 50 kPa, σ'p = 260 kPa (from Problem 8-18)
+W_n=32.5%, ρ_d=1.45Mg/m^3 ;
+For the clay ρ_sat =ρ_dry * (1+w) = 1.45 Mg/m3 * (1+0.325) = 1.92 Mg/m3
+σ'vo = [(1.8 m)(1.45 Mg/m3) + (4.7 m)(1.70 - 1.0 Mg/m3) + (4.55 m)(1.92 - 1.0 Mg/m3)] × 9.81 m/s2 
+σ'vo = (10.086 Mg/m2)*9.81 m/s2 = 98.9 kPa (at the center of the clay layer)
+From Problem 8-18 plot: Ccε = 0.154, Crε = (0.0815-0.05) / log (640/1.0) = 0.0112
+Ho = 9.1 m  Δσv = 50 kPa
+Eq. 8.17:  
+sc = Crε Ho log((σ'vo + Δσv) / σ'vo) = (0.0112)(9.1 m) log((98.9 + 50) / 98.9)
+sc = (9.1)(0.00199) = 0.0181 m = 18.1 mm
+
+(b) For Δσv = 100 kPa, σ'p = 260 kPa, σ'vo = 98.9 kPa, σ'p＞σ'vo :
+OCR=σ'p/σ'v＞1, (σ'vo+Δσv)＜σ'p --- 回弹
+Eq. 8.17:  
+sc = Crε Ho log((σ'vo + Δσv) / σ'vo) = (0.0112)(9.1 m) log((98.9 + 100) / 98.9)
+sc = (9.1)(0.003398) = 0.0309 m = 3.1 mm
+
+(c) For Δσ = 250 kPa, σ'p = 260 kPa, σ'vo = 98.9 kPa, σ'p＞σ'vo :
+(σ'vo+Δσv)＞σ'p --- 回弹+压缩
+Using Eq. 8.19b:
+sc = Crε Ho log(σ'p / σ'vo) + C_cε H0 log((σ'vo + Δσv) / σ'_p)
+sc = (0.0112)(9.1 m)(log( 260 / 98.9)) + (0.154)(9.1 m)(log((98.9 + 250) / 260))
+sc = (9.1 m)(0.0047) + (9.1 m)(0.01967) = 0.0428 + 0.179 = 0.222 m = 22.2 mm
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.1 压缩指数与e-logσ'关系 Compression Index and e-logσ' Relationship
+
+公式 1：[压缩指数定义式]
+公式含义：压缩指数（Cc）描述孔隙比e随对数有效应力σ'变化的速率。
+Meaning: The compression index (Cc) expresses the slope of the e–logσ' curve.
+Cc = (e1 - e2) / log(σ'2 / σ'1)
+（Cc：压缩指数，无单位；e：孔隙比；σ'：有效应力[kPa]）
+
+公式 2：[经验拟合曲线表达式]
+公式含义：e-logσ'关系可近似为线性对数关系，用以描述压缩过程。
+Meaning: The e–logσ' curve can be empirically fitted as a linear function.
+e = -k × ln(σ') + b
+（e：孔隙比；σ'：有效应力[kPa]；k：斜率；b：截距）
+
+------------------------------------------------------------
+
+[m]Q8-10. The compression curve for a certain clay is a straight line on the semilogarithmic plot, and it passes through the point e = 1.15, σ'v = 65 kPa and e = 0.76, σ'v = 825 kPa. Determine an equation for this relationship. (After Taylor, 1948.)
+[m]SOLUTION:
+Eq. 8.7: Compression index = Cc = (e1 - e2) / log(σ'2 / σ'1)
+Compression index Cc = (1.15 - 0.76) / log(825 / 65) = 0.353
+The equation for the relationship is:
+e = (-0.1535) * Ln(σ') + 1.7907
+Cc = 0.353
+For the plot:
+- X-axis: Effective Stress (σ'v in kPa, logarithmic scale)
+- Y-axis: Void Ratio (e)
+- Data: (65 kPa, e = 1.15) and (825 kPa, e = 0.76)
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.2 预压密压力与应力历史
+
+8.2.1 超固结比OCR计算
+
+公式 1：[超固结比 OCR]
+公式含义：OCR 表示土体过去经历过的最大有效应力与当前有效应力的比值。
+Meaning: OCR measures the ratio between the past maximum effective stress and current effective stress.
+OCR = σ'p / σ'vo
+（σ'p：预压密应力[kPa]；σ'vo：现有有效应力[kPa]）
+
+------------------------------------------------------------
+
+[m]Q8-3. Determine the overconsolidation ratio (OCR) for the five fine-grained soils of Fig. 8.9a.
+SOLUTION:
+Eq. (8.2): OCR = σ' p / σ' vo
+Soil #8: OCR = 200 kPa / 160 kPa = 1.25
+Soil #9: OCR = 250 kPa / 170 kPa = 1.47
+Soil #10: OCR = 350 kPa / 230 kPa = 1.52
+Soil #11: OCR = 350 kPa / 280 kPa = 1.25
+Soil #13: OCR = 290 kPa / 340 kPa = 0.85
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.2.2 实验结果验证与参数确定
+
+公式 1：[回压缩指数 Cr 与压缩指数 Cc]
+公式含义：在再压缩阶段（Cr）与主压缩阶段（Cc）中，e–logσ'关系仍然适用。
+Meaning: Both recompression (Cr) and compression (Cc) indices use the e–logσ' framework.
+Cc = (e1 - e2) / log(σ'2 / σ'1) --- 压缩段
+Cr = (e1 - e2) / log(σ'2 / σ'1) --- 再压缩段
+（e：孔隙比；σ'：有效应力[kPa]）
+
+单位换算参考 Unit Conversion Reference:
+1 MPa = 1000 kPa
+log 表达式：常用为以10为底的对数（log10）
+ln 表达式：表示自然对数（以e为底）
+
+------------------------------------------------------------
+
+[m]Q8-5. What is the OCR of the clay till in Fig. 8.9c?
+SOLUTION:
+Eq. (8.2): OCR = σ' p / σ' vo
+OCR = 420 kPa / 36.7 kPa = 11.4
+
+------------------------------------------------------------
+
+[m]Q8-6. Estimate the preconsolidation stress for: 
+(a) the undisturbed Leda clay in Fig. 8.9d, 
+(b) undisturbed Mexico City clay in Fig. 8.9e, 
+(c) undisturbed Chicago clay in Fig. 8.9f, and 
+(d) the swelling clays from Texas in Fig. 8.9g.
+SOLUTION:
+(a) Leda clay (undisturbed): σ'p = 220 to 280 kPa
+(b) Mexico City clay (sample CP2): σ'p = 90 to 120 kPa
+(c) Chicago clay (sample CP1): σ'p = 110 to 140 kPa
+(d) Texas clay (sample #1): σ'p = 300 to 400 kPa
+
+[m]Q8-7. Determine the compression indices for the four soils of Problem 8.6.
+SOLUTION:
+Eq. 8.7: Compression index = Cc = (e1 - e2) / log(σ'2 / σ'1)
+Recompression index = Cr = (e1 - e2) / log(σ'2 / σ'1)
+(a) Leda clay (undisturbed):
+Cc = (1.39 - 0.6) / log(5000 / 1000) = 1.13
+Cr = (2.2 - 2.08) / log(10000 / 1.0) = 0.03
+(b) Mexico City clay (sample CP2):
+Cc = (14.5 - 2.15) / log(1000 / 100) = 12.35
+Cr = (14.1 - 13.6) / log(5000 / 2) = 0.15
+(c) Chicago clay (sample CP1):
+Cc = (1.13 - 0.42) / log(5000 / 2) = 0.21
+Cr = (0.95 - 0.85) / log(5000 / 2) = 0.03
+(d) Texas clay (sample #1):
+Cc = (0.87 - 0.63) / log(3000 / 300) = 0.24
+Cr = (0.9 - 0.86) / log(3000 / 10) = 0.016
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.3 一维固结试验数据分析
+
+8.3.1 固结实验数据分析
+
+公式 1 [Cc - 压缩指数 Compression Index]
+Meaning: Cc represents the slope of the virgin compression line in e–logσ' plot.
+Cc = (e1 - e2) / log10(σ'2 / σ'1) 
+(e: void ratio; σ': effective vertical stress in kPa)
+
+公式 2 [Cr - 回压缩指数 Recompression Index]
+Meaning: Cr represents the slope of the unloading/recompression portion of the e–logσ' plot.
+Cr = (e1 - e2) / log10(σ'2 / σ'1) 
+(e, σ' same as above)
+
+公式 3 [Cc′ - 修正压缩指数 Modified Compression Index]
+Meaning: Cc′ normalizes the compression index to improve applicability in consolidation rate prediction.
+Cc′ = Cc / (1 + e0) 
+(e0: initial void ratio)
+
+公式 4 [Cr′ - 修正回压缩指数 Modified Recompression Index]
+Meaning: Cr′ is the normalized recompression index for the rebound range.
+Cr′ = Cr / (1 + e0) 
+(e0: initial void ratio)
+
+------------------------------------------------------------
+
+[m]Q8-8. The pressure versus void ratio data determined from a consolidation test on an undisturbed clay specimen are as follows: 
+(a) Plot the pressure versus void ratio curve on both arithmetic and semilogarithmic graphs. 
+(b) Determine the equations for the virgin compression curve and for the rebound curve for unloading, starting at 1280 kPa. 
+(c) What are the corresponding modified compression and recompression indices for this soil? 
+(d) Estimate the stress to which this clay has been preconsolidated. (After A. Casagrande.)
+[m]SOLUTION:
+(a) Arithmetic graph:
+- X-axis: Effective Stress (kPa)
+- Y-axis: Void Ratio (e)
+- Data: (Pressure, Void Ratio) pairs provided in the question.
+Semilogarithmic graph:
+- X-axis: Effective Stress (kPa) (logarithmic scale)
+- Y-axis: Void Ratio (e)
+- Data: Same data as in the arithmetic graph but plotted on a logarithmic scale for the X-axis.
+(b) Using Eq. 8.7: 
+Compression index Cc = (e1 - e2) / log(σ'2 / σ'1)
+Compression index = (1.0 - 0.3) / log(10,000 / 60) = 0.32
+Recompression index Cr = (e1 - e2) / log(σ'2 / σ'1)
+Recompression index = (0.8 - 0.54) / log(10,000 / 1.0) = 0.065
+(c) Using Eq. 8.9:
+Modified compression index Cc' = Cc / (1 + e0)
+Modified compression index = 0.32 / (1 + 0.864) = 0.315
+Eq. 8.15: Modified recompression index Cr' = Cr / (1 + e0)
+Modified recompression index = 0.065 / (1 + 0.864) = 0.035
+(d) From the semilogarithmic plot, the preconsolidation stress is estimated at approximately 330 kPa.
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.3.2 湾区淤泥的固结实验数据分析
+
+公式 5 [ε_a - 应变 (e变化法) Strain from void ratio change]
+Meaning: Strain computed from the change in void ratio.
+ε_a = (e0 - e1) / (1 + e0) 
+(e0: initial void ratio; e1: current void ratio)
+
+公式 6 [ε_b - 应变 (量表读数法) Strain from dial reading]
+Meaning: Strain computed from dial gauge readings.
+ε_b = (R0 - Ri) / H0 
+(R0: initial dial reading; Ri: current reading; H0: specimen height in mm)
+
+公式 7 [%ε - 百分应变 Percent strain]
+Meaning: Average of two strain values, converted to percentage.
+%ε = [(ε_a + ε_b) / 2] × 100
+
+公式 8 [Ccε - 修正压缩指数 Modified Compression Index]
+Meaning: Modified compression index from strain–logσ' data.
+Ccε = (e2 - e1) / log10(σ'2 / σ'1) 
+(e, σ' as above)
+
+公式 9 [Cc from Ccε]
+Meaning: Back-calculate Cc using Ccε.
+Cc = (1 + e0) × Ccε 
+(e0: initial void ratio)
+
+------------------------------------------------------------
+
+[m]Q8-12. The following consolidation test data were obtained from undisturbed San Francisco Bay Mud. For this clay, LL = 88, PL = 43, ρs = 2.70 Mg/m3 and w = 105.7%. Initially, the specimen height was 2.54 cm and its volume was 75.14 cm3. Plot the data as percent consolidation versus log pressure. Evaluate the preconsolidation pressure and the modified virgin compression index.
+SOLUTION:
+Stress (kPa) | Dial Reading (mm) | Void Ratio | Strain a | Strain b | % Strain c
+0           | 12.700            | 2.765     | 0.000    | 0.000    | 0.00
+5           | 12.352            | 2.712     | 0.014    | 0.014    | 1.39
+10          | 12.294            | 2.703     | 0.016    | 0.016    | 1.62
+20          | 12.131            | 2.679     | 0.023    | 0.022    | 2.26
+40          | 11.224            | 2.541     | 0.059    | 0.058    | 5.88
+80          | 9.053             | 2.211     | 0.147    | 0.144    | 14.54
+160         | 6.665             | 1.849     | 0.243    | 0.238    | 24.04
+320         | 4.272             | 1.486     | 0.340    | 0.332    | 33.58
+480         | 2.548             | 1.224     | 0.409    | 0.400    | 40.45
+160         | 2.951             | 1.285     | 0.393    | 0.384    | 38.85
+40          | 3.533             | 1.374     | 0.369    | 0.361    | 36.52
+5           | 4.350             | 1.499     | 0.336    | 0.329    | 33.25
+Strain a: ε = Δe / (1 + e0) = (e0-e1) / (1 + e0)
+Strain b: ε = (Ro - Ri) / 25.4 mm
+Strain c: % Strain = ((Strain a + Strain b) / 2) * 100
+Modified Compression Index Ccε = (e2 - e1) / log(σ'2 / σ'1)
+Modified Compression Index = (0.45 - 0.053) / log(700/40)= 0.32
+Using Eq. 8.9: Cc = (1 + e0) * Ccε = (1 + 2.765) * (0.32) = 1.20
+From the semilogarithmic plot, the preconsolidation stress is estimated at approximately 38 kPa.
+
+------------------------------------------------------------
+
+[m]Q8-13. Plot the data of Problem 8.12, on a void ratio versus log pressure graph. Evaluate the preconsolidation pressure and the virgin compression index. Do these values agree with what you found in Problem 8.12?
+SOLUTION:
+- Plot the data on a graph with:
+  - X-axis: Effective Stress (kPa, logarithmic scale)
+  - Y-axis: Void Ratio (e)
+- Preconsolidation pressure σ'p ≈ 39 kPa
+- Using Eq. 8.7: Compression index Cc = (e1 - e2) / log(σ'2 / σ'1)
+  - Cc = (2.1 - 1.486) / log(320 / 100) = 1.21
+- These values agree with the solutions in Problem 8.12.
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.4 沉降计算方法 Settlement Calculation Methods
+
+8.4.1 粘土层沉降计算 Settlement in Clay Layers
+
+公式 1：[OC土的分段沉降公式（两段式）Settlement in Overconsolidated Clay (Two-Stage)]
+[公式含义]对于超固结土，沉降由两部分组成：预压密段与主压缩段。
+[Meaning]For OC clays, settlement is calculated using rebound and virgin compression stages.
+sc = Cr x H0 x log10(σ'p / σ'vo) + Cc x H0 x log10((σ'vo + Δσv) / σ'p)
+(Cr：回压缩指数；Cc：压缩指数；H0：层厚[m]；σ'p：预压密压力[kPa]；σ'vo：原有效应力[kPa]；Δσv：新增荷载[kPa])
+
+公式 2：[NC土沉降公式 Settlement in Normally Consolidated Clay]
+[公式含义]对于NC土，全段为 virgin 压缩，沉降取决于应力增量。
+[Meaning]For NC clays, settlement is fully from virgin compression.
+sc = Cc x H0 x log10((σ'vo + Δσv) / σ'vo)
+(Cc：压缩指数，其它同上)
+
+------------------------------------------------------------
+
+[m]Q8-9. A building is to be constructed on a stratum of the clay 7 m thick for which consolidation data are given in Problem 8.8. 
+The average existing effective overburden pressure on this clay stratum is 126 kPa. The average applied pressure on the clay after construction of the building is 285 kPa. 
+(a) Estimate the decrease in thickness of the clay stratum caused by full consolidation under the building load. 
+(b) Estimate the decrease in thickness due to the building load if the clay had never been preconsolidated under a load greater than the existing overburden.
+(c) Show on the eversus log σ plot of Problem 8.8 the values of Δe used.
+[m]SOLUTION:
+(a) Using Eq. (8.2): OCR = σ' p / σ' vo = 310 kPa / 126 kPa = 2.5
+Using Eq. 8.19b:
+sc = Cc * Ho * log(σ' p / σ' vo) + Cc * Ho * log(σ' vo + Δσv / σ' p)
+sc = (0.035)(7 m) * log(310 / 126) + (0.17)(7 m) * log(126 + 285 / 310)
+sc = 0.09579 + 0.1457 = 0.2415 m = 241 mm
+(b) σ' p=σ' vo=126 kPa
+Using Eq. 8.13: 
+sc = Ccε * Ho * log(σ' vo + Δσv) / σ' p) = 0.17 * 7m * log((126 + 285) / 126)
+sc = Ho * ε = (7 m)(0.0873) = 0.611 m = 611 mm
+(c) Δe1 / (1+e0) = 0.0137 → Δe1 = (0.0137)(1 + 0.864) = 0.0255
+Δe2 / (1+e0)  = 0.0208 → Δe2 = (0.0208)(1 + 0.864) = 0.0388
+Δe_NC / (1+e0) = 0.0873 → Δe_NC=(0.0873)(1 + 0.0873) = 0.0949
+ε = 0.0873
+Show on the e versus log σ plot the values of Δe used.
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.4.2 湾区淤泥沉降计算 Consolidation of Bay Mud
+
+公式 3：[修正指数沉降公式（NC/OC）Modified Index Settlement Formula for NC/OC Clay]
+[公式含义]使用 Ccε 和 Crε 更适用于从实验图像获得数据的沉降分析。
+[Meaning]Modified indices (Ccε, Crε) are used when working with percent strain or void ratio data.
+sc = Ccε x H0 x log10((σ'vo + Δσv) / σ'p) (NC Clay)
+sc = Crε x H0 x log10((σ'vo + Δσv) / σ'vo) (OC Clay, small stress)
+sc = Crε x H0 x log10(σ'p / σ'vo) + Ccε x H0 x log10((σ'vo + Δσv) / σ'p) (OC Clay, two-stage)
+(Ccε, Crε：修正压缩/回压缩指数；H0：土层厚度[m]；σ'p, σ'vo, Δσv：同上)
+
+------------------------------------------------------------
+
+[m]Q8-15. A 7.8 m thick layer of soft San Francisco Bay Mud is to be loaded with a granular fill 3.2 m thick, on the average. The total density of the fill is about 1.8 Mg/m3. Assume that the test data in Problem 8.12 is typical of the clay layer, and that the layer is normally consolidated. What consolidation settlement will take place due to the weight of the fill?
+[m]SOLUTION:
+Δσv = (3.2 m)(1.8 Mg/m3)(9.81 m/s2) = 56.50 kPa
+Clay is NC, thus: σ' vo = σ' p = 38 kPa
+From Problem 8-12: Ccε = 0.32
+Using the formula for settlement:
+sc = Ccε * Ho * log((σ' vo + Δσv) / σ' p) = (0.32)(7.8 m) * log((38 + 56.5) / 38)
+sc = 0.9875 m = 99 mm
+
+------------------------------------------------------------
+
+[m]Q8-16. Assume the laboratory test results in Problem 8.12 are typical of another San Francisco Bay Mud site, but where the clay is slightly overconsolidated. The present vertical effective overburden stress is calculated to be about 15 kPa, and the thickness of the clay is 3.9 m. At this location, the granular fill (ρ = 1.8 Mg/m3) will be only about 1.2 m thick. Estimate the consolidation settlement due to the weight of the fill.
+[m]SOLUTION:
+Δσv = (1.2 m)(1.8 Mg/m3)(9.81 m/s2) = 21.9 kPa
+Given: 
+σ'vo = 15 kPa
+σ'p = 38 kPa
+From Problem 8-12 plot: 
+Ccε = 0.32 and Crε (0.0226-0.01) / log (20/1.0)= 0.0097
+Using Eq. 8.17: 
+sc = Crε * Ho * log(σ'vo + Δσv) / σ'vo
+sc = (0.0097)(3.9 m) * log((15 + 21.9) / 15) = (3.9 m)(0.00379) = 0.0148 m = 1.5 mm
+
+------------------------------------------------------------
+
+[m]Q8-17. What settlement would you expect at the overconsolidated site in Problem 8.16 if the fill to be constructed were 4 m thick?
+SOLUTION:
+Δσv = (4 m)(1.8 Mg/m3)(9.81 m/s2) = 70.63 kPa
+Given: 
+σ'vo = 15 kPa
+σ'p = 38 kPa
+From Problem 8-12 plot: 
+Ccε = 0.32 and Crε = (0.0226-0.01) / log (20/1.0) = 0.0097
+Using Eq. 8.19b: 
+sc = Crε * Ho * log(σ'p / σ'vo) + Ccε * Ho * log((σ'vo + Δσv) / σ'p)
+sc = (0.0097)(3.9 m) * log(38 / 15) + (0.32)(3.9 m) * log((15 + 70.63) / 38)
+sc = 3.9m * 0.0039 +3.9m *0.11291
+sc = 0.0153 + 0.440 = 0.456 m = 456 mm
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.4.4 孔隙比-压力关系分析与沉降计算
+
+公式 1：[压缩指数 Compression Index]
+公式含义: 描述 virgin 压缩段中孔隙比与有效应力之间的对数关系斜率。
+Meaning: Represents slope of the e–logσ' curve in the virgin compression zone.
+公式: Cc = (e1 - e2) / log(σ'2 / σ'1)
+(Cc = 压缩指数 (unitless), e = 孔隙比 (unitless), σ' = 有效应力 (kPa))
+
+公式 2：[回压缩指数 Recompression Index]
+公式含义: 表示卸载或回压缩段中孔隙比–logσ'曲线的斜率。
+Meaning: Represents slope of the e–logσ' curve in the rebound range.
+公式: Cr = (e1 - e2) / log(σ'2 / σ'1)
+(Cr = 回压缩指数 (unitless), e = 孔隙比, σ' = 有效应力 (kPa))
+
+公式 3：[超固结土沉降 Settlement in Overconsolidated Clay]
+公式含义: 适用于加载压力跨越预压密应力的情形。
+Meaning: Used when applied stress exceeds preconsolidation pressure.
+公式: sc = Cr * H0 / (1 + e0) * log(σ'p / σ'vo) + Cc * H0 / (1 + e0) * log((σ'vo + Δσv) / σ'p)
+字母含义:
+  sc = 沉降量 (m)
+  Cr, Cc = 回压缩/压缩指数 (unitless)
+  H^0 = 土层厚度 (m)
+  e^0 = 初始孔隙比 (unitless)
+  σ'vo = 原有效应力 (kPa)
+  σ'p = 预压密应力 (kPa)
+  Δσv = 应力增量 (kPa)
+
+公式 4：[常固结土沉降 Settlement in Normally Consolidated Clay]
+公式含义: 适用于超固结比为1的情况 (NC 土)。
+Meaning: Used when OCR = 1 (Normally Consolidated Soil).
+公式: sc = Cc * H0 / (1 + e0) * log((σ'vo + Δσv) / σ'vo)
+
+------------------------------------------------------------
+
+[m]Q8-20. Plot the following void ratio versus pressure data, and evaluate the compression index and the recompression index. Determine the preconsolidation stress.
+SOLUTION:
+From the plot:
+Preconsolidation stress σ'p ≈ 220 kPa
+Eq. 8.7: Compression index Cc = (e1 - e2) / log(σ'2 / σ'1)
+Cc = (1.1 - 0.30) / log(6200 / 71) = 0.412
+Recompression index Cr = (e1 - e2) / log(σ'2 / σ'1)
+Cr = (0.8 - 0.504) / log(2000 / 71) = 0.090
+Plot the data as:
+- X-axis: Effective Stress (kPa, logarithmic scale)
+- Y-axis: Void Ratio (e)
+Data points to be plotted are the pairs of effective stress (Pressure) and Void Ratio values provided in the table.
+
+------------------------------------------------------------
+
+[m]Q8-21. Use the consolidation data from Problem 8.20 to compute the settlement of a structure that adds 175 kPa to the already existing overburden pressure of 130 kPa at the middle of a 6 m thick layer.
+SOLUTION:
+Δσv = 175 kPa; σ'vo = 130 kPa; σ'p = 220 kPa; OCR = 220 / 130 = 1.7
+From Problem 8-20: 
+Cc = 0.412, Cr = 0.09, e0 = 1.025
+Use Eq. 8.18b:
+sc = Cr * Ho / (1 + e0) * log(σ'p / σ'vo) + Cr * [Ho / (1 + e0)] * log(σ'vo + Δσv / σ'p)
+sc = (0.09) * (6 m / (1+1.025)) * log(220 / 130) + (0.412) * (6 m / (1+1.025)) * log((130 + 175) / 220)
+sc = 0.0609 + 0.1732 = 0.234 m = 234 mm
+
+------------------------------------------------------------
+
+[m]Q8-22. What would be the settlement of the same structure in Problem 8.21 if the overconsolidation ratio of the clay were 1.0 and σ'vo + Δσv = 305 kPa at the middepth of the clay layer? Show your work and assumptions on the e versus log s curve of Problem 8.20.
+SOLUTION:
+Δσv = 175 kPa; σ'vo + Δσv = 305 kPa; OCR = 1.0 → σ'p = σ'vo = 220 kPa
+From Problem 8-20:
+Cc = 0.412, Cr = 0.09, e0 = 1.025
+Using Eq. 8.11:
+sc = Cc * [Ho / (1 + e0)] * log((σ'vo + Δσv ) / σ'vo)
+sc = (0.412)(6 m / (1+1.025)) * log(305 / 220)
+sc = 0.173 m = 173 mm
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+[m]8.5 现场压缩曲线预测
+
+8.5.1 现场主压缩曲线与沉降分析
+
+[m]Q8-23. The consolidation curve of Fig. Ex. 8.9 is typical of a compressible layer 5 m thick. If the existing overburden pressure is 50 kPa, compute the settlement due to an additional stress of 150 kPa added by a structure.
+SOLUTION:
+Δσv = 150 kPa; σ'vo = 50 kPa; σ'p = 120 kPa; OCR = 120 / 50 = 1.7; Ho = 5 m
+From Examples 8.9 and 8.12:
+Cc = 0.44, Cr = 0.03, e0 = 0.87
+Using Eq. 8.18b:
+sc = Cr * [Ho / (1 + e0)] * log(σ'p / σ'vo) + Cc * [Ho / (1 + e0)] * log((σ'vo + Δσv) / σ'p)
+sc = (0.03) * (5 m / (1+0.87)) * log(120 / 50) + (0.44) * (5 m / (1+0.87)) * log((50 + 150) / 120)
+sc = 0.0305 + 0.261 = 0.291 m = 291 mm
+
+------------------------------------------------------------
+
+[m]Q8-24. For the test data of Problem 8.12, construct the field virgin compression curve using the Schmertmann procedure for an OCR of unity.
+SOLUTION:
+Data points:
+- (590.000, 1.161)
+- (39.000, 2.765)
+X: Effective Stress (kPa) vs. Y: Void Ratio (e) plot
+Field virgin compression curve based on Schmertmann’s (1955) procedure:
+Field compression index Cc = (e1-e2)/log(σ'2/σ'1) 
+Cc = (2.765 - 1.161) / log(590 / 39)
+Cc = 1.36
+This compares to Cc = 1.21 using the un-adjusted lab compression curve (see Problem 8-13).
+
+------------------------------------------------------------
+
+[m]Q8-25. Do Problem 8.24 for an OCR = 2.5.
+SOLUTION:
+Data points:
+- (39, 2.71)
+- (570, 1.1613)
+Field virgin compression curve based on Schmertmann’s (1955) procedure.
+Field compression index (OCR = 2.5):
+Cc = (e1 - e2) / log(σ'2 / σ'1)
+Cc = (2.71 - 1.161) / log(570 / 39) = 1.33
+Plot the data as:
+- X-axis: Effective Stress (kPa, logarithmic scale)
+- Y-axis: Void Ratio (e)
+Data points to be plotted are the pairs of effective stress (Pressure) and Void Ratio values provided in the table.
+
+[m]Q8-26. At the midpoint of a 7.5 m thick soil layer, the void ratio is 1.9. Find this point on the field virgin compression curve determined in Problem 8.24. What is the corresponding pressure? If this pressure is doubled over the entire site, compute the consolidation settlement of the layer.
+SOLUTION:
+Given:
+- H0 = 7.5 m, e1 = 1.9
+- From the plot: p1 = 170 kPa, p2 = 2 * p1 = 340 kPa --  e2 = 1.49 (from the plot)
+Using Eq. 8.18b to compute the settlement:
+sc = H0(ε) = H0 * (Δe / (1 + e0)) = (7.5 m) * (1.9 - 1.49) / (1 + 1.9)
+sc = 1.06 m = 106 mm
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+8.6 经验关系估算压缩指数
+
+
+

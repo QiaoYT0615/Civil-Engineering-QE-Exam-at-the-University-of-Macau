@@ -1,0 +1,983 @@
+Ch9 固结时率
+
+公式:H_dr = H/n
+T = (c_v * t) / H_dr^2
+u＞60%, T=1.781-0.933*log(100-u%)
+u＜60%, T=(pai/4)*u^2
+s_t = s_c*U_avg
+
+9.1 一维固结理论应用
+9.1.7 固结沉降分析
+
+[m]Q9-7. How much difference would there be in the (a) computed ultimate settlement and (b) the time required for 90% consolidation for the soil conditions of Example 9.7 if the clay layer were doubly drained?
+[m] Known: Cv=0.544*10^-2 cm/s , H=10m , St=9cm
+Q1: ultimate consolidation settlement --- it is asking about Sc=?
+Q2: u for ultimate settlement, we already know t=3.5yr; u=90%, asking t=?
+公式: H_dr = H/n
+T = (c_v * t) / H_dr^2
+u＞60%, T=1.781-0.933*log(100-u%)
+s_t = s_c*U_avg
+[m]SOLUTION:
+Given:
+    H_dr = H/n = 10 m / 2 = 5 m for double-layer drainage
+Using Eq. 9.5: 
+    T = (c_v * t) / H_dr^2
+    T = [(0.544 * 10^-2 cm^2/s * 3.1536 * 10^7 s/yr * 3.5 yr)] / (5 m)^2
+    T = 2.4 (compared to 0.6 in Ex. 9.7)
+For T = 2.4, assume u＞60%, T=1.781-0.933*log(100-u%):
+    U_avg = 99.78%
+Thus, 9 cm represents 99.78% of the total settlement.
+Using Eq. 9.12, determine the total consolidation settlement, s_c:
+    s_c = s_t / U_avg = (9 cm) / 0.9978 =9.02cm ≈ 9 cm
+(b) For U_avg = 90%＞60%, T=1.781-0.933*log(100-u%):
+    T = 0.848 (for U_avg = 90%)
+Using the formula for time T=(Cv*t)/(Hdr^2):
+    t = T * H_dr^2 / c_v
+    t = [(0.848 * (5 m)^2)] / [(0.544 * 10^-2 cm^2/s) * (3.1536 * 10^7 s/yr)]*10000 cm^2
+    t ≈ 1.23 yr
+
+[m]Q9-8. A deposit of Swedish clay is 11 m thick, on the average, and apparently drained on the bottom. The coefficient of consolidation for the clay was estimated to be 1.7 x 10^-4 cm^2/s from laboratory tests. A settlement analysis based on consolidation tests predicted an ultimate consolidation settlement under the applied load in the field to be 0.95 m. (a) How long would it take for settlements of 40 and 70 cm to occur? (b) How much settlement would you expect to occur in 3 yr? 8 yr? 35 yr? (c) How long will it take for the ultimate settlement of 0.95 m to occur?
+[m]Known: H=11m, n=1 (single drainage) --- Hdr=H/n=11m
+Cv=1.7*10^-4 cm^2/s --- using T=(Cv*t)/(Hdr^2)
+St=0.95m --- s_t = s_c*U_avg ; u＞60%, T=1.781-0.933*log(100-u%) 
+[m]SOLUTION:
+(a) Use Eq. 9.12: 
+    U_avg = s(t) / s_c  → U_avg = s(t) / 0.95 m
+Calculate T using Eq. 9.10 or 9.11
+Calculate t as: 
+    t = [T * H_dr^2] / c_v
+Given: 
+    c_v = 1.7 * 10^-4 cm^2/s, 
+    H_dr = 11 m for single-layer drainage and H_dr = 5.5 m for double-layer drainage
+Results for part (a):
+    s(t) (cm) | U_avg (decimal) | T (Eq. 9.10 or 9.11) | t (single drainage H_dr=11m, yr) | t (double drainage H_dr=5.5m, yr)
+    ------------------------------------------------------------------------------------------------
+    40        | 0.421            | 0.139                 | 31.4                   | 7.9
+    70        | 0.737            | 0.456                 | 102.9                  | 25.7
+(b) For time estimation (using Eq. 9.5 for double-layer drainage):
+    T = [c_v*t] / H_dr^2
+    T =[ (1.7 * 10^-4 cm^2/s) * (3.1536 * 10^7 s/yr) * (t yr) ]/ (5.5 m)^2 *[1m^2/10000cm^2]= 0.01772 * t
+Using Eq. 9.12 to determine settlement, s(t) in time, t:
+    t = 3 yr → T = 0.01772(3) = 0.053 → U_avg = 26.0% → s(t) = (0.95 m)(0.26) = 0.247 m = 247 mm
+    t = 8 yr → T = 0.01772(8) = 0.1418 → U_avg = 42.5% → s(t) = (0.95 m)(0.425) = 0.404 m = 404 mm
+    t = 35 yr → T = 0.01772(35) = 0.620 → U_avg = 82.4% → s(t) = (0.95 m)(0.824) = 0.783 m = 783 mm
+(c) Theoretically, it takes an infinite amount of time to obtain a settlement = s_c.
+
+[m]Q9-9. A conventional laboratory consolidation test on a 25 mm thick sample gave a time for 90% consolidation equal to 9.5 min. Calculate cv in cm^2/s, m^2/s, and ft^2/d.
+[m]Known: H=25 mm, Hdr=H/n, single drainage n=1, double drainage n=2 ;
+U_avg = 90%, t=9.5 min, u＞60%, T=1.781-0.933*log(100-u%) ;
+Cv=? --- using T=(Cv*t)/(Hdr^2)
+[m]SOLUTION:
+Given:
+    H_dr = 2.5 cm / 2 = 1.25 cm for double-layer drainage
+    For U_avg = 90%, T = 0.848 (from Table 9.1), t = 9.5 min
+(a) Calculate cv in cm^2/s:
+    Using Eq. 9.5: T = (c_v * t) / H_dr^2
+    c_v = (T * H_dr^2) / t
+    c_v = [(0.848 * (1.25 cm)^2)] / (9.5 min )*[ 1 min/ 60 s]
+    c_v = 0.0023 cm^2/s
+    c_v = 2.324 * 10^-3 cm^2/s
+(b) Calculate cv in m^2/s:
+    Using the same formula:
+    c_v =[ (0.848 * (0.0125 m)^2)] / (9.5 min)*[ 1 min/ 60 s]
+    c_v = 2.324 * 10^-7 m^2/s
+(c) Calculate cv in ft^2/d:
+    Using Eq. 9.5 for conversion to ft^2/d:
+    c_v = [(0.848 * (1.25 cm)^2 ) / (9.5 min )]*[ 1440 min/ 1 day]*[1 ft/30.48 cm]^2
+    c_v = 0.216 ft^2/day
+
+[m]Q9-10. A doubly drained specimen, 2.54 cm in height, is consolidated in the lab under an applied stress. The time for 50% overall (or average) consolidation is 12 min. (a) Compute the cv value for the lab specimen. (b) How long will it take for the specimen to consolidate to an average consolidation of 50%? (c) If the final consolidation settlement of the specimen is expected to be 0.43 cm, how long will it take for 0.18 cm of settlement to occur? (d) After 14 minutes, what percent consolidation has occurred at the middle of the specimen?
+[m]Known: H=2.54 cm ; double drainage, n=2 --- Hdr=H/n;  
+u=50%, t=12min --- u＜60%, T=(pai/4)*u^2
+Also T=(Cv*t)/(Hdr^2)
+[m]SOLUTION:
+Given:
+    Height of specimen = 2.54 cm
+    H_dr = 2.54 cm / 2 = 1.27 cm (for double-layer drainage)
+    For U_avg = 50%, T = 0.197 (from Table 9.1), t = 12 min
+(a) Calculate c_v value:
+    Using Eq. 9.5: T = (c_v * t) / H_dr^2
+    c_v = (0.197 * (1.27 cm)^2 ) /12 min
+    c_v = 0.0265 cm^2/min
+(b) Calculate time for 50% consolidation:
+    t_50% = (T * H_dr^2) / c_v
+    t_50% = (0.197 * (1.27 cm)^2) / (0.0265 cm^2/min)
+    t_50% = 12.0 min
+For 90% consolidation:
+    t_90% = (0.848 * (1.27 cm)^2) / (0.0265 cm^2/min)
+    t_90% = 51.6 min
+(c) For s(t) = 0.18 cm, using Eq. 9.10:
+    U_avg = s(t) / s_c = 0.18 / 0.43 = 0.419
+    T = 0.138 (from Eq. 9.10)
+    t_0.18 cm = (T * H_dr^2) / c_v = (0.138 * (1.27 cm)^2) / (0.0265 cm^2/min)
+    t_0.18 cm = 8.4 min
+(d) After 14 minutes, calculate the degree of consolidation at the middle of the specimen:
+    Using Eq. 9.5: T = (c_v * t) / H_dr^2
+    T = (0.0265 cm^2/min * 14 min) / (1.27 cm)^2
+    T = 0.23
+    U_avg = 54% (from Fig. 9.5)
+
+
+[m]Q9-11. The settlement analysis for a proposed structure indicates that the underlying clay layer will settle 7.5 cm in 3 years, and that ultimately the total settlement will be about 32 cm. However, this analysis is based on the clay layer being doubly drained. It is suspected that there may be no drainage at the bottom of the layer. Answer the following questions based on single drainage only, assuming c_v = 1.5 x 10^-4 cm^2/sec for both single and double drainage. 
+(a) How will the total settlement change from the double to the single drainage case? 
+(b) How long will it take for 7.5 cm of settlement to occur if there is only single drainage?
+Known: 最终沉降量仅与何在和土的压缩性有关，在其他条件不变的情况下，(H/2)^2 和 H^2 是4倍的差异。
+For double drainage: Hdr=H/2, Cv=1.5*10^-4 cm^2/s, St=7.5cm (t=3yr), Sc=32cm
+For single drainage: Hdr=H, Cv=1.5*10^-4 cm^2/s, Sc=?, St=7.5cm (t=?)
+公式: St=Sc*Uavg --- U=?
+T=T=1.781-0.933*log(100-u%) --- T=?
+T=(Cv*t)/Hdr^2 --- Hdr=? --- H=?
+Then using same Sc, u, T --- t=?
+[m]SOLUTION:
+(a) The total settlement for single and double drainage is the same, s_c = 32 cm.
+(b) Determine the thickness of the clay layer using the initial values given for double-layer drainage.
+    Given:
+        s(t) = 7.5 cm, U_avg = s(t) / s_c = 7.5 cm / 32 cm = 0.23
+        T = 0.043 (from Eq. 9.10)
+        t = 3 years
+    Using Eq. 9.5 to calculate T:
+        T = (c_v * t) / H_dr^2     H_dr =   ( (c_v * t) / T )
+        H_dr =   {( (1.5 * 10^-4 cm^2/s * 3 yr) / 0.043 ) *(1m^2/10000cm^2)*(3.1536*10^7 s/yr)}
+        H_dr = 5.74 m (for double-layer drainage)
+        H_0 = 2 * H_dr = 11.49 m
+    Now, for single-layer drainage: 
+        H_0 = H_dr = 11.49 m
+        t = (T * H_dr^2) / c_v
+        t = (0.043 * (11.49 m)^2) / ( (1.5 * 10^-4 cm^2/s) *(10000cm^2/1m^2)*(1yr / 3.1536 * 10^7 s) )
+        t = 12.0 years
+
+9.1 一维固结理论应用
+9.1.8 固结时间与厚度的关系
+
+[m]Q9-16. A certain compressible layer has a thickness of 3.8 m. After 1.5 years, when the clay is 50% consolidated, 7.3 cm of settlement has occurred. For a similar clay and loading conditions, how much settlement would occur at the end of 1.5 years and 5 years if the thickness of this new layer were 38 m?
+[m]思路:Assume both are double drainage,
+Case 1: H=3.8 m, n=2, Hdr=H/n ; t=1.5yr (u=50%), St=7.3cm
+St=Sc*Uavg --- Sc=?
+u=50% ＜60% --- T=(pai/4)*u^2 --- T=?
+T=(Cv*t)/Hdr^2 --- Cv=?
+Case 2: H=38 m, n=2, Hdr=H/n ; t=1.5yr (St=?) ; t=5yr (St=?)
+the same Cv as case 1,
+T -- u --- If we know Sc [Sc2=Sc1*H2/H1] --- St
+提示: 一维固结沉降，同样的粘土质地 --- 压缩指数Cc，初始孔隙比e0，单位重等都一样。 
+同样的荷载条件，应力变化Δσ'一致。
+唯一变化是涂层厚度H。
+Sc=H*(Cc/(1+e0))*log((σv0'+Δσv)/σv0') --- Sc与H成正比
+Sc2/Sc1=H2/H1 --- Sc2=Sc1*H2/H1
+[m]Solution
+Given Data:
+- Initial layer thickness: H = 3.8 m
+- Time elapsed: t = 1.5 yr
+- Observed settlement: s(t) = 7.3 cm
+- Degree of consolidation: U = 50%
+- Time factor for U = 50%: T = 0.197
+- Double drainage condition assumed
+Step 1: Compute the Coefficient of Consolidation (cv)
+T = (cv * t) / Hdr^2
+Since double drainage is assumed,
+Hdr = H / 2 = 3.8 / 2 = 1.9 m
+cv = (T * Hdr^2) / t = (0.197 * 1.9^2) / 1.5 = 0.474 m^2/yr
+Step 2: Compute the Final Settlement (sc)
+sc = s(t) / U = 7.3 / 0.5 = 14.6 cm
+(a) Settlement for New Layer at t = 1.5 years, H = 38 m
+For new layer:
+H = 38 m, Hdr = 38 / 2 = 19 m
+T = (cv * t) / Hdr^2 = (0.474 * 1.5) / (19^2) = 0.0019
+From consolidation tables, for T = 0.0019, we get U    5.0%.
+s(t) = sc * U = (1.46 m) * (0.05) = 0.073 m = 7.3 cm
+(b) Settlement for New Layer at t = 5 years, H = 38 m
+T = (cv * t) / Hdr^2 = (0.474 * 5) / (19^2) = 0.00656
+From consolidation tables, for T = 0.00656, we get U    9.14%.
+s(t) = sc * U = (146 cm) * (0.0914) = 13.3 cm
+Final Answer:
+- Settlement after 1.5 years: 7.3 cm
+- Settlement after 5 years: 13.3 cm
+
+
+[m]Q9-17. In a laboratory consolidation test on a representative sample of cohesive soil, the original height of a doubly-drained sample was 25.4 mm. Based on the log time versus dial reading data, the time for 50% consolidation was 8.5 min. The laboratory sample was taken from a soil layer which is 14 m thick in the field, doubly drained, and is subjected to a similar loading. Determine: (a) How long will it take until the layer consolidates 50%? (b) If the final consolidation settlement is predicted to be 22 cm, how long will it take for a settlement of 6 cm to take place? 
+[m]SOLUTION: 
+Given: 
+H = 25.4 mm, t50 = 8.5 min 
+For U = 50%, T = 0.197
+Step 1: Calculation of c_v
+c_v = (T * (H_dr / 2)^2) / t
+c_v = (0.197) * (25.4 / 2 mm)^2 / 8.5 min
+c_v = 3.738 mm^2/min
+(a) Calculate the time for 50% consolidation for the 14 m thick layer in the field
+H = 14 m
+t = (T * H_dr^2) / (c_v)
+t =[ (0.197) * (14 / 2 m)^2] / [(3.738 mm^2/min )*(m/ 1000 mm)^2]
+t = 2,582,397 min = 4.9 years
+(b) Calculate time for settlement of 6 cm (0.06 m) for a predicted final settlement of 22 cm
+T=c_v*t/H_dr^2=[(0.474 m^2/yr)*(5yr)]/(38/2)^2 = 0.00656  
+So U=9.14%
+U = s(t) / s_c
+s(t) = 6 cm = 0.06 m
+s = 22 cm = 0.22 m
+U = 0.06 / 0.22 = 0.273 
+T = 0.0585 
+Now, use the formula for settlement with time: 
+t = (T * H_dr^2) / c_v
+t = [(0.0585) * (7 m)^2] / [(3.738 mm^2/min)*(m / 1000 mm)^2]
+t = 766,853.9 min = 1.46 years
+Answer: It will take approximately 1.46 years for a settlement of 6 cm to take place.
+
+9.1 一维固结理论应用
+9.1.9 正常固结粘土的沉降计算
+
+[m]Q9-18. A layer of normally consolidated clay 4.2 m thick has an average void ratio of 1.1. Its compression index is 0.52 and its coefficient of consolidation is 0.8 m^2/yr. When the existing vertical pressure on the clay layer is doubled, what change in thickness of the clay layer will result? 
+[m]SOLUTION: 
+Given: 
+C_c = 0.52, e_o = 1.1
+H = 4.2 m, σ_o = σ_p (initial vertical pressure), Δσ = σ_p (new vertical pressure) 
+Use Eq. 8.18b: s_c = C_c *[ H_o / (1 + e_o)] * log[(σ'_v0 + Δσ_v) / σ'_p)]
+s_c = (0.52) * [(4.2 m) / (1 + 1.1)] * log(2σ'_p/σ'_p)
+s_c = (1.04) * (0.301) 
+s_c = 0.313 m = 313 mm
+Answer: The change in thickness of the clay layer will be 313 mm.
+
+9.1 一维固结理论应用
+9.1.10 高级沉降分析
+
+[m]Q9-19. The settlement analysis for a proposed structure indicates that 6.5 cm of settlement will occur in 3.4 yr and that the ultimate total settlement will be about 25 cm. The analysis is based on the assumption that the compressible clay layer is drained at both its top and bottom surfaces. However, it is suspected that there may not be drainage at the bottom surface. For the case of single drainage, estimate (a) the ultimate total settlement and (b) the time required for 6.5 cm of settlement. (After Taylor, 1948.)
+[m]提示: same soil -- sc is the same --- St=Sc*Uavg--- T=1.781-0.933*log(100-u%)
+same soil --- Cv is the same
+so t2/t1=Hdr2^2 / Hdr1^2 --- t2=(Hdr2^2 / Hdr1^2)*t1=[H^2/(H/2)^2]*t1=4t1
+[m]SOLUTION: 
+(a) The ultimate total settlement calculation is not affected by drainage layer thickness.
+Thus, s_c = 25 cm
+(b) Given: 
+t = 3.4 yr, s(t) = 6.5 cm, s_c = 25 cm
+Calculate U:
+U = s(t) / s_c = 6.5 / 25 = 0.26  ->  T = 0.0531
+Use the equation for cv calculation:
+c_v = (T * (H_dr / 2)^2) / t
+c_v = [(0.0531) * (H_o / 2 m)^2] / 3.4 yr
+For double-layer drainage:
+c_v = 0.0039 * H_o^2 m^2/yr
+Now, for single-layer drainage:
+c_v = 0.0039 * H_o^2 m^2/yr = [(0.0531) * (H_o 米)^2]/ t yr
+So t = 13.6 yr
+Answer: The time required for 6.5 cm of settlement in the case of single drainage is 13.6 years.
+
+
+[m]Q9-20. The structure of Problem 9.19 was constructed and performed essentially as expected during the first 3.4 yr (that is, the settlement of the building was about 6.5 cm). The owner decides to build a duplicate of the first structure nearby. During foundation investigations, it is discovered that the clay layer under the new building would be about 25% thicker than under the first structure. Otherwise, the properties of the clay are the same. Estimate for the new structure: (a) the ultimate total settlement, and (b) the settlement in 4.5 yr. (After Taylor, 1948.)
+[m]Ask: Case 1: H1 --- t1=3.4 yr (St=6.5cm)
+Case 2: H2=H1*(1+25%) --- Sc=?, t=4.5yr (St=?)
+[m]Known:Q(1) Sc=一维固结沉降，同样的粘土质地 --- 压缩指数Cc，初始孔隙比e0，单位重等都一样。 同样的荷载条件，应力变化Δσ'一致。唯一变化是涂层厚度H。
+Sc=H*(Cc/(1+e0))*log((σv0'+Δσv)/σv0') --- Sc与H成正比
+Sc2/Sc1=H2/H1 --- Sc2=Sc1*H2/H1
+Q(2) T=(Cv*t)/(Hdr^2)
+T=1.781-0.933*log(100-u%)
+St=Sc*Uavg
+[m]SOLUTION: 
+(a) Ultimate settlement is directly proportional to H. 
+Thus, s_c = (1.25)*(25 cm) = 31.25 cm
+(b) Given: 
+s_c = 25 cm, t = 4.5 yr, s(4.5) = ?
+Use the equation for cv and settlement calculation from Problem 9.19:
+T = (c * H_dr^2) / t 
+c_v = T*(H_dr)^2/t
+c_v = 0.0039 * H_o^2 m^2/yr for double-layer drainage
+Now for single-layer drainage: 
+0.0039 * H_o^2 m^2/yr = T*(H_0*m)^2 / 4.5 yr
+T = 0.0175,  So U = 0.14 
+Use U to calculate settlement:
+U = s(t) / s_c -> s(t) = U * s_c
+s(4.5) = (0.14)(25 cm) = 3.5 cm
+Answer: The settlement in 4.5 years for the new structure will be 3.5 cm.
+
+[m]Q9-21. A certain doubly drained clay layer has an expected ultimate settlement sc = 18 cm. The clay layer, which is 15 m thick, has a coefficient of consolidation of 4.7 x 10^-3 cm^2/s. Plot the sc-time relationship to: (a) an arithmetic time scale and (b) a semilog time scale.
+[m]SOLUTION:
+Given:
+- Ultimate settlement, s_c = 18 cm
+- Thickness of clay layer, H = 15 m
+- Coefficient of consolidation, c_v = 4.7 x 10^-3 cm^2/s
+Equation:
+c_v = (T * (H_dr)^2) / t
+Where: T is the time factor, t is the time in years, and c_v = 4.7 x 10^-3 cm^2/s
+Substituting into the equation:
+4.7 x 10^-3 cm^2/s = T*(1500/2)^2 / t
+T = 0.2635 * t  (in years)
+U = s(t) /s_c=s(t)/18 cm
+Steps to develop plots:
+1) Compute T as a function of time, t, using the equation above.
+2) Determine values of U for each computed value of T.
+3) Determine S(t) as: s(t) = (18 cm) * U for each value of U.
+4) Tabulate and plot values as shown in the table below.
+Real Time (yr)  | Time Factor (T)  | Avg. Degree of Consolidation (%) (U_avg)  | Settlement at time t (cm) (s(t))
+-------------------------------------------------------------------------------------------------------------
+0.10            | 0.0264           | 18.317                                  | 3.297
+0.30            | 0.0791           | 31.725                                  | 5.711
+0.50            | 0.1318           | 40.955                                  | 7.372
+0.70            | 0.1845           | 48.429                                  | 8.717
+0.90            | 0.2372           | 54.803                                  | 9.864
+1.10            | 0.2899           | 60.340                                  | 10.861
+1.30            | 0.3426           | 65.184                                  | 11.733
+1.50            | 0.3953           | 69.432                                  | 12.498
+1.70            | 0.4480           | 73.160                                  | 13.169
+1.90            | 0.5007           | 76.433                                  | 13.758
+2.10            | 0.5534           | 79.307                                  | 14.275
+3.10            | 0.8169           | 89.199                                  | 16.056
+7.00            | 1.8445           | 99.144                                  | 17.846
+9.00            | 2.3715           | 99.767                                  | 17.958
+15.00           | 3.9525           | 99.995                                  | 17.999
+Plots:
+(a) For the arithmetic time scale:
+- X-axis: Time, t (years)
+- Y-axis: Settlement, s(t) (cm)
+(b) For the semilog time scale:
+- X-axis: Time, t (years) (log scale)
+- Y-axis: Settlement, s(t) (cm)
+Note: To generate the plot, use the provided data to create graphs with the correct axes as described above.
+
+
+[m]Q9-22. Given soil data from Prob. 9.21. After 2.5 yr, an identical load is placed, causing an additional 12 cm of consolidation settlement. Plot the time rate of settlement under these conditions, assuming that the load causing consolidation settlement is placed instantaneously.
+[m]SOLUTION:
+Given:
+- Additional settlement, s_c = 12 cm
+- Coefficient of consolidation, c_v = 4.7 x 10^-3 cm^2/s
+Equation:
+c_v = ( T * (H_dr)^2) / t
+Where: T is the time factor, t is the time in years, and c_v = 4.7 x 10^-3 cm^2/s
+Substituting into the equation:
+4.7 x 10^-3 cm^2/s = T*(1500/2)^2 / (t-2.5)
+T = 0.2635 * (t - 2.5)  (in years)
+U=s(t)/s_c=s(t)/12 cm
+Steps to develop plots:
+1) Use settlement computed in Problem 9-21 from t = +0 to t = 2.5 yr.
+2) Compute T as a function of time, t, using the equation above.
+3) Determine values of U for each computed value of T.
+4) Determine s(t) as: s(t) = (12 cm) * U + s(t_9-21) for each value of U.
+5) Tabulate and plot values as shown in the table below.
+Real Time (yr)  | Time Factor (T)  | Avg. Degree of Consolidation (%) (U_avg)  | Settlement at time t (cm) (s(t))
+-------------------------------------------------------------------------------------------------------------
+0.20            | 0.0527           | 25.904                                  | 4.663
+0.50            | 0.1318           | 40.955                                  | 7.372
+1.00            | 0.2635           | 57.665                                  | 10.380
+2.00            | 0.5270           | 77.916                                  | 14.025
+2.50            | 0.6588           | 84.045                                  | 15.128
+2.51            | 0.0026           | 5.792                                   | 15.823
+2.60            | 0.0264           | 18.317                                  | 17.326
+2.80            | 0.0791           | 31.725                                  | 18.935
+3.00            | 0.1318           | 40.955                                  | 20.043
+3.50            | 0.2635           | 57.665                                  | 22.048
+4.00            | 0.3953           | 69.432                                  | 23.460
+5.00            | 0.6588           | 84.045                                  | 25.214
+8.00            | 1.4493           | 97.731                                  | 26.856
+10.00           | 1.9763           | 99.382                                  | 27.054
+20.00           | 4.6113           | 99.999                                  | 27.128
+Plots:
+- For the arithmetic time scale:
+  - X-axis: Time, t (years)
+  - Y-axis: Settlement, s(t) (cm)
+- For the semilog time scale:
+  - X-axis: Time, t (years) (log scale)
+  - Y-axis: Settlement, s(t) (cm)
+Note: To generate the plot, use the provided data to create graphs with the correct axes as described above.
+
+9.1 一维固结理论应用
+9.1.11 孔压分析
+
+[m]Q9-24. A specimen of clay in a special consolidation device (with drainage at the top only) has a height of 2.065 cm when fully consolidated under a pressure of 65 kPa. A pressure transducer is located at the base of the sample to measure the pore water pressure. 
+(a) When another stress increment of 65 kPa is applied, what would you expect the initial reading on the transducer to be?
+(b) If, after 20 min has elapsed, the transducer records a pressure of 30 kPa, what would you expect it to read 45 min later (total elapsed time of 1.25 h)? (After G.A. Leonards.)
+[m]提示:fully consolidated under a pressure of 65 kPa.这句话的重点是提供稳态背景，即之前无孔压。
+Known: σ0'=65kP 这是个干扰项，因为本题的核心在于“加载增量引起的孔压变化”。
+H=2.065cm, n=1 --- Hdr=H/n
+Q(1) 初始孔隙水压(瞬时)完全承载应力
+Q(2) U=1-u/Δσ＜60%, T=(pai/4)*u^2
+T=(Cv*t)/Hdr^2 --- Cv=?
+[m]SOLUTION:
+(a) The total pore water pressure, u, is the sum of the initial pore water pressure, u_o, and the excess pore water pressure, u_x.
+u=u_0+u_x
+At the end of primary consolidation, u_x = 0.
+u=u_o = (0.02065 m) * (1.0 Mg/m^3) * (9.81 m/s^2) = 202.6 Pa
+So, the initial reading on the transducer will be:
+u = u_o = 202.6 Pa
+(b) From Eq. 9.8: U_z = 1 - (u / u_i)
+Where U is the degree of consolidation, u_i = 65 kPa, u = 30 kPa (after 20 min), and u_i is the initial pore water pressure.
+Thus, U = 1 - (30 / 65) = 0.54
+From Fig. 9.3, T = 0.41. We can now use these values to back-calculate the coefficient of consolidation, c_v:
+c_v = (T * (H_dr)^2) / t
+c_v = (0.41) * (2.065 cm)^2 / 20 min = 0.0874 cm^2/min
+Now, solve for T corresponding to t = 65 min:
+T = (0.0874 cm^2/min * 65 min) / (2.065 cm)^2 = 1.33
+Since T > 1, primary consolidation is complete and u = u_o = 202.6 Pa.
+Answer:
+(a) The initial reading on the transducer will be 202.6 Pa.
+(b) After 1.25 hours, the transducer reading will remain at 202.6 Pa as primary consolidation is complete.
+
+
+[m]Q9-25. The total consolidation settlement for a compressible layer 8.3 m thick is estimated to be about 35 cm. After about 8 mo (240 d) a point 2 m below the top of the singly drained layer has a degree of consolidation of 70%. 
+(a) Compute the coefficient of consolidation of the material in m^2/day. 
+(b) Compute the settlement for 240 d.
+[m]SOLUTION: 
+(a) From Eq. 9.8: After 8 months, U_z = 1 - (u / u_i) = 70% 
+Z = z / H_dr = 2 / 8.3 = 0.241. From Fig. 9.3, T = 0.2. Use this value to back-calculate c_v. 
+c_v = (T * (H_dr)^2) / t = (0.2) * (8.3 m)^2 / 240 day = 0.0574 m^2/day
+(b) For t = 240 day and T = 0.2, So U_avg = 0.505. 
+U_avg = s(t) / s_c → S_240day= (0.505) * (35 cm) = 17.7 cm
+Answer: 
+(a) The coefficient of consolidation, c_v, is 0.0574 m^2/day. 
+(b) The settlement for 240 days is 17.7 cm.
+
+
+[m]Q9-26. A 22 m thick normally consolidated clay layer has a load of 150 kPa applied to it over a large areal extent. The clay layer is located below a granular fill (ρ = 1.8 Mg/m^3) 3.5 m thick. A dense sandy gravel is found below the clay. The groundwater table is located at the top of the clay layer, and the submerged density of the soil is 0.95 Mg/m^3. Consolidation tests performed on 2.20 cm thick doubly drained samples indicate t50 = 10.5 min for a load increment close to that of the loaded clay layer. Compute the effective stress in the clay layer at a depth of 16 m below the ground surface 3.5 yr after application of the load.
+[m]SOLUTION:
+Assume clay at equilibrium with stress increase caused by the granular fill (i.e., fill has been in place a relatively long time). Assume clay layer is doubly drained.
+Step 1: Calculate the initial effective stress at z = 16 m
+σ_v' = σ - u
+σ (at z = 16 m) = [(3.5)(1.8) + (12.5)(0.95 + 1)] * 9.81 = 300.92 kPa
+u = u_o+u_x
+u_o = (12.5)(1.0)(9.81) = 122.62 kPa
+Step 2: Use time-rate data to determine u_x
+c_v = (T * (H_dr)^2) / t
+c_v = (0.197) * (0.022 m /2 )^2 / 10.5 min = 2.27 x 10^-6 m^2/min
+For t = 3.5 yr:
+T = (c_v * t) / (H_dr)^2 = (2.27 x 10^-6 m^2/min) * (3.5 yr) * (60 * 24 * 365 min/yr) / (22/2 m)^2 = 0.0345
+U_avg = 0.21
+Step 3: Calculate excess pore pressure u_x at z = 16-3.5 = 12.5 m
+Z =z / H_dr = 12.5 / 11 = 1.14
+From Fig. 9.3, U_z = 0.01
+U_z = 1- u_x / u_i = 0.01
+0.01 = 1- u_x / 150 kPa, So u_x = 148.5 kPa (excess pore pressure at z = 12.5 m) 
+Step 4: Calculate the effective stress
+u = u_0 + u_x = 122.62 kPa + 148.5 kPa = 271.12 kPa
+Thus, the effective stress at z = 16 m after 3.5 yr is:
+σ_v' = σ - u = 300.92 kPa - 271.12 kPa = 29.8 kPa
+Answer: The effective stress in the clay layer at a depth of 16 m below the ground surface after 3.5 years is 29.8 kPa.
+
+
+[m]Q9-27. Given the same data as for Problem 9.24 for t = 4 yr. At what is the average degree of consolidation for the clay layer?
+[m]SOLUTION:
+We are given the same data as in Problem 9.24.
+Step 1: Calculate the coefficient of consolidation c_v
+c_v = (T * (H_dr)^2) / t
+c_v = (0.197) * (0.022 m / 2)^2 / 10.5 min = 2.27 x 10^-6 m^2/min
+Step 2: For t = 4 years, calculate the time factor T
+T = (c_v * t) / (H_dr)^2
+T = (2.27 x 10^-6 m^2/min) * (4 yr) * (60 * 24 * 365 min/yr) / (22/2)^2 = 0.0394
+Step 3: Determine the average degree of consolidation U_avg
+U_avg = 22.5%
+Answer:
+The average degree of consolidation for the clay layer after 4 years is 22.5%.
+
+
+[m]Q9-28. Again, given the same data as for Problem 9.26. If the clay layer were singly drained from the top only, compute the effective stress at a depth of 16 m below the ground surface and 3.5 yr after placement of the external load.
+[m]SOLUTION:
+Step 1: Calculate the initial effective stress at z = 16 m
+σ_v' = σ - u
+σ (at z = 16 m) = [(3.5)(1.8) + (12.5)(0.95 + 1)] * 9.81 = 300.92 kPa
+U = u_o+u_x
+u_o = (12.5)(1.0)(9.81) = 122.62 kPa
+Step 2: Use time-rate data to determine u_x
+c_v = (T * (H_dr)^2) / t
+c_v = (0.197) * (0.022 m / 2)^2 / 10.5 min = 2.27 x 10^-6 m^2/min
+For t = 3.5 yr:
+T = (c_v * t) / (H_dr)^2 = (2.27 x 10^-6 m^2/min) * (3.5 yr) * (60 * 24 * 365 min/yr) / (22 m)^2 = 0.0086
+Step 3: Calculate the excess pore pressure u_x
+For z = 16 m and z = 12.5 m:
+Z = z / H_dr = (16 - 3.5 ) / 22 = 0.568
+From Fig. 9.3, U_z ≈ 0.
+Use Eq. 9.8: U_z = 1 - (u_x / u_i) =0
+Thus, 0 = 1-u_x /150kPa
+u_x = 150 kPa (excess pore pressure at z = 12.5 m).
+Step 4: Calculate the effective stress
+u = u_o + u_x = 122.62 kPa + 150 kPa = 272.62 kPa
+σ_v' = σ - u = 300.92 kPa - 272.62 kPa = 28.3 kPa
+Answer:
+The effective stress in the clay layer at a depth of 16 m below the ground surface after 3.5 years is 28.3 kPa.
+
+9.2 固结系数确定方法
+9.2.2 综合固结分析
+
+[m]Q9-29. A doubly drained soil specimen is 3 cm thick. It is loaded from σ'v = 150 kPa to 300 kPa, leading to a change in void ratio from 1.30 to 1.18. Its original void ratio at the start of the test, e_o = 1.42. 
+(a) If the time required for 50% consolidation is 20 min, what is the coefficient of consolidation, c_v, of the soil in cm^2/s?
+(b) How much vertical strain occurs during the loading from 150 to 300 kPa?
+(c) What is the coefficient of permeability for this soil, in cm/s, based on these results?
+[m]SOLUTION: 
+(a) Given:
+- t_50 = 20 min
+- T = 0.197
+- H = 3 cm
+Using the equation for coefficient of consolidation:
+c_v = (T * (H_dr)^2) / t
+c_v = (0.197) * (3 cm / 2)^2 / (20 * 60 sec)
+c_v = 3.694 x 10^-4 cm^2/sec
+(b) Calculate the vertical strain:
+Δe = 1.30 - 1.18 = 0.12
+ε = Δe / (1 + e_o)
+ε = 0.12 / (1 + 1.42) = 0.0496 = 5.0%
+(c) Using the equation for coefficient of permeability (k):
+a_v=de/dσ'v = (1.30-1.18) / (300000-150000) = 8.0*10^-7 (单位1/Pa)
+c_v = k(1+e_o) / (ρ_w * g*a_v)
+(3.694 x 10^-4 cm^2/sec) * (m/100 cm)^2 = k(1+1.42) / [(1000kg/m^3) * (9.81 m/s^2) * (8.0 x 10^-7 m^2s^2 /kgm)]
+k = 1.198 x 10^-10 cm/sec
+Answer:
+(a) The coefficient of consolidation, c_v, is 3.694 x 10^-4 cm^2/sec.
+(b) The vertical strain during the loading from 150 to 300 kPa is 5.0%.
+(c) The coefficient of permeability for this soil is 1.198 x 10^-10 cm/s.
+
+
+[m]Q9-30. Figure P9.30 shows a 20 m thick layer of normally consolidated clay (γt = 18.6 kN/m^3) that is one-dimensionally loaded by Δσv = 60 kPa. The clay layer is below a 3 m thick layer of granular fill (γt = 19.6 kN/m^3), and a dense, compacted glacial till underlies the clay. The water table is located at the top of the clay layer. A 1-D consolidation test is performed on a 2.20 cm thick, doubly drained specimen from the middle of the clay layer. When the stress conditions from the field (including Δσv = 60 kPa) are applied to this specimen, it takes 4 min for 90% average consolidation to occur. 
+(a) From the lab test data, determine c_v for the soil.
+(b) Compute the pore pressure at depth 18 m before and immediately after the 60 kPa stress is applied.
+(c) Compute the total vertical (σ_v) stress at depth 18 m after the 60 kPa stress is applied in the field.
+(d) At depth 18 m, compute the effective vertical stress (σ'_v) 5 years after the 60 kPa is applied.
+[m]SOLUTION:
+(a) Given:
+- t_90 = 4 min
+- T_90 = 0.848
+- H_dr = 2.2 cm
+- t = 4 * 60 sec
+Using the equation for coefficient of consolidation:
+c_v = (T * (H_dr)^2) / t
+c_v = (0.848) * (2.2 cm / 2)^2 / (4 * 60 sec) = 4.275 x 10^-3 cm^2/sec
+(b) Assume single drainage applies in the field: u = u_o + u_x
+Before Δσv is applied (u_x = 0):
+u=u_o = (15 m) * (9.81 kN/m^3) = 147.15 kPa
+After Δσv is applied (u_x = Δσv):
+u = u_o + u_x = (15m)*(9.81kN/m^3) + 60 = 147.15 kPa + 60 kPa = 207.15 kPa
+(c) Compute the total vertical stress (σ_v) at depth 18 m:
+σ_v = (3 m) * (19.6 kN/m^3) + (15 m) * (18.6 kN/m^3) = 337.8 kPa
+(d) For t = 5 yr, compute u_x at 18 m depth, 5 years after the load is applied:
+T = (c_v * t) / (H_dr)^2 = [(4.275 x 10^-3 cm^2/sec) * (5 yr) * (60 * 60 * 24 * 365 sec/yr)] / (2000 cm)^2
+T = 0.17
+Z = z / H_dr = (15 m) / 20 m = 0.75
+From Fig. 9.3, U_z = 0.25
+Using Eq. 9.8:
+U_z = 1 - (u_x / u_i) → 0.25 = 1 - (u_x / 60 kPa) → u_x = 45 kPa (excess pore pressure at z = 18 m)
+The total pore pressure is:
+u = u_o + u_x = 147.15 kPa + 45 kPa = 192.2 kPa
+The effective stress is:
+σ'_v = σ_v - u = 337.8 kPa - 192.2 kPa = 145.6 kPa
+Answer:
+(a) The coefficient of consolidation, c_v, is 4.275 x 10^-3 cm^2/sec.
+(b) The pore pressure at depth 18 m before the 60 kPa stress is 147.15 kPa, and after the 60 kPa stress, it is 207.15 kPa.
+(c) The total vertical stress at depth 18 m after the 60 kPa stress is 337.8 kPa.
+(d) The effective vertical stress at depth 18 m, 5 years after the 60 kPa is applied, is 145.6 kPa.
+
+
+[m]Q9-31. Figure P9.31 shows a soil profile at a certain site, including an 8.5 m thick stratum of saturated, normally consolidated clay overlying an impermeable rock formation. The groundwater location is not known; however, a pore pressure measurement device (piezometer) has been installed in the middle of the clay and reads 52 kPa. A settlement plate has also been installed at the top of the clay to measure the deformation of the clay layer only (doesn’t include any deformation of overlying materials). 
+(a) A 2.6 m deep layer of fill (unit weight 19.2 kN/m^3) is placed on the ground surface. At 220 days after the fill is placed, the piezometer reads 77 kPa of pore pressure, and the settlement plate has moved downward by 0.54 m. What is the c_v for the clay?
+(b) Based on these readings at 220 days, what total settlement can be expected at the end of consolidation?
+(c) Compute the modified compression index, C_ce for this loading increment.
+[m]SOLUTION:
+(a) Using the equation for degree of consolidation:
+U_z = 1 - (u_x / u_i) =0
+u_i = Δσ_v = (2.6 m) * (19.6 kN/m^3) = 50.96 kPa; 
+u_o = 52 kPa; u_x = 77 - 52 = 25 kPa (at t = 220 days)
+U_z = 1 - (25 / 50.96) = 0.509
+Z = z / H_dr = 4.25 / 8.5 = 0.5
+T = 0.38 (from Fig. 9.3)
+c_v = (T * (H_dr)^2) / t = [(0.38) * (8.5 m)^2] / 220 days = 2.56 m^2/day
+(b) Calculate the average degree of consolidation, U_avg = s(t) / s_c:
+For T = 0.38, U_avg = 0.22
+Thus, s_c = s(t) / U_avg = (0.54 m) / 0.22 = 2.45 m
+(c) At the center of the clay, calculate the effective stress:
+σ'_vo = (2.6 m) * (19.6 kN/m^3) + (4.25 m) * (18.3 kN/m^3) - 52 kPa 
+σ'_vo =  128.735 kPa - 52 = 76.735 kPa
+Calculate the modified compression index, C_ce:
+C_cε = (ε_2 - ε_1) / (log σ_2 - log σ_1)
+ε_2 = 0.54 m / 8.5 m = 0.064; ε_1 = 0; 
+σ_1' = 76.735 kPa; σ_2' = 76.735+50.96 =127.695 kPa
+C_cε = (ε_2 - ε_1) / (log σ_2 - log σ_1)= 0.064 /[ (log(127.695) - log(76.735)) ]= 0.289
+Answer:
+(a) The coefficient of consolidation, c_v, is 2.56 m^2/day.
+(b) The total settlement at the end of consolidation is 2.45 m.
+(c) The modified compression index, C_ce, for this loading increment is 0.289.
+
+
+[m]Q9-32. Figure P9.32 shows a 20 m thick layer of normally consolidated clay (γt = 18.6 kN/m^3) that is one-dimensionally loaded by Δσv = 50 kPa. The clay layer is below a 3 m thick layer of granular fill (γt = 19.6 kN/m^3), and a dense, compacted glacial till underlies the clay. The water table is located at the top of the clay layer. A 1-D consolidation test is performed on a 2.20 cm thick, doubly drained specimen from the middle of the clay layer. When the stress conditions from the field (including the Δσv = 50 kPa) are applied to this specimen, it takes 1 minute for 50% average consolidation to occur. 
+(a) From the lab test data, determine c_v for the soil. 
+(b) Compute effective stress at 18 m depth 4 years after the Δσv is applied to the clay layer. 
+(c) Compute the average degree of consolidation 4 years after Δσv application. 
+(d) If the settlement after 4 years is 22 cm, what is the estimated Cce for the clay?
+[m]SOLUTION:
+(a) Given:
+- t_50 = 1 min
+- T_50 = 0.197
+- H_dr = 2.2 cm / 2
+- t = 1 * 60 sec
+Using the equation for coefficient of consolidation:
+c_v = (T * (H_dr)^2) / t
+c_v = (0.197) * (2.2 cm / 2)^2 / (1 * 60 sec) = 3.973 x 10^-3 cm^2/sec
+(b) For t = 4 years, determine u_x at 18 m depth:
+T = (c_v * t) / (H_dr)^2 = [(3.973 x 10^-3 cm^2/sec) * (4 yr) * (60 * 60 * 24 * 365 sec/yr)] / (2000 cm)^2 = 0.125
+T = 0.125
+Z = z / H_dr = 15 / 20 = 0.75
+From Fig. 9.3, U_z = 0.15
+Using Eq. 9.8:
+U_z = 1 - (u_x / u_i)=0 → 0.15 = 1 - (u_x / 50 kPa) → u_x = 42.5 kPa (excess pore pressure at z = 18 m)
+u_o = (15 m) * (9.81 kN/m^3) = 147.15 kPa
+u = u_o + u_x = 147.15 kPa + 42.5 kPa = 189.65 kPa
+The total vertical stress is:
+σ_v' = σ - u = 337.8 kPa - 189.65 kPa = 148.15 kPa
+(c) For T = 0.125, U_avg = 39.9%
+(d) At the center of the clay, calculate the effective vertical stress:
+σ'_vo = (3 m) * (19.6 kN/m^3) + (10 m) * (18.6 kN/m^3) - (10 m) * (9.81 kN/m^3)
+σ'_vo = 244.8-98.1 = 146.7 kPa
+The modified compression index, C_cε:
+C_cε = (ε_2 - ε_1) / (log σ_2 - log σ_1)
+ε_2 = 0.22 m / 20 m =0.011; ε_1 = 0; 
+σ_1' = 146.7 kPa; σ_2' = 146.7+50=196.7 kPa
+C_cε =(ε_2 - ε_1) / (log σ_2 - log σ_1)= 0.011 / (log(196.7) - log(146.7)) =0.086
+Answer:
+(a) The coefficient of consolidation, c_v, is 3.973 x 10^-3 cm^2/sec.
+(b) The effective vertical stress at 18 m depth after 4 years is 148.15 kPa.
+(c) The average degree of consolidation at 4 years is 39.9%.
+(d) The modified compression index, C_cε, is 0.086.
+
+9.4 二次固结分析
+9.4.1 次固结分析
+
+[m]Q9-36. Given the data of Problem 9.13. Evaluate (a) the secondary compression index and (b) the modified secondary compression index if: e_o = 2.45, H_o = 2.54 cm, ρ_s = 2.69 Mg/m^3
+At t = 0, e = 1.67, H = 1.872 cm. At t = 1485 min, e = 1.387, H = 1.646 cm
+[m]SOLUTION:
+(a) Using Eq. 9.31 to determine secondary compression (ε):
+e = H_v / H_s = (H_o - H_s)/ H_s = [(H_o - H_s) - (R_o - R)] / H_s
+Where, H_s = H_o / (1 + e_o) = 2.54 cm / (1 + 2.45) = 0.736
+ε = H_v / H_s = (H_o - H_s) / H_s = [(H_o - H_i) +(R_o - R)] /H_o
+e = e_1 + Δe = e_1 - (ε_1 - ε)(1+e_o)
+For example, at t = 0.1 min;
+ε = [((25.4 - 18.72)+(3.951-3.827)) / 25.4] * 100 = 26.79%
+e = 1.67 - (26.787 - 26.299) / 100 * (1+2.45) = 1.653
+Using Eq. 9.27 for the secondary compression index:
+C_α = (Δe) / (Δlogt) 
+Over 1 log cycle, C_α = (1.41 - 1.36) / log(100) = 0.05
+For the modified secondary compression index:
+C_αε = C_α / (1 + e_o)
+C_αε = 0.05 / (1 + 2.45) = 0.0145
+(b) Based on the table of settlement (s(t)) values, calculate secondary compression and plot:
+The x-axis represents the elapsed time (min) while the y-axis represents the void ratio (e).
+Values for time and void ratio are as follows:
+Time (min)   |   Dial Reading (mm)   |   Strain e (%) 
+0            |   3.951               |   26.299
+0.1          |   3.827               |   26.787
+0.25         |   3.789               |   26.937
+0.5          |   3.740               |   27.130
+1            |   3.667               |   27.417
+2            |   3.560               |   27.839
+4            |   3.405               |   28.449
+8            |   3.192               |   29.287
+15           |   2.945               |   30.260
+30           |   2.676               |   31.319
+60           |   2.460               |   32.169
+120          |   2.333               |   32.669
+240          |   2.186               |   33.248
+505          |   2.094               |   33.610
+1485         |   1.950               |   34.177
+The plot should have Time (min) on the x-axis and Void Ratio (e) on the y-axis.
+Answer:
+(a) The secondary compression index is 0.05.
+(b) The modified secondary compression index is 0.0145.
+
+
+[m]Q9-40. A consolidation test was performed on a specimen of inorganic clay 2.3 cm thick (doubly drained) and gave the following results: Crε = 0.043, Ccε = 0.265, and σ'p = 75 kPa. The typical t100 in the recompression range was 8.4 min, and in the virgin compression range it was 32.5 min. (a) If each increment is left on for 24 hours, determine the amount of secondary compression strain that will occur in both the recompression and the virgin compression ranges. (b) One increment was left on at σ'v = 95 kPa for two weeks. What overconsolidation ratio resulted?
+[m]SOLUTION:
+Eq. 9.30: s_s = C_αε * H_o * log(t / t_p)
+From estimates provided in Table 9.4, assume:
+C_α / C_c = C_αε / C_cε = C_rαε / C_rε = 0.04 for inorganic clays.
+Thus, C_αε = (0.04)(0.265) = 0.0106, 
+C_rαε = (0.04)(0.043) = 0.00172
+(a) Recompression: s_rs = C_rαε * H_o * log(t / t_p)
+s_rs = (0.00172)(2.3 cm) * log(24 * 60 / 8.4) = 0.0088 cm
+Compression: s_s = C_αε * H_o * log(t / t_p)
+s_s = (0.0106)(2.3 cm) * log(24 * 60 / 8.4) = 0.054 cm
+(b) Primary consolidation would be complete after 2 weeks. 
+Thus, σ'v = σ'p = 95 kPa → OCR = 1.0
+Answer:
+(a) The secondary compression strain in the recompression range is 0.0088 cm, and in the virgin compression range is 0.054 cm.
+(b) The overconsolidation ratio (OCR) is 1.0.
+
+
+[m]Q9-41. The liquid limit of a soil is 68. Estimate the value of the modified secondary compression index.
+[m]SOLUTION:
+Estimate C_c using Eq. 8.25: 
+C_c = 0.009(LL - 10) = (0.009)(68 - 10) = 0.522
+From estimates provided in Table 9.4, assume: 
+C_αε / C_cε = 0.04 (common value for inorganic clay)
+Thus, C_αε = (0.04)(0.522) = 0.021
+Answer:
+The value of the modified secondary compression index, C_αε, is 0.021.
+
+9.1 一维固结理论应用
+9.1.1 时间因子与固结度
+
+[m]Q9-1. The time factor for a clay layer undergoing consolidation is 0.15. What is the degree of consolidation (consolidation ratio) at the center and at the quarter points (that is, z/H = 0.25 and 0.75)? What is the average degree of consolidation for the layer?
+SOLUTION:
+Given: Time factor, T = 0.15
+(a) At z/H = 0.25: U_z = 0.63 (From Fig. 9.3)
+(b) At z/H = 0.75: U_z = 0.20 (From Fig. 9.3)
+Average degree of consolidation for the layer:
+U = 44% (From Fig. 9.5)
+
+9.1 一维固结理论应用
+9.1.2 不同时间因子下的沉降计算
+
+[m]Q9-2. If the final consolidation settlement for the clay layer of Problem 9.1 is expected to be 1.5 m, how much settlement has occurred when the time factor is (a) 0.3 and (b) 0.8?
+SOLUTION:
+Given:
+    Final consolidation settlement, s_c = 1.5 m
+    Settlement equation: s(t) = (s_c) * U_avg  (From Eq. 9.12)
+(a) When T = 0.3:
+    U_avg = 61.4%
+    s_61.4% = (1.5 m) * (0.614) = 0.92 m
+(b) When T = 0.8:
+    U_avg = 88.7%
+    s_88.7% = (1.5 m) * (0.887) = 1.33 m
+
+9.1 一维固结理论应用
+9.1.3 排水条件对比
+
+[m]Q9-3. If the clay layer of Example 9.1 were singly drained, would there be any difference in the calculated values? If so, how much difference?
+SOLUTION:
+Yes, H_dr = 12 m for single layer
+Using Eq. 9.5: 
+    T = (c_v * t) / (H_dr^2) 
+    T = [(8.0)(10^-8 m/s^2)(3.1536)(10^7 s/yr)(5 yr)] / (12 m)^2 
+    T = 0.0876 (compared to 0.35 in Example 9.1)
+For T = 0.0876, use Fig. 9.3 to interpolate values of U_z.
+The results are tabulated below.
+    z (m)    |   z/H    |   U_z (%)
+    -------------------------------
+    3        |   0.25   |   52
+    6        |   0.5     |   23
+    9        |   0.75   |   8
+    12      |   1.0     |   4
+
+9.1 一维固结理论应用
+9.1.4 超孔压与深度的关系图
+
+[m]Q9-4. Plot a graph of excess pore pressure versus depth, similar to Fig. Ex. 9.2, for the soil and loading conditions given in Example 9.2, but for the case of single drainage. Assume that under the clay there is impervious shale instead of a dense sand.
+SOLUTION:
+Given:
+    H_dr = 12 m for single layer
+Using Eq. 9.5: 
+    T = (c_v * t) / (H_dr^2)
+    T = [(8.0)(10^-8 m/s^2)(3.1536)(10^7 s/yr)(5 yr)] / (12 m)^2
+    T = 0.0876 (compared to 0.35 in Example 9.1)
+For T = 0.0876, use Fig. 9.3 to interpolate values of U_z.
+Using Eq. 9.8 for excess pore pressure:
+    U_z = 1 - u_x / u_i = 1 - (u_x / Δσ)  (given: Δσ = 100 kPa)
+    u_x = (100 kPa)(1 - U_z)
+The results are as follows:
+    z (m)    |   z/H    |   U_z (%)   |  u_x (kPa)  |  u_o (kPa) |  u = u_x + u_o (kPa)
+    ----------------------------------------------------------------------------
+    0        |   0        |   1         |   0          |   29.43     |   29.43
+    3        |   0.25   |   52       |   48        |   58.86     |   106.86
+    6        |   0.5     |   23       |   77        |   88.29     |   165.29
+    9        |   0.75   |   8         |   92        |   117.72    |   209.72
+    12      |   1.0     |   4         |   96        |   147.15    |   243.15
+Graphing instructions:
+    X-axis: Depth below top of clay (m)
+    Y-axis: Excess pore pressure (kPa)
+The graph will have two lines:
+    1. Hydrostatic pressure (blue) as a dashed line.
+    2. Excess pore pressure (red) with points as squares.
+    3. The excess pore pressure increases as depth increases, and hydrostatic pressure decreases with depth.
+
+9.1 一维固结理论应用
+9.1.5 指定沉降量所需时间估算
+
+[m]Q9-5. For the soil and loading conditions of Examples 9.1 and 9.2, estimate how long it would take for 0.2, 0.35, and 0.45 m of settlement to occur. Consider both single and double drainage.
+SOLUTION:
+Using Eq. 9.12: 
+    U_avg = s(t) / s_c
+For both single and double-layer drainage, s_c = 0.48 m (see Ex. 9.5)
+    U_avg = s(t) / 0.48, calculate T using Eq. 9.10 or 9.11, and calculate t as:
+    t = [T * H_dr^2] / c_v
+Given: 
+    c_v = 8.0 * 10^-8 m^2/s
+    H_dr = 12 m for single-layer drainage and H_dr = 6 m for double-layer drainage
+The results are as follows:
+    s(t) (m) | U_avg (decimal) | T (Eq. 9.10 or 9.11) | t (single drainage, yr) | t (double drainage, yr)
+    ------------------------------------------------------------------------------------------------
+    0.2      | 0.417            | 0.136                 | 7.78                   | 1.95
+    0.35     | 0.729            | 0.444                 | 25.36                  | 6.34
+    0.45     | 0.938            | 1.038                 | 59.27                  | 14.82
+
+9.1 一维固结理论应用
+9.1.6 固结方程的级数解法
+
+[m]Q9-6. By evaluation of the series expression [Eq. (B.2.23) in Appendix B.2] for the solution to the consolidation equation, determine the average degree of consolidation U to the nearest 0.001 for time factors 0.15, 0.6, 0.8 and infinity. Verify your computations by referring to Table 9.1 and Fig. 9.5(a). Also check by Eqs. (9.10 and 9.11). (After Taylor, 1948.)
+SOLUTION:
+Given:
+    Eq. (9.10) and Eq. (9.11) can be used to compute the average degree of consolidation (U).
+    The degree of consolidation is calculated based on the following equations:
+    T = c_v(t / D^2)
+    U_c = 1 - Σ(2 / M^2) * Exp(-M^2 * T)
+    where M = nπ / 2 and n = 1, 3, 5, … (constant distribution of initial pore pressure)
+    U_s = 1 - Exp(-π^2 * T / 4)  (for sinusoidal distribution of initial pore pressure)
+For each time factor, T, the average degree of consolidation is calculated:
+Time Factor    T     |    U_c (%)   |   U_s (%)  |  S_c (in)  |  S_s (in)
+---------------------------------------------------------------
+   0.15         |   43.695     |   30.934    |   12.85    |   9.09
+   0.60         |   81.556     |   77.246    |   23.98    |   22.71
+   0.80         |   88.740     |   86.109    |   26.09    |   25.32
+   ∞             |   100           |   100          |   100       |   100
+
+
+9.2 固结系数确定方法
+9.2.1 固结系数的确定
+
+[m]Q9-13. The time rate of settlement data shown below is for the increment from 20 to 40 kPa from the test in Fig. 8.5. The initial sample height is 2.54 cm, and there are porous stones on the top and at the bottom of the sample. Determine c_v by: (a) the log time-fitting procedure and (b) the square root of time procedure. (c) Compare the results of (a) and (b). 
+SOLUTION:
+(a) Casagrande log time-fitting procedure:
+Select t_1 → choose t_1 = 0.25 min (R_1 = 3.789), 4*t_1 =t_2 = 1.0 min (R_2 = 3.667)
+    x = R_1 - R_2 = 3.789 - 3.667 = 0.122
+    R_0 = R_1 + x = 3.789 + 0.122 = 3.911
+The intersection of the tangent and asymptote yields R_100 = 2.32
+Thus, R_50 = 0.5 * (3.911 + 2.32) = 3.115 and the corresponding t_50 = 10 min
+Using the formula:
+    ΔH = 3.951 - 1.950 = 2.001 mm
+    H_f = H_0 - ΔH = 25.4 - 2.001 = 23.4 mm
+    H_avg = 0.5 * (25.4 + 23.4) = 24.4 mm
+    H_dr = 24.4 * 0.5 = 12.2 mm
+At U_avg = 50%, T_50 = 0.197
+Now solve for c_v:
+    c_v = (T_50 * H_dr^2) / t_50
+    c_v = (0.197 * (1.22 cm)^2) / 10 min
+    c_v = 0.0293 cm^2/min
+Convert to m^2/yr:
+    c_v = 0.0293 cm^2/min * (1 min/60s)*[(3.1536 * 10^7 s/ 1 yr)] * (1 m^2 / 10^4 cm^2)
+    c_v = 1.54 m^2/yr
+(b) Taylor's square root of time method:
+R_90 = 2.68, t_90=5.5^2 = 30.25 min
+For U_90%, T = 0.848
+Solve for c_v:
+    c_v = (T * H_dr^2) / t_90
+    c_v = (0.848 * (1.22 cm)^2) / 30.25 min
+    c_v = 0.04172 cm^2/min
+Convert to m^2/yr:
+    c_v = (0.04172 cm^2/min)* (1 min / 60 s) * (3.1536 * 10^7 s/ 1 yr) * (1 m^2 / 10^4 cm^2) 
+    c_v = 2.19 m^2/yr
+(c) Comparison:
+    Taylor c_v = 2.19 m^2/yr
+    Casagrande c_v = 1.54 m^2/yr
+    (Taylor c_v ) / (Casagrande c_v)=1.4
+
+
+[m]Q9-14. A consolidation test (Taylor, 1948) was conducted on a sample of soft Chicago silty clay. The specimen had a dry weight of 343.57 g and a density of solids of 2.65 Mg/m3. The area of the ring was 93.31 cm2. A displacement transducer was used, which has a precision of one ten-thousandth of an inch (1 x 10^-4 in), and the incremental stresses applied to the specimen were recorded in kgf/cm2. Direct measurements of the thickness of the specimen were as follows: 
+    1.254 in when under 1/8 kg/cm2
+    1.238 in when under 1/2 kg/cm2
+    1.215 in when under 1 kg/cm2
+Deformations to the nearest 10^-4 in recorded during the test are listed in Table P9.14. 
+Required: 
+(a) Use a spreadsheet to plot the e versus log σ' and/or the e versus log σ' curve for this test. Determine the preconsolidation stress and the appropriate compression index. 
+(b) Use a spreadsheet to plot dial reading versus (t)^(1/2) for each increment and determine c_v. Plot c_v versus log σ'. 
+(c) Same as part (b), only use the Casagrande log time-fitting method. 
+(d) For two increments, one before and one after the preconsolidation stress, compare the values of c_v as determined by the two fitting procedures.
+SOLUTION:
+(a) Adjust loads to stresses:
+    Stress (kPa) = (Load (kg/cm^2)) * (100 cm/m) * (9.81 m/s^2) * (1/1000) = Stress in kPa
+Determine e_0:
+    Vs = Ms / ρs = 0.34357 kg / 2650 kg/m^3 *[(100cm)^3/(m^3)]= 129.649 cm^3
+    Vt = area * height = (93.31 cm^2)(1.254 in) *2.54cm/in= 297.207 cm^3
+    Vv = Vt - Vs = 297.207 cm^3 - 129.649 cm^3 = 167.56 cm^3
+    e_0 = Vv / Vs = 167.56 cm^3 / 129.649 cm^3 = 1.292
+Determine strain (ε):
+    ε = (deformation reading) * 10^-4 / 1.254 in*100
+Determine e (e_i) at each load:
+    Δe = ε(1 + e_0)
+    e_i = e_0 - Δe
+    e_i = e_0 - ε(1 + e_0)
+From plots:
+    Preconsolidation stress (σ'p) ≈ 110 kPa
+    Compression index (C_ce) = 30 - 3 / 100 = 0.27
+    Recompression index (C_re) = 8 - 5 / 100 = 0.03
+(b) Apply Taylor's method for load increment from 1/4 to 1/2 kg/cm^2:
+    H_vg = (1.254 in + 1.238 in) / 2 = 1.246 in
+    Using Taylor’s method formula:
+        c_v = (T * (H_dr)^2) / t = [0.197 * (1.246/2)^2] / 114 min = 6.7 * 10^-4 in^2/min
+(c) Casagrande log time-fitting method results:
+    Taylor c_v = 2.19 m^2/yr
+    Casagrande c_v = 1.54 m^2/yr
+
+
+[m]Q9-15. A consolidation test is performed on the specimen with these characteristics:
+Height of specimen = 37.60 mm
+Area of specimen = 90.1 cm2
+Wet weight of specimen = 645.3 g
+Dry weight of specimen = 491.2 g
+Density of solids = 2.72 Mg/m3
+The consolidation data (after A. Casagrande) are summarized in Table P9.15.
+(a) Plot the effective stress versus void ratio curve for both arithmetic and semilogarithmic scales.
+(b) Estimate the preconsolidation pressure.
+(c) Compute the compression index for virgin consolidation.
+(d) Plot the time curve for the load increment from 256 to 512 kg for both arithmetic and semilogarithmic scales.
+(e) Compute the coefficient of compressibility av, the coefficient of permeability, and the coefficient of consolidation cv, for the load increment from 256 kg to 512 kg
+SOLUTION
+(a) w = (M_w - M_s) / M_s = (645.3 - 491.2) / 491.2 * 100 = 31.37%
+Determine e_o:
+V_s = M_s / ρ_s = 491.2 / 2.72 = 180.59 cm3
+V_t = Area × Height = 90.1 cm2 × 3.76 cm = 338.78 cm3
+V_v = V_t - V_s = 338.78 - 180.59 = 158.19 cm3
+e_o = V_v / V_s = 158.19 / 180.59 = 0.876
+Δe = ε (1 + e_o)
+Deformation ε = deformation reading / H_o
+(refer to table and plot for solutions)
+(b) From e-log p plot: σ_p ≈ 120 kPa
+(c) Field compression index C_c = (e1 - e2) / log(σ2 / σ1) = (0.935 - 0.4) / log(2900 / 40) = 0.288
+(d) Time rate plots for load increment from 256 to 512 kg.
+(e) Casagrande log time-fitting procedure:
+select a t1 → choose t1 = 0.1 min (R1 = 4.328), 4t1 =t2 = 0.4 min (R2 = 4.37)
+x = R1 - R2 = 4.37 - 4.328 = 0.042; R_0 = R1 + x = 4.328 - 0.042 = 4.286
+The intersection of the tangent and asymptote yields 
+R_100 = 5.61
+R_50 = 0.5 × (4.286 + 5.61) = 4.948 and the corresponding t_50 = 13 min
+ΔH =5.738-4.186 = 1.552 mm
+H_f = H_o - ΔH = 37.6 - 1.552 = 36.048 mm
+H_avg = 0.5 × (37.6 + 36.048) = 36.824 mm
+H_dr = 36.824 × 0.5 = 18.41 mm; at U_50%, T_50 = 0.197
+solve for c_v = (T_50 × H_d_r^2) / t_50 = (0.197 × 1.841 cm^2) / 12 min = 0.05564 cm2/min
+c_v = 0.05564 cm2/min ×（min / 60s)* (3.1536 × 10^7 s/yr) × (1 m2 / 10? cm2) = 2.92 m2/yr
+a_v = (0.667 - 0.590) / (557.5 - 278.7) = 2.0 m2/kN (for stress increment 278.7 to 557.5 kPa)
+k = (c_v × ρ_w × g × a_v) / (1 + e_o) 
+k = [(2.92m^2/yr) × (1.0 Mg/m3) × 9.81 m/s2 × 2.0 m2/kN *yr ]/ [(1 + 0.876)*3.1536*10^7 s]
+k = 9.67 × 10^7 m/s
+
+9.3 渗透系数确定
+9.3.1 从固结试验中求渗透系数
+
+[m]Q9-33. Determine the average coefficient of permeability, corrected to 20°C, of a clay specimen for the following consolidation increment: 
+σ1 = 200 kPa, e1 = 1.24, σ2 = 400 kPa, e2 = 1.09 
+Height of specimen = 25.4 mm, Drainage at both top and bottom faces 
+Time required for 50% consolidation = 18 min, Test temperature = 23 deg C
+SOLUTION:
+(a) Given:
+- t_50 = 18 min
+- T = 0.197
+- Height of specimen = 25.4 mm
+a_v=de/dσ'v = (1.24-1.09) / (400000-200000) = 7.5*10^-7 (单位1/Pa)
+Using the equation for the coefficient of consolidation:
+c_v = (T * (H_dr)^2) / t
+c_v = (0.197) * (2.54 cm / 2)^2 / (18 * 60 sec) = 2.942 x 10^-4 cm^2/sec
+(b) Calculate the coefficient of permeability, k, using the equation:
+c_v = k(1+e_o)/(ρ_w * g*a_v)
+ (2.942 x 10^-4 cm^2/sec)*(m/100cm)^2 = k(1+1.24) / [(1000 kg/m^3) * (9.81 m/s^2) * (7.5 x 10^-7 m^2s^2/kgm) ]
+k = 9.66 x 10^-11 m/s = 9.66 x 10^-9 cm/s
+Answer:
+The average coefficient of permeability, corrected to 20°C, of the clay specimen is 9.66 x 10^-9 cm/s.
+
+
+[m]Q9-34. The following data were obtained from a consolidation test on an undisturbed clay sample: The average value of the coefficient of permeability of the clay in this pressure increment range is 9.2 x 10^-8 cm/s. Compute and plot the decrease in thickness with time for a 12 m layer of this clay which is drained. σ1 = 140 kPa, e1 = 0.912, σ2 = 280 kPa, e2 = 0.749
+SOLUTION:
+Given:
+- Height of specimen (H_dr) = 12 m (single-layer drainage)
+- k = 9.2 x 10^-8 cm/s
+From Eq. 8.5:
+a_v = de / dσ'v = (e2 - e1) / (σ2 - σ1) = (0.912 - 0.749) / (280,000 - 140,000) = 1.164 x 10^-6 1/Pa
+From Eq. 9.3:
+c_v = k(1 + e_o) / (ρ_w * g * a_v)
+c_v = [(9.2 x 10^-8 cm/s) *(m/100cm)* (1 + 0.912)] / [(1000 kg/m^3 * 9.81 m/s^2 * 1.164 x 10^-6 m^2s^2/kgm)] 
+c_v = 1.540 x 10^-7 m^2/sec
+C_c = (e2-21) / (log(σ2) - log(σ1)) = (0.912-0.749) / (log(280) - log(140)) = 0.5415
+s_c = Ho / (1+eo)*C_c* log(σ2' / σ1') = [12 m / (1+0.912)] *0.5415*log(280/140) = 1.02m
+c_v = [T(H_dr)^2] / t → 
+T = (c_v * t) / (H_dr)^2 = (1.540 x 10^-7 m^2/sec) * t * (60 * 60 * 24 * 365 sec/yr) / (12 m)^2
+T = 0.03373*t (t in days)
+s(t) = U_avg * sc = U_avg * 1.02 m
+Calculate s(t) by determining U_avg from T, for various values of t.
+Use spreadsheet to calculate T, U_avg , and s(t). See tabulated values and plot below.
+
